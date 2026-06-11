@@ -1,0 +1,1468 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cauê Sagae — Terapeuta & Professor de Meditação das Rosas</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #f0e6d8;
+      --bg-alt:    #f7f1e9;
+      --dark:      #2d5016;
+      --mid:       #4a7c2a;
+      --light:     #7fb069;
+      --tan:       #d4b896;
+      --white:     #ffffff;
+      --text:      #3a3a3a;
+      --muted:     #7a7a7a;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ─────────────────────────────────── */
+    nav {
+      position: fixed; top: 0; width: 100%; z-index: 200;
+      background: transparent;
+      padding: .9rem 2.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+      transition: background .4s, box-shadow .4s, backdrop-filter .4s;
+    }
+    nav.scrolled {
+      background: rgba(240,230,216,.96);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 2px 20px rgba(0,0,0,.08);
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: .65rem;
+      text-decoration: none;
+    }
+    .nav-logo-text {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem; color: var(--white); font-weight: 700; transition: color .4s;
+    }
+    nav.scrolled .nav-logo-text { color: var(--dark); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      text-decoration: none; color: rgba(255,255,255,.9);
+      font-size: .875rem; font-weight: 500; transition: color .4s;
+    }
+    nav.scrolled .nav-links a { color: var(--dark); }
+    .nav-links a:hover { color: var(--white); }
+    nav.scrolled .nav-links a:hover { color: var(--mid); }
+    .nav-cta {
+      background: rgba(255,255,255,.15) !important; color: var(--white) !important;
+      padding: .45rem 1.25rem; border-radius: 2rem;
+      border: 1px solid rgba(255,255,255,.4); transition: background .4s, border-color .4s;
+    }
+    nav.scrolled .nav-cta { background: var(--dark) !important; border-color: transparent; }
+    .nav-cta:hover { background: rgba(255,255,255,.28) !important; }
+    nav.scrolled .nav-cta:hover { background: var(--mid) !important; }
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      cursor: pointer; background: none; border: none; padding: .4rem;
+    }
+    .hamburger span {
+      display: block; width: 24px; height: 2px;
+      background: var(--dark); border-radius: 2px; transition: all .3s;
+    }
+
+    /* ── SECTIONS BASE ───────────────────────── */
+    section { padding: 6rem 4rem; position: relative; overflow: hidden; }
+    .inner { max-width: 1100px; margin: 0 auto; }
+    .section-tag {
+      display: inline-block;
+      background: rgba(127,176,105,.18); color: var(--mid);
+      font-size: .75rem; font-weight: 600; letter-spacing: .1em;
+      text-transform: uppercase; padding: .35rem 1rem;
+      border-radius: 2rem; margin-bottom: .9rem;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem,4vw,2.8rem); color: var(--dark);
+      line-height: 1.2; margin-bottom: 1.25rem;
+    }
+    .section-body {
+      font-size: 1.03rem; line-height: 1.8; color: #5a5a5a;
+    }
+
+    /* ── BLOBS ───────────────────────────────── */
+    .blob {
+      position: absolute; border-radius: 60% 40% 70% 30% / 50% 60% 40% 50%;
+      pointer-events: none;
+    }
+
+    /* ── BUTTONS ─────────────────────────────── */
+    .btn {
+      display: inline-flex; align-items: center; gap: .45rem;
+      padding: .85rem 1.9rem; border-radius: 3rem;
+      font-weight: 600; font-size: .9rem;
+      text-decoration: none; transition: all .3s; cursor: pointer; border: none;
+    }
+    .btn-green {
+      background: var(--dark); color: var(--white);
+      box-shadow: 0 4px 18px rgba(45,80,22,.28);
+    }
+    .btn-green:hover { background: var(--mid); transform: translateY(-2px); box-shadow: 0 7px 24px rgba(45,80,22,.35); }
+    .btn-outline {
+      border: 2px solid var(--dark); color: var(--dark);
+    }
+    .btn-outline:hover { background: var(--dark); color: var(--white); transform: translateY(-2px); }
+    .btn-wa {
+      background: #25D366; color: var(--white);
+      box-shadow: 0 4px 18px rgba(37,211,102,.35);
+    }
+    .btn-wa:hover { background: #1ebe5d; transform: translateY(-2px); }
+    .btn-amazon {
+      background: #ff9900; color: #111;
+      box-shadow: 0 4px 18px rgba(255,153,0,.3);
+    }
+    .btn-amazon:hover { background: #e68900; transform: translateY(-2px); }
+
+    /* ── HERO ────────────────────────────────── */
+    #hero {
+      min-height: 100vh;
+      display: flex; align-items: center;
+      padding: 7rem 4rem 4rem;
+      position: relative; overflow: hidden;
+    }
+    .hero-video-bg {
+      position: absolute; inset: 0; z-index: 0;
+    }
+    .hero-video-bg video {
+      width: 100%; height: 100%;
+      object-fit: cover; display: block;
+    }
+    .hero-video-overlay {
+      position: absolute; inset: 0; z-index: 1;
+      background: linear-gradient(to right, rgba(0,0,0,.62) 0%, rgba(0,0,0,.3) 60%, rgba(0,0,0,.1) 100%);
+    }
+    .hero-photo { display: none; }
+    .hero-blob-top {
+      top: -120px; right: -120px; width: 520px; height: 520px;
+      background: var(--light); opacity: .2;
+      border-radius: 60% 40% 70% 30% / 50% 60% 40% 50%;
+    }
+    .hero-blob-bot {
+      bottom: -80px; left: -100px; width: 420px; height: 420px;
+      background: var(--tan); opacity: .35;
+      border-radius: 40% 60% 30% 70% / 60% 40% 60% 40%;
+    }
+    .hero-content { position: relative; z-index: 2; max-width: 640px; }
+    .hero-pretitle {
+      color: rgba(255,255,255,.8); font-size: .9rem; font-weight: 500;
+      letter-spacing: .12em; text-transform: uppercase; margin-bottom: 1rem;
+    }
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3.5rem,7vw,5.5rem);
+      color: var(--white); line-height: 1.05; margin-bottom: 1.5rem;
+    }
+    .hero-desc {
+      font-size: 1.1rem; color: rgba(255,255,255,.82); line-height: 1.75;
+      max-width: 480px; margin-bottom: 2.5rem;
+    }
+    .hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .hero-stats {
+      display: flex; gap: 3rem; margin-top: 3.5rem; flex-wrap: wrap;
+    }
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem; color: var(--white); font-weight: 700;
+    }
+    .stat-lbl { font-size: .78rem; color: rgba(255,255,255,.65); margin-top: .2rem; }
+
+    /* ── SOBRE ───────────────────────────────── */
+    #sobre { background: var(--bg-alt); }
+    .sobre-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 5rem; align-items: center;
+    }
+    .sobre-img-wrap { position: relative; }
+    .sobre-img-blob {
+      position: absolute; top: -30px; left: -30px;
+      width: 110%; height: 110%;
+      background: var(--light); opacity: .15;
+      border-radius: 60% 40% 50% 50% / 50% 50% 60% 40%;
+    }
+    .sobre-img-placeholder {
+      position: relative; z-index: 1;
+      width: 100%; min-height: 460px;
+      border-radius: 50% 50% 45% 55% / 45% 50% 50% 55%;
+      background: linear-gradient(140deg, #a8d08d 0%, #2d5016 100%);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 6rem; color: white;
+    }
+    .sobre-img-real {
+      position: relative; z-index: 1;
+      width: 100%; height: 500px;
+      object-fit: cover; object-position: center top;
+      border-radius: 50% 50% 45% 55% / 45% 50% 50% 55%;
+      display: block;
+      box-shadow: 0 16px 40px rgba(45,80,22,.15);
+    }
+    /* ── GALERIA ─────────────────────────────── */
+    #galeria { background: var(--bg); padding: 0 4rem 5rem; }
+    .galeria-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1.5rem; max-width: 900px; margin: 0 auto;
+    }
+    .galeria-img {
+      width: 100%; aspect-ratio: 3/4;
+      object-fit: cover; border-radius: 1.5rem;
+      transition: transform .35s, box-shadow .35s;
+      box-shadow: 0 6px 20px rgba(0,0,0,.08);
+    }
+    .galeria-img:hover { transform: scale(1.025); box-shadow: 0 14px 36px rgba(0,0,0,.14); }
+    .galeria-img.offset { margin-top: 3rem; }
+    .sobre-text p + p { margin-top: 1.1rem; }
+    strong.green { color: var(--dark); }
+
+    /* ── SERVIÇOS ────────────────────────────── */
+    #servicos { background: var(--bg); }
+    .services-header { text-align: center; margin-bottom: 3.5rem; }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(270px,1fr));
+      gap: 1.5rem;
+    }
+    .svc-card {
+      background: var(--white); border-radius: 1.5rem;
+      padding: 1.9rem; border: 1px solid rgba(45,80,22,.07);
+      display: flex; flex-direction: column;
+      transition: transform .3s, box-shadow .3s;
+    }
+    .svc-card:hover { transform: translateY(-6px); box-shadow: 0 18px 40px rgba(45,80,22,.12); }
+    .svc-icon {
+      width: 2.8rem; height: 2.8rem; border-radius: .85rem;
+      background: rgba(127,176,105,.18);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.35rem; margin-bottom: 1.1rem;
+    }
+    .svc-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem; color: var(--dark); margin-bottom: .6rem;
+    }
+    .svc-desc { font-size: .875rem; color: var(--muted); line-height: 1.6; flex: 1; }
+    .svc-footer {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-top: 1.1rem; padding-top: 1rem;
+      border-top: 1px solid rgba(45,80,22,.07);
+    }
+    .svc-dur { font-size: .78rem; color: #aaa; }
+    .svc-price { font-size: .92rem; font-weight: 600; color: var(--mid); }
+    .services-cta { text-align: center; margin-top: 3rem; }
+
+    /* ── TRAJETÓRIA ──────────────────────────── */
+    #trajetoria { background: var(--dark); color: var(--white); }
+    .traj-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 5rem; align-items: center;
+    }
+    .traj-tag {
+      background: rgba(255,255,255,.14); color: rgba(255,255,255,.9);
+    }
+    .traj-title { color: var(--white); }
+    .traj-body { color: rgba(255,255,255,.78); }
+    .traj-list { list-style: none; margin-top: 1.75rem; display: flex; flex-direction: column; gap: .9rem; }
+    .traj-list li {
+      display: flex; align-items: flex-start; gap: .7rem;
+      color: rgba(255,255,255,.82); font-size: .93rem; line-height: 1.6;
+    }
+    .traj-list li span.icon { flex-shrink: 0; margin-top: .1rem; }
+    .traj-quote {
+      background: rgba(255,255,255,.09);
+      border-left: 4px solid var(--light);
+      padding: 1.5rem 1.75rem; border-radius: .5rem;
+    }
+    .traj-quote p {
+      font-family: 'Playfair Display', serif; font-style: italic;
+      font-size: 1.1rem; color: var(--white); line-height: 1.65;
+    }
+    .traj-quote cite {
+      display: block; margin-top: .85rem;
+      font-size: .8rem; color: rgba(255,255,255,.55);
+      font-style: normal;
+    }
+    .traj-stats {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem;
+      margin-top: 1.5rem;
+    }
+    .traj-stat {
+      background: rgba(255,255,255,.07);
+      border-radius: 1rem; padding: 1.25rem; text-align: center;
+    }
+    .tstat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem; color: var(--light); font-weight: 700;
+    }
+    .tstat-lbl { font-size: .78rem; color: rgba(255,255,255,.55); margin-top: .2rem; }
+
+    /* ── MEDITAÇÕES ──────────────────────────── */
+    #meditacoes { background: var(--bg-alt); }
+    .medit-header { text-align: center; margin-bottom: 3.5rem; }
+    .medit-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 2rem; max-width: 960px; margin: 0 auto;
+    }
+    .medit-card {
+      background: var(--white); border-radius: 1.5rem;
+      overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,.06);
+      transition: transform .3s, box-shadow .3s;
+    }
+    .medit-card:hover { transform: translateY(-5px); box-shadow: 0 14px 35px rgba(0,0,0,.1); }
+    .video-wrap {
+      position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;
+      cursor: pointer; background: #000;
+    }
+    .video-wrap iframe {
+      position: absolute; top: 0; left: 0;
+      width: 100%; height: 100%; border: none;
+    }
+    .video-thumb {
+      position: absolute; top: 0; left: 0;
+      width: 100%; height: 100%;
+      object-fit: cover; transition: transform .3s;
+    }
+    .video-wrap:hover .video-thumb { transform: scale(1.04); }
+    .play-btn {
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%,-50%);
+      width: 64px; height: 64px; border-radius: 50%;
+      background: rgba(255,0,0,.9);
+      display: flex; align-items: center; justify-content: center;
+      transition: transform .2s, background .2s;
+      pointer-events: none;
+    }
+    .video-wrap:hover .play-btn { transform: translate(-50%,-50%) scale(1.12); background: #ff0000; }
+    .play-btn svg { width: 24px; height: 24px; fill: white; margin-left: 4px; }
+    .medit-body { padding: 1.4rem 1.5rem; }
+    .medit-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem; color: var(--dark); margin-bottom: .4rem;
+    }
+    .medit-desc { font-size: .85rem; color: var(--muted); line-height: 1.55; }
+
+    /* ── TABELA DE PREÇOS ───────────────────── */
+    .price-row {
+      display: grid; grid-template-columns: 1.5fr 1.3fr 1fr 1fr;
+      align-items: center; gap: 1rem;
+      padding: 1.1rem 1.75rem;
+      border-bottom: 1px solid rgba(45,80,22,.07);
+      transition: background .2s;
+    }
+    .price-row:hover { background: rgba(45,80,22,.03); }
+    .pr-name {
+      font-size: .97rem; font-weight: 500; color: var(--text);
+      display: flex; align-items: center; gap: .5rem;
+    }
+    .pr-icon { font-size: 1.1rem; flex-shrink: 0; }
+    .pr-type {
+      font-size: .88rem; color: var(--muted);
+      text-align: center;
+    }
+    .pr-dur {
+      font-size: .85rem; color: var(--muted);
+      text-align: center;
+    }
+    .pr-price {
+      font-size: .92rem; font-weight: 700; color: var(--dark);
+      text-align: right;
+    }
+    .pr-consulte { color: var(--mid); font-weight: 600; }
+
+    /* ── CORPORATIVO ─────────────────────────── */
+    #corporativo {
+      background: #1a2535;
+      color: var(--white);
+      position: relative; overflow: hidden;
+    }
+    .corp-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 5rem; align-items: center;
+    }
+    .corp-video-wrap {
+      border-radius: 1.5rem; overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0,0,0,.5);
+      position: relative;
+    }
+    .corp-video-wrap video { width: 100%; display: block; }
+    .corp-tag { background: rgba(180,210,255,.15); color: #a8c8f8; }
+    .corp-title { color: var(--white); }
+    .corp-body { color: rgba(255,255,255,.78); }
+    .corp-body p + p { margin-top: 1rem; }
+    .corp-body strong { color: var(--white); }
+    .corp-highlight {
+      margin-top: 2rem; padding: 1.25rem 1.5rem;
+      background: rgba(255,255,255,.06);
+      border-left: 3px solid #a8c8f8;
+      border-radius: 0 .5rem .5rem 0;
+      font-size: .95rem; color: rgba(255,255,255,.82);
+      line-height: 1.7; font-style: italic;
+    }
+
+    /* ── TREVO MUNDO ─────────────────────────── */
+    #trevo-mundo {
+      background: #b31a1a;
+      padding: 6rem 4rem;
+      overflow: hidden; position: relative;
+    }
+    #trevo-mundo::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 30% 50%, rgba(255,255,255,.06) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .trevo-mundo-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 5rem; align-items: center;
+      max-width: 1100px; margin: 0 auto; position: relative; z-index: 1;
+    }
+    .trevo-mundo-tag { background: rgba(255,255,255,.15); color: rgba(255,255,255,.9); }
+    .trevo-mundo-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem,4vw,3.2rem); color: var(--white);
+      line-height: 1.15; margin-bottom: 1.25rem;
+    }
+    .trevo-mundo-desc { color: rgba(255,255,255,.78); font-size: 1rem; line-height: 1.8; }
+    .trevo-mundo-stats { display: flex; gap: 2.5rem; margin-top: 2rem; flex-wrap: wrap; }
+    .tms-num { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: var(--white); font-weight: 700; }
+    .tms-lbl { font-size: .78rem; color: rgba(255,255,255,.6); margin-top: .2rem; }
+    .trevo-slideshow {
+      position: relative; aspect-ratio: 9/16;
+      border-radius: 1.5rem; overflow: hidden;
+      box-shadow: 0 24px 60px rgba(0,0,0,.45);
+      background: #000;
+      max-height: 580px; justify-self: center; width: 100%;
+    }
+    .trevo-slide {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      opacity: 0; transition: opacity .25s ease;
+    }
+    .trevo-slide.active { opacity: 1; }
+
+    /* ── TERAPIAS ────────────────────────────── */
+    #terapias { background: var(--dark); color: var(--white); }
+    .terapia-sep {
+      border: none; border-top: 1px solid rgba(255,255,255,.12);
+      margin: 5rem 0;
+    }
+    /* Massagem */
+    .massagem-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 5rem; align-items: center;
+    }
+    .massagem-video-wrap {
+      border-radius: 1.5rem; overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0,0,0,.4);
+      background: #000;
+    }
+    .massagem-video-wrap video {
+      width: 100%; display: block;
+      max-height: 480px; object-fit: cover;
+    }
+    .massagem-tag  { background: rgba(255,255,255,.13); color: rgba(255,255,255,.9); }
+    .massagem-title { color: var(--white); }
+    .massagem-body  { color: rgba(255,255,255,.78); }
+    .massagem-body p + p { margin-top: 1rem; }
+    .massagem-body strong { color: var(--white); }
+    /* Aura */
+    .aura-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 5rem; align-items: center;
+    }
+    .aura-fotos { width: 100%; }
+    .aura-foto-wrap {
+      position: relative; width: 100%; aspect-ratio: 3/4;
+      border-radius: 1.5rem; overflow: hidden;
+      box-shadow: 0 16px 40px rgba(0,0,0,.4);
+    }
+    .aura-slide {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center top;
+      opacity: 0; transition: opacity 1.2s ease-in-out;
+    }
+    .aura-slide.active { opacity: 1; }
+    .aura-topics {
+      list-style: none; margin-top: 1.25rem;
+      display: flex; flex-direction: column; gap: .5rem;
+    }
+    .aura-topics li {
+      display: flex; align-items: center; gap: .6rem;
+      font-size: .92rem; color: rgba(255,255,255,.8);
+    }
+    .aura-topics li::before { content: "→"; color: var(--light); font-weight: 700; }
+
+    /* ── LIVRO ───────────────────────────────── */
+    #livro { background: var(--bg); }
+    .livro-grid {
+      display: grid; grid-template-columns: auto 1fr;
+      gap: 5rem; align-items: center;
+    }
+    /* CSS book cover */
+    .book-cover {
+      width: 210px; flex-shrink: 0;
+      background: #fff;
+      border-radius: .75rem;
+      box-shadow: 0 20px 50px rgba(0,0,0,.16), 0 2px 8px rgba(0,0,0,.08);
+      padding: 2rem 1.5rem 1.5rem;
+      display: flex; flex-direction: column; align-items: center;
+      gap: 1.1rem; min-height: 295px;
+      transition: transform .3s;
+      border: 1px solid #e8e8e8;
+    }
+    .book-cover:hover { transform: rotate(-2deg) scale(1.03); }
+    .book-cover-title {
+      text-align: center; line-height: 1.1;
+    }
+    .book-cover-title .amor {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-style: italic; font-size: 2.1rem; color: #c0392b;
+    }
+    .book-cover-title .e-sorte {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 2rem; color: #2d5016;
+    }
+    .book-cover-title .e-sorte sup {
+      font-size: .9rem; vertical-align: super;
+    }
+    .book-clover-svg { width: 60px; height: 70px; }
+    .book-author {
+      font-size: .6rem; letter-spacing: .12em;
+      text-transform: uppercase; color: #555; text-align: center;
+      line-height: 1.5;
+    }
+    .livro-badge {
+      display: inline-block;
+      background: rgba(127,176,105,.18); color: var(--mid);
+      font-size: .75rem; font-weight: 600; letter-spacing: .08em;
+      text-transform: uppercase; padding: .35rem 1rem;
+      border-radius: 2rem; margin-bottom: .9rem;
+    }
+    .livro-text p + p { margin-top: 1rem; }
+    .livro-btns { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 2rem; }
+
+    /* ── MÍDIA ───────────────────────────────── */
+    #midia { background: var(--bg-alt); text-align: center; }
+    .midia-logos {
+      display: flex; gap: 3.5rem; justify-content: center;
+      align-items: flex-start; flex-wrap: wrap; margin-top: 3rem;
+    }
+    .midia-item { display: flex; flex-direction: column; align-items: center; gap: .6rem; }
+    .midia-badge {
+      width: 90px; height: 90px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 18px rgba(0,0,0,.09);
+      font-weight: 800; font-size: 1.15rem;
+    }
+    .midia-badge.globo { background: #fff; }
+    .midia-badge.globo svg { width: 56px; }
+    .midia-badge.band  { background: #003399; color: #ffd700; font-size: 1rem; letter-spacing: -.03em; }
+    .midia-name  { font-weight: 600; color: var(--dark); font-size: .9rem; }
+    .midia-prog  { font-size: .78rem; color: var(--muted); }
+    /* Globo and Band video cards */
+    .midia-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      max-width: 1800px;
+      margin: 3.5rem auto 0;
+    }
+    .midia-card {
+      display: block; border-radius: 1.75rem; overflow: hidden;
+      position: relative; text-decoration: none; cursor: pointer;
+      box-shadow: 0 10px 40px rgba(0,0,0,.15);
+      transition: transform .3s, box-shadow .3s;
+      background: #000;
+    }
+    .midia-card:hover { transform: translateY(-5px); box-shadow: 0 22px 55px rgba(0,0,0,.25); }
+    .midia-thumb {
+      position: relative; width: 100%;
+      aspect-ratio: 16/9; overflow: hidden;
+    }
+    .midia-thumb video {
+      width: 100%; height: 100%;
+      object-fit: cover; display: block;
+      transition: transform .4s;
+    }
+    .midia-card:hover .midia-thumb video { transform: scale(1.02); }
+    .midia-thumb::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,.85) 0%, rgba(0,0,0,.2) 50%, transparent 100%);
+      pointer-events: none;
+    }
+    .audio-indicator {
+      position: absolute; top: 1.25rem; right: 1.25rem;
+      width: 44px; height: 44px; border-radius: 50%;
+      background: rgba(0,0,0,.6); backdrop-filter: blur(4px);
+      border: 1px solid rgba(255,255,255,.2);
+      display: flex; align-items: center; justify-content: center;
+      z-index: 3;
+      transition: transform .2s, background .2s;
+    }
+    .midia-card:hover .audio-indicator {
+      transform: scale(1.08);
+      background: rgba(0,0,0,.85);
+    }
+    .audio-indicator svg {
+      width: 20px; height: 20px;
+      fill: #fff;
+    }
+    .midia-info {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      padding: 1.5rem 2rem;
+      z-index: 2;
+      display: flex; align-items: flex-end; justify-content: space-between; gap: 1rem;
+      text-align: left;
+    }
+    .midia-info-text { flex-grow: 1; }
+    .midia-network {
+      display: inline-block;
+      font-size: .8rem; font-weight: 700; letter-spacing: .12em;
+      text-transform: uppercase; color: rgba(255,255,255,.75);
+      margin-bottom: .4rem;
+    }
+    .midia-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.45rem; color: #fff;
+      line-height: 1.25;
+    }
+    .midia-action-btn {
+      flex-shrink: 0;
+      display: inline-flex; align-items: center; gap: .4rem;
+      background: rgba(255,255,255,.15);
+      border: 1px solid rgba(255,255,255,.3);
+      backdrop-filter: blur(6px);
+      color: #fff; font-size: .85rem; font-weight: 600;
+      padding: .5rem 1.2rem; border-radius: 2rem;
+      transition: background .2s;
+      user-select: none;
+    }
+    .midia-card:hover .midia-action-btn { background: rgba(255,255,255,.25); }
+    .midia-play-overlay {
+      position: absolute; inset: 0; z-index: 2;
+      display: flex; align-items: center; justify-content: center;
+      background: rgba(0,0,0,.18);
+      opacity: 0; transition: opacity .2s;
+      pointer-events: none;
+    }
+    .midia-card:hover .midia-play-overlay { opacity: 1; }
+    .midia-play-overlay svg { filter: drop-shadow(0 2px 8px rgba(0,0,0,.6)); }
+
+    /* ── CONTATO ─────────────────────────────── */
+    #contato { background: var(--dark); text-align: center; }
+    .contato-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem,4vw,2.8rem); color: var(--white); margin-bottom: 1rem;
+    }
+    .contato-desc {
+      color: rgba(255,255,255,.72); font-size: 1.03rem;
+      max-width: 480px; margin: 0 auto 3rem; line-height: 1.75;
+    }
+    .contato-cards {
+      display: flex; gap: 1.25rem; justify-content: center;
+      flex-wrap: wrap; margin-bottom: 3rem;
+    }
+    .contato-card {
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: 1.1rem; padding: 1.4rem 1.75rem;
+      text-decoration: none; min-width: 190px; transition: all .3s;
+      display: flex; flex-direction: column; align-items: center; gap: .2rem;
+    }
+    .contato-card:hover { background: rgba(255,255,255,.16); transform: translateY(-4px); }
+    .cc-icon  { font-size: 1.65rem; margin-bottom: .3rem; }
+    .cc-label { font-size: .72rem; text-transform: uppercase; letter-spacing: .1em; color: rgba(255,255,255,.55); }
+    .cc-value { font-size: .93rem; font-weight: 600; color: var(--white); }
+
+    /* ── FOOTER ──────────────────────────────── */
+    footer {
+      background: #1e3810;
+      color: rgba(255,255,255,.45);
+      text-align: center; padding: 1.75rem 2rem;
+      font-size: .82rem; line-height: 1.8;
+    }
+
+    /* ── FLOATING WA ─────────────────────────── */
+    .wa-float {
+      position: fixed; bottom: 1.75rem; right: 1.75rem;
+      width: 3.5rem; height: 3.5rem;
+      background: #25D366; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      text-decoration: none;
+      box-shadow: 0 4px 18px rgba(37,211,102,.45);
+      z-index: 999; transition: all .3s;
+    }
+    .wa-float:hover { transform: scale(1.12); box-shadow: 0 6px 24px rgba(37,211,102,.55); }
+    .wa-float svg { width: 1.65rem; height: 1.65rem; fill: white; }
+
+    /* ── RESPONSIVE ──────────────────────────── */
+    @media (max-width: 800px) {
+      section { padding: 4rem 1.5rem; }
+      #hero { padding: 6.5rem 1.5rem 3.5rem; }
+      .hamburger { display: flex; }
+      .nav-links {
+        display: none; position: absolute; top: 100%; left: 0; right: 0;
+        background: var(--bg); flex-direction: column;
+        padding: 1.25rem 1.5rem; gap: .9rem;
+        border-bottom: 1px solid rgba(45,80,22,.1);
+      }
+      .nav-links.open { display: flex; }
+      .sobre-grid,
+      .traj-grid,
+      .livro-grid  { grid-template-columns: 1fr; gap: 2.5rem; }
+      .medit-grid  { grid-template-columns: 1fr; gap: 1.5rem; }
+      .book-cover  { margin: 0 auto; display: flex; }
+      .hero-stats  { gap: 1.75rem; }
+      .hero-photo  { display: none; }
+      #galeria     { padding: 0 1.5rem 4rem; }
+      .galeria-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
+      .galeria-img.offset { margin-top: 1.5rem; }
+      .massagem-grid,
+      .aura-grid,
+      .corp-grid,
+      .midia-grid,
+      .trevo-mundo-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      #trevo-mundo { padding: 4rem 1.5rem; }
+      .trevo-slideshow { max-height: 420px; }
+      .contato-cards { flex-direction: column; align-items: center; }
+      nav { padding: .9rem 1.25rem; }
+
+      /* Tabela de preços: esconde colunas do meio, mantém nome + valor */
+      .price-row { grid-template-columns: 1fr auto !important; }
+      .price-header-row { grid-template-columns: 1fr auto !important; }
+      .pr-type, .pr-dur, .ph-type, .ph-dur { display: none !important; }
+
+      /* Seções inline com grid 2 colunas */
+      #renascimento .inner.massagem-grid,
+      #wellness-experience .inner.massagem-grid,
+      #corporativo .inner.corp-grid { grid-template-columns: 1fr !important; gap: 2.5rem !important; }
+      #renascimento, #wellness-experience { padding: 4rem 1.5rem !important; }
+
+      /* Vídeo após texto no mobile */
+      .massagem-video-wrap, .corp-video-wrap { order: 2; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══ NAVBAR ═══════════════════════════════════════════ -->
+<nav id="navbar">
+  <a href="#hero" class="nav-logo">
+    <!-- Clover + Heart mini logo -->
+    <svg width="30" height="34" viewBox="0 0 30 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="10" cy="10" r="6.5" fill="#6a9642"/>
+      <circle cx="20" cy="10" r="6.5" fill="#6a9642"/>
+      <circle cx="10" cy="20" r="6.5" fill="#6a9642"/>
+      <circle cx="20" cy="20" r="6.5" fill="#6a9642"/>
+      <rect x="13.5" y="18" width="3" height="7" rx="1.5" fill="#6a9642"/>
+      <path d="M9 26 C9 23.2 11.2 21 14 21 C15.1 21 16 21.9 16 23 C16 21.9 16.9 21 18 21 C20.8 21 23 23.2 23 26 C23 28.8 20.8 31 18 31 L14 31 C11.2 31 9 28.8 9 26Z" fill="#c0392b"/>
+    </svg>
+    <span class="nav-logo-text">Cauê Sagae</span>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#terapias">Serviços</a></li>
+    <li><a href="trevos.html">Trevos do Amor</a></li>
+    <li><a href="meditacoes.html">Meditações Gratuitas</a></li>
+    <li><a href="livro.html">Livro Amor e Sorte</a></li>
+    <li><a href="#contato" class="nav-cta">Contato</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Abrir menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ══ HERO ═════════════════════════════════════════════ -->
+<section id="hero">
+  <div class="hero-video-bg">
+    <video autoplay muted loop playsinline preload="auto">
+      <source src="video-home.mp4" type="video/mp4" />
+    </video>
+  </div>
+  <div class="hero-video-overlay"></div>
+  <div class="hero-content" style="position:relative;z-index:2;">
+    <p class="hero-pretitle">Terapeuta · Professor de Meditação · Escritor</p>
+    <h1 class="hero-title">Cauê<br>Sagae</h1>
+    <p class="hero-desc">
+      Mais de 12 anos dedicados ao bem-estar humano, ao empoderamento pessoal e à conexão com a essência mais profunda de cada pessoa.
+    </p>
+    <div class="hero-buttons">
+      <a href="https://wa.me/5551999433373" target="_blank" class="btn btn-wa">
+        <svg viewBox="0 0 24 24" width="18" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        Falar pelo WhatsApp
+      </a>
+      <a href="#terapias" class="btn" style="border:2px solid rgba(255,255,255,.7);color:#fff;">Ver serviços</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="stat-num">12+</div>
+        <div class="stat-lbl">Anos de trajetória</div>
+      </div>
+      <div>
+        <div class="stat-num">5k+</div>
+        <div class="stat-lbl">Atendimentos individuais</div>
+      </div>
+      <div>
+        <div class="stat-num">10k+</div>
+        <div class="stat-lbl">Atendimentos em grupo</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-photo">
+    <img src="caue-4.jpg" alt="Cauê Sagae" />
+  </div>
+</section>
+
+<!-- ══ SOBRE ═════════════════════════════════════════════ -->
+<section id="sobre">
+  <div class="inner sobre-grid">
+    <div class="sobre-img-wrap">
+      <div class="sobre-img-blob"></div>
+      <img src="caue-1.jpg" alt="Cauê Sagae" class="sobre-img-real"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+      <div class="sobre-img-placeholder" aria-hidden="true" style="display:none;">🧘</div>
+    </div>
+    <div class="sobre-text">
+      <span class="section-tag">Sobre</span>
+      <h2 class="section-title">Olá, eu sou o Cauê Sagae</h2>
+      <p class="section-body">
+        Terapeuta, Professor de Meditação das Rosas e Escritor. Com mais de 12 anos de trajetória,
+        5 mil atendimentos individuais e 10 mil em grupo, minha abordagem é universalista.
+      </p>
+      <p class="section-body" style="margin-top:1rem;">
+        Tenho a intenção de compartilhar o que aprendi com o próximo, auxiliando no processo de
+        <strong class="green">empoderamento pessoal e autonomia</strong>.
+      </p>
+      <p class="section-body" style="margin-top:1rem;">
+        Meu propósito é ajudar cada pessoa a se reconectar com sua essência, abrir caminhos
+        internos e lembrar que <em>o verdadeiro mestre mora dentro de si</em>.
+      </p>
+      <a href="#contato" class="btn btn-green" style="margin-top:2rem;">Agende uma sessão</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ TREVO MUNDO ════════════════════════════════════════ -->
+<section id="trevo-mundo">
+  <div class="trevo-mundo-grid">
+    <div>
+      <span class="section-tag trevo-mundo-tag">🍀 Trevo do Amor</span>
+      <h2 class="trevo-mundo-title">Um dos maiores entregadores de sorte e amor no mundo!</h2>
+      <p class="trevo-mundo-desc">Mais de 15.000 trevos de quatro folhas entregues em 8 países como gesto genuíno de amor e sorte — cada entrega, uma história.</p>
+      <div class="trevo-mundo-stats">
+        <div><div class="tms-num">15k+</div><div class="tms-lbl">Trevos entregues</div></div>
+        <div><div class="tms-num">8+</div><div class="tms-lbl">Países</div></div>
+        <div><div class="tms-num">∞</div><div class="tms-lbl">Histórias</div></div>
+      </div>
+      <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:2rem;">
+        <a href="trevos.html" class="btn" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.35);">
+          🍀 Conhecer história dos trevos
+        </a>
+        <a href="https://wa.me/5551999433373?text=Olá%20Cauê!%20Quero%20retirar%20meu%20trevo%20do%20amor!" target="_blank" class="btn" style="background:#fff;color:#b31a1a;font-weight:700;">
+          Retirar o seu ❤️
+        </a>
+      </div>
+    </div>
+    <div class="trevo-slideshow" id="trevoSlideshow">
+      <img  src="trevo-caue.jpg"  alt="Cauê Sagae" class="trevo-slide active" data-duration="3000" />
+      <video class="trevo-slide" muted playsinline preload="auto" data-duration="5000"><source src="trevo-1.mp4" type="video/mp4"/></video>
+      <video class="trevo-slide" muted playsinline preload="auto" data-duration="5000"><source src="trevo-2.mp4" type="video/mp4"/></video>
+      <video class="trevo-slide" muted playsinline preload="auto" data-duration="5000"><source src="trevo-3.mp4" type="video/mp4"/></video>
+      <video class="trevo-slide" muted playsinline preload="auto" data-duration="5000"><source src="trevo-4.mp4" type="video/mp4"/></video>
+      <video class="trevo-slide" muted playsinline preload="auto" data-duration="5000"><source src="trevo-5.mp4" type="video/mp4"/></video>
+      <video class="trevo-slide" muted playsinline preload="auto" data-duration="5000"><source src="trevo-6.mp4" type="video/mp4"/></video>
+      <video class="trevo-slide" muted playsinline preload="auto" data-duration="5000"><source src="trevo-7.mp4" type="video/mp4"/></video>
+      <video class="trevo-slide" muted playsinline preload="auto" data-duration="5000"><source src="trevo-8.mp4" type="video/mp4"/></video>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TERAPIAS ═══════════════════════════════════════════ -->
+<section id="terapias">
+  <div class="inner">
+
+    <!-- Título da seção -->
+    <div style="text-align:center;padding-bottom:4rem;">
+      <span class="section-tag massagem-tag">O que ofereço</span>
+      <h2 style="font-family:'Playfair Display',serif;font-size:clamp(2.8rem,5vw,4.5rem);color:var(--white);line-height:1.05;margin-top:.5rem;">Serviços</h2>
+      <p style="color:rgba(255,255,255,.6);font-size:1rem;max-width:460px;margin:.8rem auto 0;line-height:1.7;">Práticas individuais para quem busca presença, cura e reconexão consigo mesmo.</p>
+    </div>
+
+    <!-- Leitura da Aura -->
+    <div class="aura-grid">
+      <div>
+        <div style="display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;margin-bottom:1rem;">
+          <span class="section-tag massagem-tag" style="margin-bottom:0;">Leitura da Aura</span>
+          <span style="background:rgba(255,255,255,.15);color:rgba(255,255,255,.9);font-size:.75rem;font-weight:600;padding:.3rem .85rem;border-radius:2rem;border:1px solid rgba(255,255,255,.25);">Sessão individual · 1h</span>
+          <span style="background:#7fb069;color:#fff;font-size:.75rem;font-weight:700;padding:.3rem .85rem;border-radius:2rem;">R$ 100 – R$ 400</span>
+        </div>
+        <h2 class="section-title massagem-title">Leitura da Aura</h2>
+        <p style="color:rgba(255,255,255,.65);font-size:1.05rem;font-style:italic;margin-bottom:1.5rem;margin-top:-.5rem;">Uma escuta do campo energético</p>
+        <div class="massagem-body">
+          <p>Revela mensagens do campo energético, trazendo clareza sobre <strong>bloqueios, potenciais e caminhos.</strong></p>
+          <p>Sessões de leitura energética para desvendar tendências, bloqueios e oportunidades de crescimento pessoal e profissional.</p>
+        </div>
+        <ul class="aura-topics">
+          <li>Caminho Profissional</li>
+          <li>Relacionamento amoroso</li>
+          <li>Espiritualidade</li>
+          <li>Projetos</li>
+          <li>Leitura da sua Empresa</li>
+          <li>Entre outros...</li>
+        </ul>
+        <div style="margin-top:1.75rem;padding:1.25rem 1.5rem;background:rgba(255,255,255,.07);border-radius:1rem;border:1px solid rgba(255,255,255,.12);">
+          <p style="font-size:.85rem;color:rgba(255,255,255,.6);margin-bottom:.5rem;text-transform:uppercase;letter-spacing:.08em;font-weight:600;">Agendar sessão</p>
+          <div style="display:flex;gap:.75rem;flex-wrap:wrap;">
+            <a href="https://wa.me/5551999433373" target="_blank" class="btn btn-wa" style="padding:.7rem 1.5rem;">
+              💬 Quero agendar
+            </a>
+            <a href="leitura-aura.html" class="btn" style="background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.3);padding:.7rem 1.5rem;">
+              Saber mais →
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="aura-fotos">
+        <div class="aura-foto-wrap">
+          <img class="aura-foto aura-slide active" src="leitura-aura-1.jpg" alt="Leitura da Aura — Cauê Sagae" />
+          <img class="aura-foto aura-slide"         src="leitura-aura-2.jpg" alt="Leitura da Aura — Cauê Sagae" />
+        </div>
+      </div>
+    </div>
+
+    <hr class="terapia-sep" />
+
+    <!-- Meditação das Rosas -->
+    <div class="massagem-grid">
+      <div class="massagem-video-wrap">
+        <video autoplay muted loop playsinline preload="auto">
+          <source src="meditacao-rosas.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <div>
+        <div style="display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;margin-bottom:1rem;">
+          <span class="section-tag massagem-tag" style="margin-bottom:0;">Meditação</span>
+          <span style="background:rgba(255,255,255,.15);color:rgba(255,255,255,.9);font-size:.75rem;font-weight:600;padding:.3rem .85rem;border-radius:2rem;border:1px solid rgba(255,255,255,.25);">Individual ou Grupo · 5h</span>
+          <span style="background:#7fb069;color:#fff;font-size:.75rem;font-weight:700;padding:.3rem .85rem;border-radius:2rem;">R$ 490</span>
+        </div>
+        <h2 class="section-title massagem-title">Meditação das Rosas (níveis 1, 2 e 3)</h2>
+        <p style="color:rgba(255,255,255,.65);font-size:1.05rem;font-style:italic;margin-bottom:1.5rem;margin-top:-.5rem;">Limpeza energética e reconexão</p>
+        <div class="massagem-body">
+          <p>Prática de limpeza energética e reconexão com a própria verdade, fortalecendo a intuição. <strong>Ferramentas para quem deseja mais leveza, presença e alinhamento.</strong></p>
+          <p>Foi um encontro muito especial, focado em <strong>proteção energética, limpeza energética, emocional e mental</strong>, além do fortalecimento do poder pessoal.</p>
+        </div>
+        <div style="display:flex;gap:.75rem;flex-wrap:wrap;margin-top:2rem;">
+          <a href="https://wa.me/5551999433373?text=Olá%20Cauê!%20Gostaria%20de%20agendar%20uma%20sessão%20de%20Meditação%20das%20Rosas." target="_blank" class="btn btn-wa" style="display:inline-flex;align-items:center;gap:.45rem;">
+            💬 Agendar Meditação
+          </a>
+          <a href="meditacao-rosas.html" class="btn" style="background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.3);">Saber mais →</a>
+        </div>
+      </div>
+    </div>
+
+    <hr class="terapia-sep" />
+
+    <!-- Massagem -->
+    <div class="massagem-grid">
+      <div>
+        <div style="display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;margin-bottom:1rem;">
+          <span class="section-tag massagem-tag" style="margin-bottom:0;">Massagem Shiatsu</span>
+          <span style="background:rgba(255,255,255,.15);color:rgba(255,255,255,.9);font-size:.75rem;font-weight:600;padding:.3rem .85rem;border-radius:2rem;border:1px solid rgba(255,255,255,.25);">Sessão individual · 1h</span>
+          <span style="background:#7fb069;color:#fff;font-size:.75rem;font-weight:700;padding:.3rem .85rem;border-radius:2rem;">R$ 350</span>
+        </div>
+        <h2 class="section-title massagem-title">Mais do que uma massagem</h2>
+        <div class="massagem-body">
+          <p>Uma experiência de <strong>cuidado, presença e reconexão com o corpo.</strong></p>
+          <p>Shiatsu, liberação miofascial, ventosaterapia, bambuterapia, guasha e outras abordagens que ajudam a aliviar tensões, melhorar a mobilidade e trazer mais bem-estar.</p>
+          <p>Cada atendimento é único, respeitando as necessidades e a história de cada corpo.</p>
+        </div>
+        <div style="display:flex;gap:.75rem;flex-wrap:wrap;margin-top:2rem;">
+          <a href="https://wa.me/5551999433373" target="_blank" class="btn btn-wa">
+            💬 Agendar sessão
+          </a>
+          <a href="massagem.html" class="btn" style="background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.3);">Saber mais →</a>
+        </div>
+      </div>
+      <div class="massagem-video-wrap">
+        <video autoplay muted loop playsinline preload="auto">
+          <source src="massagem.mp4" type="video/mp4" />
+        </video>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ RENASCIMENTO ═══════════════════════════════════════ -->
+<section id="renascimento" style="background:var(--dark);color:var(--white);padding:6rem 4rem;">
+  <div class="inner massagem-grid">
+    <div class="massagem-video-wrap">
+      <video autoplay muted loop playsinline preload="auto">
+        <source src="renascimento.mp4" type="video/mp4" />
+      </video>
+    </div>
+    <div>
+      <div style="display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;margin-bottom:1rem;">
+        <span class="section-tag massagem-tag" style="margin-bottom:0;">Renascimento · Breathwork</span>
+        <span style="background:rgba(255,255,255,.15);color:rgba(255,255,255,.9);font-size:.75rem;font-weight:600;padding:.3rem .85rem;border-radius:2rem;border:1px solid rgba(255,255,255,.25);">Sessão individual · 1h</span>
+        <span style="background:#7fb069;color:#fff;font-size:.75rem;font-weight:700;padding:.3rem .85rem;border-radius:2rem;">R$ 600</span>
+      </div>
+      <h2 class="section-title massagem-title">Renascimento pela Respiração</h2>
+      <p style="color:rgba(255,255,255,.65);font-size:1.05rem;font-style:italic;margin-bottom:1.5rem;margin-top:-.5rem;">Uma lembrança de quem você é além da mente</p>
+      <div class="massagem-body">
+        <p><strong>Técnica de respiração consciente</strong> que libera traumas e emoções estagnadas, trazendo bem-estar e plenitude.</p>
+        <p>Meu primeiro Renascimento foi aos 23 anos — um presente da minha mãe no meu aniversário. Naquele dia, pela primeira vez, <strong>minha mente parou 100%</strong>. Entrei em um vazio expandido… um lugar de silêncio, plenitude e paz que nunca tinha acessado antes. <em>Foi como voltar para casa dentro de mim.</em></p>
+        <p>Depois dessa experiência, fui para a Espanha fazer minha formação com <strong>Leonard Orr</strong>, americano que iniciou essa técnica no mundo. E já fazem mais de 12 anos que acompanho pessoas através do Renascimento.</p>
+        <p>O Renascimento não é só uma respiração. <strong>É uma lembrança de quem você é além da mente.</strong> 🌬️✨</p>
+        <p style="margin-top:1rem;padding:.75rem 1rem;background:rgba(127,176,105,.15);border-radius:.75rem;font-size:.9rem;color:rgba(255,255,255,.85);">
+          📅 <strong>Agenda aberta até 17 de junho em São Paulo!</strong> 18 a 24 de junho — Paris e Ibiza em seguida.
+        </p>
+      </div>
+      <div style="margin-top:1.75rem;padding:1.25rem 1.5rem;background:rgba(255,255,255,.07);border-radius:1rem;border:1px solid rgba(255,255,255,.12);">
+        <p style="font-size:.85rem;color:rgba(255,255,255,.6);margin-bottom:.5rem;text-transform:uppercase;letter-spacing:.08em;font-weight:600;">Agendar sessão</p>
+        <div style="display:flex;gap:.75rem;flex-wrap:wrap;">
+          <a href="https://wa.me/5551999433373?text=Olá%20Cauê!%20Gostaria%20de%20agendar%20uma%20sessão%20de%20Renascimento." target="_blank" class="btn btn-wa" style="padding:.7rem 1.5rem;">
+            💬 Quero agendar
+          </a>
+          <a href="renascimento.html" class="btn" style="background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.3);padding:.7rem 1.5rem;">Saber mais →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ WELLNESS EXPERIENCE ═══════════════════════════════ -->
+<section id="wellness-experience" style="background:var(--dark);color:var(--white);padding:6rem 4rem;">
+  <div class="inner massagem-grid">
+    <div>
+      <div style="display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;margin-bottom:1rem;">
+        <span class="section-tag massagem-tag" style="margin-bottom:0;">Wellness Experience</span>
+        <span style="background:rgba(255,255,255,.15);color:rgba(255,255,255,.9);font-size:.75rem;font-weight:600;padding:.3rem .85rem;border-radius:2rem;border:1px solid rgba(255,255,255,.25);">Individual ou Grupo · 3h</span>
+        <span style="background:#7fb069;color:#fff;font-size:.75rem;font-weight:700;padding:.3rem .85rem;border-radius:2rem;">R$ 1.200</span>
+      </div>
+      <h2 class="section-title massagem-title">Imersão Wellness Experience</h2>
+      <p style="color:rgba(255,255,255,.65);font-size:1.05rem;font-style:italic;margin-bottom:1.5rem;margin-top:-.5rem;">Uma imersão de 3 horas para presença, clareza e conexão profunda consigo</p>
+      <div class="massagem-body">
+        <p>Durante o encontro, você será guiado por práticas que trabalham respiração, consciência e energia, criando um espaço seguro para liberar tensões, acessar emoções e se reconectar com sua essência. Um encontro de alinhamento profundo onde o corpo, a mente e a energia se integram através de respiração, partilhas e silêncios.</p>
+        
+        <p style="margin-top:1rem;"><strong>Práticas incluídas:</strong></p>
+        <ul class="aura-topics" style="margin-top:0.5rem; margin-bottom:1.5rem;">
+          <li>Rebirthing Breathwork</li>
+          <li>Meditação das Rosas (Rose Meditation)</li>
+          <li>Terapia de contraste (sauna e gelo)</li>
+          <li>Leitura da Aura</li>
+          <li>Ativação corporal</li>
+        </ul>
+        
+        <p style="margin-top:1.2rem;padding:.75rem 1rem;background:rgba(127,176,105,.15);border-radius:.75rem;font-size:.9rem;color:rgba(255,255,255,.85);">
+          🌿 <strong>Wellness Experience em Grupo:</strong> Se você sente que esse tipo de vivência pode transformar o seu time, o seu grupo ou o seu espaço, será uma alegria levar essa experiência até vocês.
+        </p>
+      </div>
+      <div style="margin-top:1.75rem;padding:1.25rem 1.5rem;background:rgba(255,255,255,.07);border-radius:1rem;border:1px solid rgba(255,255,255,.12);">
+        <p style="font-size:.85rem;color:rgba(255,255,255,.6);margin-bottom:.5rem;text-transform:uppercase;letter-spacing:.08em;font-weight:600;">Agendar imersão</p>
+        <div style="display:flex;gap:.75rem;flex-wrap:wrap;">
+          <a href="https://wa.me/5551999433373?text=Olá%20Cauê!%20Gostaria%20de%20agendar%20ou%20saber%20mais%20sobre%20a%20Wellness%20Experience." target="_blank" class="btn btn-wa" style="padding:.7rem 1.5rem;">
+            💬 Quero agendar
+          </a>
+          <a href="wellness.html" class="btn" style="background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.3);padding:.7rem 1.5rem;">Saber mais →</a>
+        </div>
+      </div>
+    </div>
+    <div class="massagem-video-wrap">
+      <video autoplay muted loop playsinline preload="auto">
+        <source src="wellness-experience.mp4" type="video/mp4" />
+      </video>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CORPORATIVO ═══════════════════════════════════════ -->
+<section id="corporativo">
+  <div class="inner corp-grid">
+    <div class="corp-video-wrap">
+      <video autoplay muted loop playsinline preload="auto">
+        <source src="corporativo.mp4" type="video/mp4" />
+      </video>
+    </div>
+    <div>
+      <div style="display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;margin-bottom:1rem;">
+        <span class="section-tag corp-tag" style="margin-bottom:0;">Bem-estar nas Empresas</span>
+        <span style="background:rgba(255,255,255,.15);color:rgba(255,255,255,.9);font-size:.75rem;font-weight:600;padding:.3rem .85rem;border-radius:2rem;border:1px solid rgba(255,255,255,.25);">Palestra ou Vivência</span>
+        <span style="background:#7fb069;color:#fff;font-size:.75rem;font-weight:700;padding:.3rem .85rem;border-radius:2rem;">Sob Consulta</span>
+      </div>
+      <h2 class="section-title corp-title">Consciência e presença dentro das empresas</h2>
+      <div class="corp-body">
+        <p>Hoje tive a alegria de levar uma vivência de <strong>bem-estar e meditação dentro de uma empresa.</strong></p>
+        <p>Em meio à correria do dia a dia, criar um espaço para respirar, silenciar a mente e se reconectar faz toda a diferença. Funcionários mais presentes, mais equilibrados e com mais energia para viver e trabalhar.</p>
+        <p><strong>Cuidar das pessoas dentro das empresas não é luxo — é necessidade.</strong></p>
+      </div>
+      <div class="corp-highlight">
+        Se você trabalha em uma empresa ou conhece alguém do RH, liderança ou gestão de pessoas, me indica ou entra em contato. Vai ser um prazer levar mais momentos de consciência, presença e bem-estar para mais pessoas. ✨
+      </div>
+      <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:2rem;">
+        <a href="https://wa.me/5551999433373?text=Olá%20Cauê!%20Gostaria%20de%20saber%20mais%20sobre%20o%20programa%20de%20bem-estar%20para%20empresas." target="_blank" class="btn btn-wa">
+          💬 Levar para minha empresa
+        </a>
+        <a href="empresas.html" class="btn" style="background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.3);">
+          Conhecer mais →
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SERVIÇOS ══════════════════════════════════════════ -->
+<section id="servicos" style="background:var(--bg-alt);">
+  <div class="inner" style="max-width:780px;">
+    <div class="services-header">
+      <span class="section-tag">Tabela de preços</span>
+      <h2 class="section-title">Serviços &amp; Valores</h2>
+    </div>
+    <div style="background:var(--white);border-radius:1.5rem;overflow:hidden;box-shadow:0 4px 24px rgba(45,80,22,.08);">
+
+      <div class="price-header-row" style="display:grid;grid-template-columns:1.5fr 1.3fr 1fr 1fr;gap:0;background:var(--dark);padding:.75rem 1.75rem;">
+        <span class="ph-name" style="font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.6);">Serviço</span>
+        <span class="ph-type" style="font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.6);text-align:center;">Modalidade</span>
+        <span class="ph-dur" style="font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.6);text-align:center;">Duração</span>
+        <span class="ph-price" style="font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.6);text-align:right;">Valor</span>
+      </div>
+
+      <div class="price-row">
+        <div class="pr-name"><span class="pr-icon">👁️</span> Leitura da Aura</div>
+        <div class="pr-type">Individual</div>
+        <div class="pr-dur">1h</div>
+        <div class="pr-price">R$ 100 – R$ 400</div>
+      </div>
+      <div class="price-row">
+        <div class="pr-name"><span class="pr-icon">🙌</span> Massagem Shiatsu</div>
+        <div class="pr-type">Individual</div>
+        <div class="pr-dur">1h</div>
+        <div class="pr-price">R$ 350</div>
+      </div>
+      <div class="price-row">
+        <div class="pr-name"><span class="pr-icon">🌹</span> Meditação das Rosas <span style="font-size:.78rem;color:var(--muted);">níveis 1, 2 e 3</span></div>
+        <div class="pr-type">Individual / Grupo</div>
+        <div class="pr-dur">5h</div>
+        <div class="pr-price">R$ 490</div>
+      </div>
+      <div class="price-row">
+        <div class="pr-name"><span class="pr-icon">🌬️</span> Rebirthing Breathwork</div>
+        <div class="pr-type">Individual</div>
+        <div class="pr-dur">1h</div>
+        <div class="pr-price">R$ 600</div>
+      </div>
+      <div class="price-row">
+        <div class="pr-name"><span class="pr-icon">✨</span> Wellness Experience</div>
+        <div class="pr-type">Individual / Grupo</div>
+        <div class="pr-dur">3h</div>
+        <div class="pr-price">R$ 1.200</div>
+      </div>
+      <div class="price-row">
+        <div class="pr-name"><span class="pr-icon">⚡</span> Ritual de Corte de Energia</div>
+        <div class="pr-type">Individual</div>
+        <div class="pr-dur" style="color:var(--muted);font-style:italic;">Personalizado</div>
+        <div class="pr-price pr-consulte">Consulte</div>
+      </div>
+      <div class="price-row">
+        <div class="pr-name"><span class="pr-icon">💡</span> Aula de Intuição na Prática</div>
+        <div class="pr-type">Individual / Grupo</div>
+        <div class="pr-dur" style="color:var(--muted);font-style:italic;">Personalizado</div>
+        <div class="pr-price pr-consulte">Consulte</div>
+      </div>
+      <div class="price-row" style="border-bottom:none;">
+        <div class="pr-name"><span class="pr-icon">❤️</span> Palestra Amor e Sorte</div>
+        <div class="pr-type">Corporativo / Grupo</div>
+        <div class="pr-dur" style="color:var(--muted);font-style:italic;">Palestra</div>
+        <div class="pr-price pr-consulte">Consulte</div>
+      </div>
+
+    </div>
+    <div class="services-cta">
+      <a href="https://wa.me/5551999433373" target="_blank" class="btn btn-wa">
+        💬 Agendar pelo WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ MÍDIA ══════════════════════════════════════════════ -->
+<section id="midia">
+  <div class="inner" style="text-align:center;">
+    <span class="section-tag">Mídia</span>
+    <h2 class="section-title">Na mídia</h2>
+    <p class="section-body" style="max-width:460px;margin:.5rem auto 0;text-align:center;">
+      Cauê já foi destaque em grandes veículos da televisão brasileira.
+    </p>
+    <div class="midia-logos">
+      <div class="midia-item">
+        <div class="midia-badge" style="background: transparent; box-shadow: none;">
+          <img src="logo-globo.png" alt="TV Globo" style="height: 70px; width: auto; object-fit: contain;" />
+        </div>
+        <span class="midia-prog">Encontro com Fátima Bernardes</span>
+      </div>
+      <div class="midia-item">
+        <div class="midia-badge" style="background: transparent; box-shadow: none;">
+          <img src="logo-band.png" alt="Band" style="height: 70px; width: auto; object-fit: contain;" />
+        </div>
+        <span class="midia-prog">Programa Melhor da Noite</span>
+      </div>
+    </div>
+
+    <!-- Video grid for Globo and Band -->
+    <div class="midia-grid">
+      <!-- Globo Card -->
+      <div class="midia-card" data-src="video-globo.mp4" data-start="0" style="cursor:pointer;">
+        <div class="midia-play-overlay"><svg viewBox="0 0 24 24" width="40" fill="white"><path d="M8 5v14l11-7z"/></svg></div>
+        <div class="midia-thumb">
+          <video id="bgGlobo" autoplay muted loop playsinline preload="auto">
+            <source src="video-globo.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="midia-info">
+          <div class="midia-info-text">
+            <span class="midia-network">TV Globo</span>
+            <h3 class="midia-title">Encontro com Fátima Bernardes</h3>
+          </div>
+          <span class="midia-action-btn"><span class="btn-text">▶ Ver com som</span></span>
+        </div>
+      </div>
+
+      <!-- Band Card -->
+      <div class="midia-card" data-src="video-band.mp4" style="cursor:pointer;">
+        <div class="midia-play-overlay"><svg viewBox="0 0 24 24" width="40" fill="white"><path d="M8 5v14l11-7z"/></svg></div>
+        <div class="midia-thumb">
+          <video id="bgBand" autoplay muted loop playsinline preload="auto">
+            <source src="video-band.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="midia-info">
+          <div class="midia-info-text">
+            <span class="midia-network">Band</span>
+            <h3 class="midia-title">Programa Melhor da Noite</h3>
+          </div>
+          <span class="midia-action-btn"><span class="btn-text">▶ Ver com som</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Modal vídeo mídia -->
+<div id="midiaModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:9000;align-items:center;justify-content:center;">
+  <button onclick="closeMidiaModal()" style="position:absolute;top:1.25rem;right:1.5rem;background:none;border:none;color:#fff;font-size:2.2rem;cursor:pointer;line-height:1;">✕</button>
+  <video id="midiaModalVideo" controls playsinline style="max-width:90vw;max-height:88vh;border-radius:1rem;box-shadow:0 24px 60px rgba(0,0,0,.7);"></video>
+</div>
+
+<!-- ══ TRAJETÓRIA ════════════════════════════════════════ -->
+<section id="trajetoria">
+  <div class="inner traj-grid">
+    <div>
+      <span class="section-tag traj-tag">Trajetória</span>
+      <h2 class="section-title traj-title">Uma vida dedicada à cura e ao autoconhecimento</h2>
+      <p class="section-body traj-body">
+        Com mais de uma década de caminhada espiritual e terapêutica, Cauê acumulou experiências únicas ao redor do mundo.
+      </p>
+      <ul class="traj-list">
+        <li><span class="icon">🌍</span> Atendimentos e retiros na França, Suíça, Índia, Peru, Espanha, Portugal, Tailândia e Bali</li>
+        <li><span class="icon">🤝</span> Mais de 5 mil atendimentos individuais e 10 mil em grupo</li>
+        <li><span class="icon">☮️</span> Viveu em comunidades ligadas à filosofia de Gandhi</li>
+        <li><span class="icon">🚶</span> Percorreu o Caminho de Santiago de Compostela</li>
+        <li><span class="icon">🌿</span> 21 dias de jejum</li>
+        <li><span class="icon">🍀</span> Entregou mais de 15.000 trevos de 4 folhas como gesto de amor e sorte</li>
+      </ul>
+    </div>
+    <div>
+      <div class="traj-quote">
+        <p>"O verdadeiro mestre mora dentro de si. Meu papel é apenas te ajudar a lembrar disso."</p>
+        <cite>— Cauê Sagae</cite>
+      </div>
+      <div class="traj-stats">
+        <div class="traj-stat">
+          <div class="tstat-num">8+</div>
+          <div class="tstat-lbl">Países</div>
+        </div>
+        <div class="traj-stat">
+          <div class="tstat-num">15k+</div>
+          <div class="tstat-lbl">Trevos entregues</div>
+        </div>
+        <div class="traj-stat">
+          <div class="tstat-num">12+</div>
+          <div class="tstat-lbl">Anos de prática</div>
+        </div>
+        <div class="traj-stat">
+          <div class="tstat-num">1</div>
+          <div class="tstat-lbl">Livro publicado</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CONTATO ═══════════════════════════════════════════ -->
+<section id="contato">
+  <h2 class="contato-title">Vamos conversar?</h2>
+  <p class="contato-desc">
+    Estou disponível para sessões individuais, grupos e parcerias. Entre em contato e dê o primeiro passo.
+  </p>
+  <div class="contato-cards">
+    <a href="https://wa.me/5551999433373" target="_blank" class="contato-card">
+      <div class="cc-icon">💬</div>
+      <span class="cc-label">WhatsApp</span>
+      <span class="cc-value">51 99943 3373</span>
+    </a>
+    <a href="https://instagram.com/cauesagae" target="_blank" class="contato-card">
+      <div class="cc-icon">📸</div>
+      <span class="cc-label">Instagram</span>
+      <span class="cc-value">@cauesagae</span>
+    </a>
+    <a href="https://instagram.com/cauedostrevos" target="_blank" class="contato-card">
+      <div class="cc-icon">🍀</div>
+      <span class="cc-label">Instagram</span>
+      <span class="cc-value">@cauedostrevos</span>
+    </a>
+    <a href="mailto:cauesagae@gmail.com" class="contato-card">
+      <div class="cc-icon">✉️</div>
+      <span class="cc-label">E-mail</span>
+      <span class="cc-value">cauesagae@gmail.com</span>
+    </a>
+  </div>
+  <a href="https://wa.me/5551999433373" target="_blank" class="btn btn-wa">
+    <svg viewBox="0 0 24 24" width="16" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+    Enviar mensagem agora
+  </a>
+</section>
+
+<!-- ══ FOOTER ════════════════════════════════════════════ -->
+<footer>
+  <p>© 2025 Cauê Sagae — Todos os direitos reservados.</p>
+  <p style="margin-top:.4rem;">Feito com ❤️ e 🍀 &nbsp;·&nbsp; São Paulo, Brasil</p>
+</footer>
+
+<!-- ══ FLOATING WHATSAPP ════════════════════════════════ -->
+<a href="https://wa.me/5551999433373" target="_blank" class="wa-float" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+  </svg>
+</a>
+
+<script>
+  // Mobile nav toggle
+  document.getElementById('hamburger').addEventListener('click', () => {
+    document.getElementById('navLinks').classList.toggle('open');
+  });
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'));
+  });
+
+  // Navbar: transparent on hero, solid on scroll
+  const navbar = document.getElementById('navbar');
+  const heroHeight = document.getElementById('hero').offsetHeight;
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > heroHeight * 0.6);
+  });
+
+  // Trevo slideshow — 3s photo, 5s each video
+  (function() {
+    const slides = document.querySelectorAll('#trevoSlideshow .trevo-slide');
+    let cur = 0;
+    let timer = null;
+    function showNext() {
+      const prev = slides[cur];
+      prev.classList.remove('active');
+      if (prev.tagName === 'VIDEO') { prev.pause(); prev.currentTime = 0; }
+      cur = (cur + 1) % slides.length;
+      const item = slides[cur];
+      item.classList.add('active');
+      if (item.tagName === 'VIDEO') { item.play().catch(() => {}); }
+      const dur = parseInt(item.dataset.duration) || 3000;
+      timer = setTimeout(showNext, dur);
+    }
+    const firstDur = parseInt(slides[0].dataset.duration) || 3000;
+    timer = setTimeout(showNext, firstDur);
+  })();
+
+  // Aura photos crossfade
+  const auraSlides = document.querySelectorAll('.aura-slide');
+  if (auraSlides.length > 1) {
+    let cur = 0;
+    setInterval(() => {
+      auraSlides[cur].classList.remove('active');
+      cur = (cur + 1) % auraSlides.length;
+      auraSlides[cur].classList.add('active');
+    }, 3500);
+  }
+
+  // YouTube thumbnail → iframe on click
+  document.querySelectorAll('.video-wrap[data-vid]').forEach(wrap => {
+    wrap.addEventListener('click', () => {
+      const id = wrap.dataset.vid;
+      const iframe = document.createElement('iframe');
+      iframe.src = `https://www.youtube.com/embed/${id}?autoplay=1`;
+      iframe.allow = 'autoplay; encrypted-media; picture-in-picture';
+      iframe.allowFullscreen = true;
+      iframe.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;border:none;';
+      wrap.innerHTML = '';
+      wrap.appendChild(iframe);
+    });
+  });
+
+  // Fade-in cards on scroll
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.svc-card, .medit-card, .traj-stat').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(28px)';
+    el.style.transition = 'opacity .55s ease, transform .55s ease';
+    io.observe(el);
+  });
+
+
+  // Mídia cards → open modal with sound
+  const midiaModal    = document.getElementById('midiaModal');
+  const midiaModalVid = document.getElementById('midiaModalVideo');
+
+  document.querySelectorAll('.midia-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const src   = card.dataset.src;
+      const start = parseFloat(card.dataset.start) || 0;
+      midiaModalVid.src = src;
+      midiaModal.style.display = 'flex';
+      midiaModalVid.currentTime = start;
+      midiaModalVid.muted = false;
+      midiaModalVid.play().catch(() => {});
+    });
+  });
+
+  function closeMidiaModal() {
+    midiaModal.style.display = 'none';
+    midiaModalVid.pause();
+    midiaModalVid.src = '';
+  }
+  midiaModal.addEventListener('click', e => { if (e.target === midiaModal) closeMidiaModal(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMidiaModal(); });
+</script>
+</body>
+</html>

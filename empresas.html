@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bem-estar nas Empresas — Cauê Sagae</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #f0e6d8; --bg-alt: #f7f1e9;
+      --corp: #1a2535; --corp-mid: #243347; --corp-light: #a8c8f8;
+      --dark: #2d5016; --mid: #4a7c2a; --light: #7fb069;
+      --white: #fff; --text: #3a3a3a; --muted: #7a7a7a;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Poppins', sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; width: 100%; z-index: 200;
+      background: rgba(26,37,53,.97); backdrop-filter: blur(12px);
+      padding: .9rem 2.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+      box-shadow: 0 2px 20px rgba(0,0,0,.2);
+    }
+    .nav-logo { display: flex; align-items: center; gap: .65rem; text-decoration: none; }
+    .nav-logo-text { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--white); font-weight: 700; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { text-decoration: none; color: rgba(255,255,255,.8); font-size: .875rem; font-weight: 500; transition: color .2s; }
+    .nav-links a:hover { color: var(--corp-light); }
+    .nav-cta { background: var(--corp-light); color: var(--corp) !important; padding: .45rem 1.25rem; border-radius: 2rem; font-weight: 600; }
+    .nav-cta:hover { background: #c5d9ff !important; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: .4rem; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--white); border-radius: 2px; }
+
+    /* HERO */
+    #hero {
+      background: var(--corp);
+      padding: 9rem 4rem 6rem;
+      position: relative; overflow: hidden;
+    }
+    #hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 30% 50%, rgba(168,200,248,.08) 0%, transparent 60%);
+    }
+    .hero-inner { max-width: 700px; position: relative; }
+    .hero-tag {
+      display: inline-block; background: rgba(168,200,248,.15); color: var(--corp-light);
+      font-size: .75rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
+      padding: .35rem 1rem; border-radius: 2rem; margin-bottom: 1.25rem;
+    }
+    .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem,5vw,3.8rem); color: var(--white); line-height: 1.1; margin-bottom: 1.25rem; }
+    .hero-desc { font-size: 1.05rem; color: rgba(255,255,255,.72); line-height: 1.8; max-width: 580px; margin-bottom: 2.5rem; }
+    .btn { display: inline-flex; align-items: center; gap: .45rem; padding: .85rem 1.9rem; border-radius: 3rem; font-weight: 600; font-size: .9rem; text-decoration: none; transition: all .3s; }
+    .btn-wa { background: #25D366; color: var(--white); box-shadow: 0 4px 18px rgba(37,211,102,.35); }
+    .btn-wa:hover { background: #1ebe5d; transform: translateY(-2px); }
+    .btn-corp { background: var(--corp-light); color: var(--corp); }
+    .btn-corp:hover { background: #c5d9ff; transform: translateY(-2px); }
+    .btn-outline-w { border: 2px solid rgba(255,255,255,.4); color: var(--white); }
+    .btn-outline-w:hover { background: rgba(255,255,255,.1); transform: translateY(-2px); }
+
+    /* EXPERIENCES */
+    #experiencias { background: var(--corp); }
+    .exp-block {
+      padding: 5rem 4rem;
+      border-top: 1px solid rgba(255,255,255,.08);
+    }
+    .exp-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 5rem; align-items: center;
+      max-width: 1100px; margin: 0 auto;
+    }
+    .exp-grid.reverse { direction: rtl; }
+    .exp-grid.reverse > * { direction: ltr; }
+    .exp-video-wrap {
+      border-radius: 1.5rem; overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0,0,0,.5);
+    }
+    .exp-video-wrap video { width: 100%; display: block; }
+    .exp-tag {
+      display: inline-block; background: rgba(168,200,248,.15); color: var(--corp-light);
+      font-size: .75rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
+      padding: .35rem 1rem; border-radius: 2rem; margin-bottom: 1rem;
+    }
+    .exp-title { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem,3vw,2.4rem); color: var(--white); margin-bottom: 1.25rem; line-height: 1.2; }
+    .exp-body { color: rgba(255,255,255,.78); font-size: .97rem; line-height: 1.8; }
+    .exp-body p + p { margin-top: 1rem; }
+    .exp-body strong { color: var(--white); }
+    .exp-list { list-style: none; margin: 1.25rem 0; display: flex; flex-direction: column; gap: .5rem; }
+    .exp-list li { display: flex; align-items: center; gap: .6rem; color: rgba(255,255,255,.82); font-size: .93rem; }
+    .exp-list li span { color: var(--corp-light); }
+    .exp-contact {
+      margin-top: 1.5rem; padding: 1rem 1.25rem;
+      background: rgba(255,255,255,.06); border-radius: .75rem;
+      font-size: .88rem; color: rgba(255,255,255,.65); line-height: 1.7;
+    }
+    .exp-contact strong { color: rgba(255,255,255,.9); }
+
+    /* CTA FINAL */
+    #cta {
+      background: linear-gradient(135deg, #1a2535 0%, #243347 100%);
+      padding: 6rem 4rem; text-align: center;
+      border-top: 1px solid rgba(255,255,255,.08);
+    }
+    .cta-title { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem,3vw,2.8rem); color: var(--white); margin-bottom: 1rem; }
+    .cta-desc { font-size: 1rem; color: rgba(255,255,255,.7); max-width: 520px; margin: 0 auto 3rem; line-height: 1.75; }
+    .cta-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+    /* FOOTER */
+    footer { background: #0f1820; color: rgba(255,255,255,.4); text-align: center; padding: 1.75rem 2rem; font-size: .82rem; line-height: 1.8; }
+
+    /* WA FLOAT */
+    .wa-float { position: fixed; bottom: 1.75rem; right: 1.75rem; width: 3.5rem; height: 3.5rem; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 4px 18px rgba(37,211,102,.45); z-index: 999; transition: all .3s; }
+    .wa-float:hover { transform: scale(1.12); }
+    .wa-float svg { width: 1.65rem; height: 1.65rem; fill: white; }
+
+    @media (max-width: 800px) {
+      .hamburger { display: flex; }
+      .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--corp); flex-direction: column; padding: 1.25rem 1.5rem; gap: .9rem; border-bottom: 1px solid rgba(255,255,255,.1); }
+      .nav-links.open { display: flex; }
+      nav { padding: .9rem 1.25rem; }
+      #hero, .exp-block, #cta { padding: 4rem 1.5rem; }
+      #hero { padding-top: 7rem; }
+      .exp-grid, .exp-grid.reverse { grid-template-columns: 1fr; gap: 2.5rem; direction: ltr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">
+    <svg width="30" height="34" viewBox="0 0 30 34" fill="none">
+      <circle cx="10" cy="10" r="6.5" fill="#6a9642"/><circle cx="20" cy="10" r="6.5" fill="#6a9642"/>
+      <circle cx="10" cy="20" r="6.5" fill="#6a9642"/><circle cx="20" cy="20" r="6.5" fill="#6a9642"/>
+      <rect x="13.5" y="18" width="3" height="7" rx="1.5" fill="#6a9642"/>
+      <path d="M9 26 C9 23.2 11.2 21 14 21 C15.1 21 16 21.9 16 23 C16 21.9 16.9 21 18 21 C20.8 21 23 23.2 23 26 C23 28.8 20.8 31 18 31 L14 31 C11.2 31 9 28.8 9 26Z" fill="#c0392b"/>
+    </svg>
+    <span class="nav-logo-text">Cauê Sagae</span>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html#sobre">Sobre</a></li>
+    <li><a href="index.html#terapias">Serviços</a></li>
+    <li><a href="trevos.html">Trevos do Amor</a></li>
+    <li><a href="meditacoes.html">Meditações Gratuitas</a></li>
+    <li><a href="livro.html">Livro Amor e Sorte</a></li>
+    <li><a href="index.html#contato" class="nav-cta">Contato</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-inner">
+    <span class="hero-tag">Bem-estar nas Empresas</span>
+    <h1 class="hero-title">Consciência e presença dentro das organizações</h1>
+    <p class="hero-desc">
+      Funcionários mais presentes, mais equilibrados e com mais energia para viver e trabalhar. Cuidar das pessoas dentro das empresas não é luxo — é necessidade.
+    </p>
+    <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+      <a href="https://wa.me/5551999433373?text=Olá%20Cauê!%20Gostaria%20de%20saber%20mais%20sobre%20o%20programa%20de%20bem-estar%20para%20empresas." target="_blank" class="btn btn-wa">
+        <svg viewBox="0 0 24 24" width="16" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        Levar para minha empresa
+      </a>
+      <a href="index.html" class="btn btn-outline-w">← Voltar ao site</a>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIÊNCIAS -->
+<section id="experiencias">
+
+  <!-- Experiência 1 -->
+  <div class="exp-block">
+    <div class="exp-grid">
+      <div class="exp-video-wrap">
+        <video autoplay muted loop playsinline preload="auto">
+          <source src="empresas-1.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <div>
+        <span class="exp-tag">Experiência 1</span>
+        <h2 class="exp-title">Bem-estar e meditação dentro de uma empresa</h2>
+        <div class="exp-body">
+          <p>Hoje tive a alegria de levar uma vivência de <strong>bem-estar e meditação dentro de uma empresa.</strong></p>
+          <p>Em meio à correria do dia a dia, criar um espaço para respirar, silenciar a mente e se reconectar faz toda a diferença.</p>
+          <p>Funcionários mais presentes, mais equilibrados e com mais energia para viver e trabalhar.</p>
+          <p><strong>Cuidar das pessoas dentro das empresas não é luxo — é necessidade.</strong></p>
+        </div>
+        <a href="https://wa.me/5551999433373?text=Olá%20Cauê!%20Gostaria%20de%20saber%20mais%20sobre%20o%20programa%20de%20bem-estar%20para%20empresas." target="_blank" class="btn btn-wa" style="margin-top:2rem;">
+          💬 Quero para minha equipe
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Experiência 3 · Wellness Experience nas Empresas -->
+  <div class="exp-block">
+    <div class="exp-grid">
+      <div class="exp-video-wrap">
+        <video autoplay muted loop playsinline preload="auto">
+          <source src="wellness-empresas.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <div>
+        <span class="exp-tag">Experiência 3 · Wellness Experience</span>
+        <h2 class="exp-title">Bem-estar que transforma equipes</h2>
+        <div class="exp-body">
+          <p>Levamos experiências de bem-estar diretamente para dentro das empresas — criando momentos reais de pausa, presença e reconexão.</p>
+          <ul class="exp-list">
+            <li><span>✨</span> Práticas de relaxamento</li>
+            <li><span>✨</span> Momentos de autocuidado</li>
+            <li><span>✨</span> Reconexão com o corpo, a mente e a intuição</li>
+          </ul>
+          <p>Porque quando as pessoas se sentem bem, elas florescem — e toda a empresa cresce junto.</p>
+          <p style="margin-top:1rem;">Quer levar o <strong>Wellness Experience</strong> para a sua equipe? Vamos criar uma experiência sob medida para o seu grupo.</p>
+        </div>
+        <div class="exp-contact" style="margin-top:1.5rem;">
+          📩 <strong>Quer levar essa experiência para a sua empresa?</strong><br/>
+          Entre em contato: <strong>51 99943-3373</strong>
+        </div>
+        <a href="https://wa.me/5551999433373?text=Olá%20Cauê!%20Gostaria%20de%20levar%20o%20Wellness%20Experience%20para%20a%20minha%20empresa." target="_blank" class="btn btn-wa" style="margin-top:1.5rem;">
+          💬 Quero para minha equipe
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Experiência 2 -->
+  <div class="exp-block">
+    <div class="exp-grid reverse">
+      <div class="exp-video-wrap">
+        <video autoplay muted loop playsinline preload="auto">
+          <source src="empresas-2.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <div>
+        <span class="exp-tag">Experiência 2 · Janeiro Branco</span>
+        <h2 class="exp-title">Pausar, respirar e voltar para o presente</h2>
+        <div class="exp-body">
+          <p>Janeiro Branco é sobre cuidar da saúde mental e emocional. Mas, na prática, é sobre <strong>pausar, respirar e voltar para o presente</strong>, mesmo dentro do ambiente de trabalho.</p>
+          <p>Conduzi uma vivência de 1 hora com colaboradores, unindo:</p>
+          <ul class="exp-list">
+            <li><span>✨</span> Meditação</li>
+            <li><span>✨</span> Vivências corporais</li>
+            <li><span>✨</span> Integração em grupo</li>
+            <li><span>✨</span> Histórias que tocam</li>
+            <li><span>✨</span> Reflexão sobre bem-estar, mente e corpo no dia a dia profissional</li>
+          </ul>
+          <p><strong>O resultado?</strong> Mais presença, mais conexão entre a equipe e um espaço real de cuidado.</p>
+          <p style="margin-top:1rem;">Se você sente que sua empresa precisa desacelerar para render melhor, ou quer oferecer uma experiência de bem-estar verdadeira para seus colaboradores, <strong>me chama.</strong></p>
+        </div>
+        <div class="exp-contact">
+          <strong>📲 51 99943-3373</strong><br/>
+          🌱 Vivências para empresas | Saúde mental | Bem-estar | Meditação
+        </div>
+        <a href="https://wa.me/5551999433373?text=Olá%20Cauê!%20Vi%20a%20experiência%20de%20Janeiro%20Branco%20e%20gostaria%20de%20saber%20mais." target="_blank" class="btn btn-wa" style="margin-top:1.5rem;">
+          💬 Quero para minha equipe
+        </a>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- CTA FINAL -->
+<section id="cta">
+  <h2 class="cta-title">Pronto para transformar seu ambiente de trabalho?</h2>
+  <p class="cta-desc">
+    Leve consciência, presença e bem-estar para a sua equipe. Entre em contato e vamos criar uma experiência sob medida para a sua empresa.
+  </p>
+  <div class="cta-btns">
+    <a href="https://wa.me/5551999433373?text=Olá%20Cauê!%20Gostaria%20de%20levar%20bem-estar%20para%20minha%20empresa." target="_blank" class="btn btn-wa">
+      <svg viewBox="0 0 24 24" width="16" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+      Entrar em contato
+    </a>
+    <a href="index.html" class="btn btn-corp">Voltar ao site</a>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 Cauê Sagae — Todos os direitos reservados.</p>
+  <p style="margin-top:.4rem;">Feito com ❤️ e 🍀 &nbsp;·&nbsp; São Paulo, Brasil</p>
+</footer>
+
+<a href="https://wa.me/5551999433373" target="_blank" class="wa-float" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+</a>
+
+<script>
+  document.getElementById('hamburger').addEventListener('click', () =>
+    document.getElementById('navLinks').classList.toggle('open'));
+  document.querySelectorAll('.nav-links a').forEach(a =>
+    a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open')));
+</script>
+</body>
+</html>
