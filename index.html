@@ -720,12 +720,14 @@
     /* ── CURSOS ──────────────────────────────── */
     #cursos { background: var(--bg-alt); }
     .cursos-outer { overflow: hidden; padding: .5rem 0 1.5rem; }
+    .cursos-outer { cursor: grab; }
+    .cursos-outer:active { cursor: grabbing; }
     .cursos-track {
       display: flex;
       animation: marquee-cursos 38s linear infinite;
       width: max-content;
+      user-select: none;
     }
-    .cursos-track:hover { animation-play-state: paused; }
     @keyframes marquee-cursos {
       0%   { transform: translateX(0); }
       100% { transform: translateX(-50%); }
@@ -1669,6 +1671,51 @@
   var track = document.getElementById('cursosTrack');
   if (!track) return;
   track.innerHTML += track.innerHTML;
+
+  var DURATION = 38;
+  var isDragging = false, startX = 0, startTX = 0;
+
+  function getTX() {
+    var t = window.getComputedStyle(track).transform;
+    if (!t || t === 'none') return 0;
+    var m = t.match(/matrix\(1,\s*0,\s*0,\s*1,\s*([-\d.]+),/);
+    return m ? parseFloat(m[1]) : 0;
+  }
+
+  function beginDrag(clientX) {
+    isDragging = true;
+    startX = clientX;
+    startTX = getTX();
+    track.style.animation = 'none';
+    track.style.transform = 'translateX(' + startTX + 'px)';
+  }
+
+  function moveDrag(clientX) {
+    if (!isDragging) return;
+    track.style.transform = 'translateX(' + (startTX + clientX - startX) + 'px)';
+  }
+
+  function endDrag() {
+    if (!isDragging) return;
+    isDragging = false;
+
+    var pos = getTX();
+    var half = track.scrollWidth / 2;
+    while (pos < -half) pos += half;
+    while (pos > 0) pos -= half;
+
+    var delay = (pos / half) * DURATION;
+    track.style.transform = '';
+    track.style.animation = 'marquee-cursos ' + DURATION + 's linear ' + delay + 's infinite';
+  }
+
+  track.addEventListener('mousedown', function (e) { beginDrag(e.clientX); e.preventDefault(); });
+  document.addEventListener('mousemove', function (e) { moveDrag(e.clientX); });
+  document.addEventListener('mouseup', endDrag);
+
+  track.addEventListener('touchstart', function (e) { beginDrag(e.touches[0].clientX); }, { passive: true });
+  document.addEventListener('touchmove', function (e) { if (isDragging) { moveDrag(e.touches[0].clientX); e.preventDefault(); } }, { passive: false });
+  document.addEventListener('touchend', endDrag);
 })();
 </script>
 <script src="translations.js"></script>
