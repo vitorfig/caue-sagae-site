@@ -66,9 +66,14 @@
       }).join('') +
       '</ul>';
 
-    var hamburger = qs('.hamburger', nav);
-    if (hamburger) nav.insertBefore(div, hamburger);
-    else nav.appendChild(div);
+    // Prepend inside #navRight so order is [lang-switcher][Contato]
+    var navRight = qs('#navRight', nav);
+    if (navRight) navRight.insertBefore(div, navRight.firstChild);
+    else {
+      var hamburger = qs('.hamburger', nav);
+      if (hamburger) nav.insertBefore(div, hamburger);
+      else nav.appendChild(div);
+    }
 
     var menu = qs('.ls-menu', div);
     qs('.ls-btn', div).addEventListener('click', function (e) {
@@ -115,9 +120,12 @@
 
   /* ── Nav & footer ────────────────────────────────────── */
   function translateNav() {
-    var links = qsa('#navLinks li a');
-    var keys  = ['nav.sobre', 'nav.trevos', 'nav.servicos', 'nav.meditacoes', 'nav.contato'];
+    var links = qsa('#navLinks li:not(.nav-mobile-cta) a');
+    var keys  = ['nav.sobre', 'nav.trevos', 'nav.servicos', 'nav.meditacoes'];
     links.forEach(function (a, i) { if (keys[i]) set(a, t(keys[i])); });
+    var contato = t('nav.contato');
+    set(qs('#nav-contato'), contato);
+    set(qs('.nav-mobile-cta a'), contato);
   }
 
   function translateFooter() {
@@ -280,6 +288,30 @@
     set(qs('.ph-dur'),   t('pricing.col_duration'));
     set(qs('.ph-price'), t('pricing.col_price'));
     set(qs('#servicos .services-cta .btn-wa'), t('pricing.btn'));
+
+    var svcKeys   = ['svc.aura','svc.massagem','svc.meditacao','svc.rebirthing','svc.wellness','svc.ritual','svc.intuicao','svc.palestra'];
+    var typeKeys  = ['pricing.type_individual','pricing.type_individual','pricing.type_ind_group','pricing.type_individual','pricing.type_ind_group','pricing.type_individual','pricing.type_ind_group','pricing.type_corp_group'];
+    var durFixed  = ['1h','1h','5h','1h','3h',null,null,null];
+    var durKeys   = [null,null,null,null,null,'pricing.personalized','pricing.personalized','pricing.lecture'];
+    var priceKeys = ['price.aura','price.massagem','price.meditacao','price.rebirthing','price.wellness',null,null,null];
+
+    qsa('#servicos .price-row').forEach(function (row, i) {
+      var nameEl = qs('.pr-name', row);
+      if (nameEl && svcKeys[i]) {
+        var icon = qs('.pr-icon', nameEl);
+        var iconHtml = icon ? icon.outerHTML : '';
+        var name = t(svcKeys[i]);
+        if (name) {
+          var sub = i === 2 ? ' <span style="font-size:.78rem;color:var(--muted);">' + (t('svc.meditacao.sub') || '') + '</span>' : '';
+          nameEl.innerHTML = iconHtml + ' ' + name + sub;
+        }
+      }
+      set(qs('.pr-type', row), typeKeys[i] ? t(typeKeys[i]) : null);
+      var durEl = qs('.pr-dur', row);
+      if (durEl) set(durEl, durFixed[i] !== null ? durFixed[i] : (durKeys[i] ? t(durKeys[i]) : null));
+      var priceEl = qs('.pr-price', row);
+      if (priceEl) set(priceEl, priceKeys[i] ? t(priceKeys[i]) : t('pricing.consulte'));
+    });
 
     // ── Mídia
     set(qs('#midia .section-tag'),   t('midia.tag'));

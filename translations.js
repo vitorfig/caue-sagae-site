@@ -487,6 +487,26 @@ var TRANSLATIONS = {
   "svc.palestra": {
     pt: "Palestra Amor e Sorte", en: "Love & Luck Lecture", es: "Charla Amor y Suerte", fr: "Conférence Amour et Chance"
   },
+  "svc.meditacao.sub": {
+    pt: "níveis 1, 2 e 3", en: "levels 1, 2 and 3", es: "niveles 1, 2 y 3", fr: "niveaux 1, 2 et 3"
+  },
+
+  // Service prices (BRL for PT, EUR for EN/ES/FR)
+  "price.aura": {
+    pt: "R$ 100 – R$ 400", en: "€ 20 – € 70", es: "€ 20 – € 70", fr: "€ 20 – € 70"
+  },
+  "price.massagem": {
+    pt: "R$ 350", en: "€ 60", es: "€ 60", fr: "€ 60"
+  },
+  "price.meditacao": {
+    pt: "R$ 490", en: "€ 80", es: "€ 80", fr: "€ 80"
+  },
+  "price.rebirthing": {
+    pt: "R$ 600", en: "€ 100", es: "€ 100", fr: "€ 100"
+  },
+  "price.wellness": {
+    pt: "R$ 1.200", en: "€ 200", es: "€ 200", fr: "€ 200"
+  },
 
   // ─── INDEX: MÍDIA ────────────────────────────────────
   "midia.tag": {
