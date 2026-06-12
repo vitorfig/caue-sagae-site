@@ -118,11 +118,17 @@ var TRANSLATIONS = {
     es: "¡Uno de los mayores repartidores de suerte y amor en el mundo!",
     fr: "L'un des plus grands livreurs de chance et d'amour au monde !"
   },
+  "trevo.desc1": {
+    pt: "Uma vida dedicada à cura e ao autoconhecimento.",
+    en: "A life dedicated to healing and self-knowledge.",
+    es: "Una vida dedicada a la sanación y al autoconocimiento.",
+    fr: "Une vie dédiée à la guérison et à la connaissance de soi."
+  },
   "trevo.desc": {
-    pt: "Mais de 15.000 trevos de quatro folhas entregues em 8 países como gesto genuíno de amor e sorte — cada entrega, uma história.",
-    en: "Over 15,000 four-leaf clovers delivered in 8 countries as a genuine gesture of love and luck — each delivery, a story.",
-    es: "Más de 15.000 tréboles de cuatro hojas entregados en 8 países como gesto genuino de amor y suerte — cada entrega, una historia.",
-    fr: "Plus de 15 000 trèfles à quatre feuilles livrés dans 8 pays comme un geste authentique d'amour et de chance — chaque livraison, une histoire."
+    pt: "Mais de 15.000 trevos de quatro folhas entregues em 12 países como gesto genuíno de amor e sorte — cada entrega, uma história.",
+    en: "Over 15,000 four-leaf clovers delivered in 12 countries as a genuine gesture of love and luck — each delivery, a story.",
+    es: "Más de 15.000 tréboles de cuatro hojas entregados en 12 países como gesto genuino de amor y suerte — cada entrega, una historia.",
+    fr: "Plus de 15 000 trèfles à quatre feuilles livrés dans 12 pays comme un geste authentique d'amour et de chance — chaque livraison, une histoire."
   },
   "trevo.stat_clovers": {
     pt: "Trevos entregues", en: "Clovers delivered", es: "Tréboles entregados", fr: "Trèfles livrés"
@@ -901,5 +907,88 @@ var TRANSLATIONS = {
     en: "Love & Luck — Cauê Sagae",
     es: "Amor y Suerte — Cauê Sagae",
     fr: "Amour et Chance — Cauê Sagae"
+  },
+
+  // ─── INDEX: TRAJETÓRIA ───────────────────────────────────
+  "traj.tag": {
+    pt: "Trajetória", en: "Journey", es: "Trayectoria", fr: "Parcours"
+  },
+  "traj.title": {
+    pt: "Uma vida dedicada à cura e ao autoconhecimento",
+    en: "A life dedicated to healing and self-knowledge",
+    es: "Una vida dedicada a la sanación y al autoconocimiento",
+    fr: "Une vie dédiée à la guérison et à la connaissance de soi"
+  },
+  "traj.body": {
+    pt: "Com mais de uma década de caminhada espiritual e terapêutica, Cauê acumulou experiências únicas ao redor do mundo.",
+    en: "With over a decade of spiritual and therapeutic practice, Cauê has accumulated unique experiences around the world.",
+    es: "Con más de una década de camino espiritual y terapéutico, Cauê ha acumulado experiencias únicas alrededor del mundo.",
+    fr: "Avec plus d'une décennie de pratique spirituelle et thérapeutique, Cauê a accumulé des expériences uniques à travers le monde."
+  },
+  "traj.quote": {
+    pt: "“O verdadeiro mestre mora dentro de si. Meu papel é apenas te ajudar a lembrar disso.”",
+    en: "“The true master lives within you. My role is simply to help you remember that.”",
+    es: "“El verdadero maestro vive dentro de ti. Mi papel es solo ayudarte a recordarlo.”",
+    fr: "“Le vrai maître vit en vous. Mon rôle est simplement de vous aider à vous en souvenir.”"
+  },
+  "traj.cite": {
+    pt: "— Cauê Sagae", en: "— Cauê Sagae", es: "— Cauê Sagae", fr: "— Cauê Sagae"
+  },
+  "traj.stat_paises": {
+    pt: "Países", en: "Countries", es: "Países", fr: "Pays"
+  },
+  "traj.stat_trevos": {
+    pt: "Trevos entregues", en: "Clovers delivered", es: "Tréboles entregados", fr: "Trèfles livrés"
+  },
+  "traj.stat_anos": {
+    pt: "Anos de prática", en: "Years of practice", es: "Años de práctica", fr: "Années de pratique"
+  },
+  "traj.stat_livro": {
+    pt: "Livro publicado", en: "Published book", es: "Libro publicado", fr: "Livre publié"
+  },
+
+  // ─── INDEX: LIVRO SECTION ────────────────────────────────
+  "livro.index_p1": {
+    pt: "Uma contação de histórias da minha vida, de como criei o <strong>Trevo do Amor</strong>, um presente entregue para mais de 15.000 pessoas, tocando profundamente suas vidas e a minha.",
+    en: "A collection of stories from my life, about how I created the <strong>Love Clover</strong>, a gift given to more than 15,000 people, deeply touching their lives and mine.",
+    es: "Una colección de historias de mi vida, sobre cómo creé el <strong>Trébol del Amor</strong>, un regalo entregado a más de 15.000 personas, tocando profundamente sus vidas y la mía.",
+    fr: "Un recueil d'histoires de ma vie, sur la façon dont j'ai créé le <strong>Trèfle de l'Amour</strong>, un cadeau offert à plus de 15 000 personnes, touchant profondément leurs vies et la mienne."
+  },
+  "livro.index_p2": {
+    pt: "A mulher em Paris que estava desempregada, ganhou um trevo e conseguiu emprego no dia seguinte. O surfista classificado para Bali. O rapaz cujo casamento foi salvo por um trevo.",
+    en: "The woman in Paris who was unemployed, received a clover and got a job the next day. The surfer selected for Bali. The man whose marriage was saved by a clover.",
+    es: "La mujer en París que estaba desempleada, recibió un trébol y consiguió trabajo al día siguiente. El surfista seleccionado para Bali. El hombre cuyo matrimonio fue salvado por un trébol.",
+    fr: "La femme à Paris qui était au chômage, a reçu un trèfle et a trouvé un emploi le lendemain. Le surfeur sélectionné pour Bali. L'homme dont le mariage a été sauvé par un trèfle."
+  },
+  "livro.index_btn_buy": {
+    pt: "📚 Livro físico — R$30,00",
+    en: "📚 Physical book — R$30.00",
+    es: "📚 Libro físico — R$30,00",
+    fr: "📚 Livre physique — R$30,00"
+  },
+  "livro.index_btn_more": {
+    pt: "Saber mais", en: "Learn more", es: "Saber más", fr: "En savoir plus"
+  },
+
+  // ─── CONTATO ─────────────────────────────────────────────
+  "contato.btn_wa": {
+    pt: "Enviar mensagem agora",
+    en: "Send message now",
+    es: "Enviar mensaje ahora",
+    fr: "Envoyer un message maintenant"
+  },
+
+  // ─── SUBPAGES: SCHEDULE LABELS ───────────────────────────
+  "label.schedule": {
+    pt: "Agendar sessão", en: "Book a session", es: "Agendar sesión", fr: "Réserver une séance"
+  },
+  "label.schedule_imersao": {
+    pt: "Agendar imersão", en: "Book immersion", es: "Agendar inmersión", fr: "Réserver une immersion"
+  },
+  "btn.saber_mais": {
+    pt: "Saber mais →", en: "Learn more →", es: "Saber más →", fr: "En savoir plus →"
+  },
+  "btn.conhecer_mais": {
+    pt: "Conhecer mais →", en: "Learn more →", es: "Conocer más →", fr: "En savoir plus →"
   }
 };
