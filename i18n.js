@@ -454,7 +454,7 @@
     set(ps[5], t('aurapage.cta_p2'), true);
     set(ps[6], t('aurapage.cta_p3'), true);
     set(qs('.btn-wa'), t('aurapage.btn_send'));
-    set(qs('.btn-back, a[href="index.html"]'), t('aurapage.btn_back'));
+    set(qs('.btn-back'), t('aurapage.btn_back'));
   }
 
   /* ═══════════════════════════════════════════════════════
@@ -466,7 +466,7 @@
     set(qs('h1, .section-title'), t('empresas.hero_title'));
     set(qs('.section-body, .hero-desc'), t('empresas.hero_desc'));
     set(qs('.btn-wa'), t('empresas.btn_wa'));
-    set(qs('.btn-back, a[href="index.html"]'), t('empresas.btn_back'));
+    set(qs('.btn-back'), t('empresas.btn_back'));
     set(qs('.cta-title, .empresas-cta h2'), t('empresas.cta_title'));
     set(qs('.cta-desc, .empresas-cta p'),   t('empresas.cta_desc'));
     set(qs('.cta-btn, .empresas-cta .btn-wa'), t('empresas.cta_btn'));
@@ -496,7 +496,7 @@
     set(autorPs[0], t('livro.about_p1'));
     set(autorPs[1], t('livro.about_p2'));
     set(qs('.autor-btns a, .sobre-autor .btn-wa'), t('livro.btn_talk'));
-    set(qs('.btn-back, a[href="index.html"]'), t('livro.btn_back'));
+    set(qs('.btn-back'), t('livro.btn_back'));
   }
 
   /* ═══════════════════════════════════════════════════════
