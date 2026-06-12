@@ -486,7 +486,7 @@ var TRANSLATIONS = {
     pt: "Tabela de preços", en: "Pricing", es: "Tabla de precios", fr: "Tarifs"
   },
   "pricing.title": {
-    pt: "Serviços &amp; Valores", en: "Services &amp; Pricing", es: "Servicios &amp; Valores", fr: "Services &amp; Tarifs"
+    pt: "Serviços & Valores", en: "Services & Pricing", es: "Servicios & Valores", fr: "Services & Tarifs"
   },
   "pricing.col_service": {
     pt: "Serviço", en: "Service", es: "Servicio", fr: "Service"
