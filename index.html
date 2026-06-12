@@ -719,18 +719,19 @@
 
     /* ── CURSOS ──────────────────────────────── */
     #cursos { background: var(--bg-alt); }
+    .cursos-outer { overflow: hidden; padding: .5rem 0 1.5rem; }
     .cursos-track {
-      display: flex; gap: 1.4rem;
-      overflow-x: auto; padding: .5rem .25rem 1.5rem;
-      scrollbar-width: thin; scrollbar-color: var(--light) rgba(0,0,0,.08);
-      -webkit-overflow-scrolling: touch; cursor: grab; user-select: none;
+      display: flex;
+      animation: marquee-cursos 38s linear infinite;
+      width: max-content;
     }
-    .cursos-track.is-dragging { cursor: grabbing; }
-    .cursos-track::-webkit-scrollbar { height: 5px; }
-    .cursos-track::-webkit-scrollbar-track { background: rgba(0,0,0,.06); border-radius: 2px; }
-    .cursos-track::-webkit-scrollbar-thumb { background: var(--light); border-radius: 2px; }
+    .cursos-track:hover { animation-play-state: paused; }
+    @keyframes marquee-cursos {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
     .curso-card {
-      flex: 0 0 255px; background: var(--white); border-radius: 1.25rem;
+      flex: 0 0 255px; margin-right: 1.5rem; background: var(--white); border-radius: 1.25rem;
       overflow: hidden; box-shadow: 0 4px 18px rgba(45,80,22,.1);
       transition: transform .3s, box-shadow .3s; display: flex; flex-direction: column;
     }
@@ -1259,7 +1260,7 @@
       <h2 class="section-title cursos-title">Aprenda com Cauê</h2>
       <p class="section-body cursos-desc" style="max-width:500px;margin:.5rem auto 0;">Cursos gravados para você praticar no seu ritmo, de onde estiver.</p>
     </div>
-    <div class="cursos-track" id="cursosTrack">
+    <div class="cursos-outer"><div class="cursos-track" id="cursosTrack">
 
       <!-- Meditação Nível 1 -->
       <div class="curso-card">
@@ -1384,7 +1385,7 @@
         </div>
       </div>
 
-    </div>
+    </div></div>
   </div>
 </section>
 
@@ -1667,16 +1668,7 @@
 (function () {
   var track = document.getElementById('cursosTrack');
   if (!track) return;
-  var isDragging = false, startX, scrollLeft;
-  track.addEventListener('mousedown', function (e) {
-    isDragging = true; track.classList.add('is-dragging');
-    startX = e.pageX - track.offsetLeft; scrollLeft = track.scrollLeft;
-  });
-  document.addEventListener('mouseup', function () { isDragging = false; track.classList.remove('is-dragging'); });
-  track.addEventListener('mousemove', function (e) {
-    if (!isDragging) return; e.preventDefault();
-    track.scrollLeft = scrollLeft - (e.pageX - track.offsetLeft - startX) * 1.5;
-  });
+  track.innerHTML += track.innerHTML;
 })();
 </script>
 <script src="translations.js"></script>
