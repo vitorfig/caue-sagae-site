@@ -1074,6 +1074,89 @@ var TRANSLATIONS = {
   "label.schedule_imersao": {
     pt: "Agendar imersão", en: "Book immersion", es: "Agendar inmersión", fr: "Réserver une immersion"
   },
+  // ─── CURSOS SECTION ──────────────────────────────────
+  "cursos.tag": {
+    pt: "🎓 Cursos Online", en: "🎓 Online Courses", es: "🎓 Cursos Online", fr: "🎓 Cours en Ligne"
+  },
+  "cursos.title": {
+    pt: "Aprenda com Cauê", en: "Learn with Cauê", es: "Aprende con Cauê", fr: "Apprenez avec Cauê"
+  },
+  "cursos.desc": {
+    pt: "Cursos gravados para você praticar no seu ritmo, de onde estiver.",
+    en: "Recorded courses so you can practice at your own pace, from anywhere.",
+    es: "Cursos grabados para que practiques a tu ritmo, desde donde estés.",
+    fr: "Cours enregistrés pour pratiquer à votre rythme, où que vous soyez."
+  },
+  "cursos.buy": { pt: "Comprar", en: "Buy", es: "Comprar", fr: "Acheter" },
+  "cursos.more": { pt: "Saber mais →", en: "Learn more →", es: "Saber más →", fr: "En savoir plus →" },
+  "cursos.cat.medit": { pt: "Meditação", en: "Meditation", es: "Meditación", fr: "Méditation" },
+  "cursos.cat.palestra": { pt: "Palestra", en: "Lecture", es: "Charla", fr: "Conférence" },
+  "cursos.cat.ritual": { pt: "Ritual", en: "Ritual", es: "Ritual", fr: "Rituel" },
+  "cursos.cat.curso": { pt: "Curso", en: "Course", es: "Curso", fr: "Cours" },
+  "cursos.lv1": { pt: "Nível 1", en: "Level 1", es: "Nivel 1", fr: "Niveau 1" },
+  "cursos.lv2": { pt: "Nível 2", en: "Level 2", es: "Nivel 2", fr: "Niveau 2" },
+  "cursos.lv3": { pt: "Nível 3", en: "Level 3", es: "Nivel 3", fr: "Niveau 3" },
+  "cursos.medit1.desc": {
+    pt: "Limpe sua Aura, enraize-se e aprenda a proteger sua energia no dia a dia.",
+    en: "Cleanse your Aura, ground yourself and learn to protect your energy daily.",
+    es: "Limpia tu Aura, enraízate y aprende a proteger tu energía en el día a día.",
+    fr: "Nettoyez votre Aura, ancrez-vous et apprenez à protéger votre énergie au quotidien."
+  },
+  "cursos.medit2.desc": {
+    pt: "Transmutar energias, limpar seus 7 chakras e criar seu Espaço Sagrado.",
+    en: "Transmute energies, cleanse your 7 chakras and create your Sacred Space.",
+    es: "Transmutar energías, limpiar tus 7 chakras y crear tu Espacio Sagrado.",
+    fr: "Transmuter les énergies, nettoyer vos 7 chakras et créer votre Espace Sacré."
+  },
+  "cursos.medit3.desc": {
+    pt: "Acordos espirituais, laços energéticos e criação consciente de realidade.",
+    en: "Spiritual agreements, energy ties and conscious reality creation.",
+    es: "Acuerdos espirituales, lazos energéticos y creación consciente de realidad.",
+    fr: "Accords spirituels, liens énergétiques et création consciente de la réalité."
+  },
+  "cursos.palestra.desc": {
+    pt: "Como amor e sorte se entrelaçam — a história do Trevo do Amor e as lições que ele trouxe.",
+    en: "How love and luck intertwine — the story of the Love Clover and the lessons it brought.",
+    es: "Cómo el amor y la suerte se entrelazan — la historia del Trébol del Amor y sus lecciones.",
+    fr: "Comment l'amour et la chance s'entrelacent — l'histoire du Trèfle de l'Amour et ses leçons."
+  },
+  "cursos.ritual.desc": {
+    pt: "Liberte-se de laços e energias que drenam sua vitalidade e bloqueiam seu avanço.",
+    en: "Free yourself from ties and energies that drain your vitality and block your progress.",
+    es: "Libérate de lazos y energías que drenan tu vitalidad y bloquean tu avance.",
+    fr: "Libérez-vous des liens et énergies qui drainent votre vitalité et bloquent votre avancement."
+  },
+  "cursos.intuicao.desc": {
+    pt: "Desenvolva sua intuição como ferramenta poderosa para decisões e percepções no cotidiano.",
+    en: "Develop your intuition as a powerful tool for decisions and perceptions in daily life.",
+    es: "Desarrolla tu intuición como poderosa herramienta para decisiones y percepciones cotidianas.",
+    fr: "Développez votre intuition comme outil puissant pour les décisions et perceptions au quotidien."
+  },
+  "cursos.medit.title": {
+    pt: "Meditação das Rosas", en: "Rose Meditation", es: "Meditación de las Rosas", fr: "Méditation des Roses"
+  },
+  "cursos.palestra.title": {
+    pt: "Amor e Sorte", en: "Love & Luck", es: "Amor y Suerte", fr: "Amour et Chance"
+  },
+  "cursos.ritual.title": {
+    pt: "Ritual de Corte de Energia", en: "Energy Cutting Ritual", es: "Ritual de Corte de Energía", fr: "Rituel de Coupure d'Énergie"
+  },
+  "cursos.intuicao.title": {
+    pt: "Intuição na Prática", en: "Intuition in Practice", es: "Intuición en la Práctica", fr: "Intuition en Pratique"
+  },
+  "cursos.medit.price": {
+    pt: "R$ 150", en: "€ 30", es: "€ 30", fr: "€ 30"
+  },
+  "cursos.palestra.price": {
+    pt: "R$ 47", en: "€ 9", es: "€ 9", fr: "€ 9"
+  },
+  "cursos.ritual.price": {
+    pt: "R$ 97", en: "€ 18", es: "€ 18", fr: "€ 18"
+  },
+  "cursos.intuicao.price": {
+    pt: "R$ 97", en: "€ 18", es: "€ 18", fr: "€ 18"
+  },
+
   "btn.saber_mais": {
     pt: "Saber mais →", en: "Learn more →", es: "Saber más →", fr: "En savoir plus →"
   },

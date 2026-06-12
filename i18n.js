@@ -347,6 +347,34 @@
     set(livroPs[0], t('livro.index_p1'), true);
     set(livroPs[1], t('livro.index_p2'));
 
+    // ── Cursos
+    set(qs('.cursos-tag'),   t('cursos.tag'));
+    set(qs('.cursos-title'), t('cursos.title'));
+    set(qs('.cursos-desc'),  t('cursos.desc'));
+    qsa('.curso-buy-lbl').forEach(function (el) { set(el, t('cursos.buy')); });
+    qsa('.curso-more-lbl').forEach(function (el) { set(el, t('cursos.more')); });
+    qsa('.curso-cat-medit').forEach(function (el) { set(el, t('cursos.cat.medit')); });
+    set(qs('.curso-cat-palestra'), t('cursos.cat.palestra'));
+    set(qs('.curso-cat-ritual'),   t('cursos.cat.ritual'));
+    set(qs('.curso-cat-intuicao'), t('cursos.cat.curso'));
+    qsa('.curso-lv1').forEach(function (el) { set(el, t('cursos.lv1')); });
+    qsa('.curso-lv2').forEach(function (el) { set(el, t('cursos.lv2')); });
+    qsa('.curso-lv3').forEach(function (el) { set(el, t('cursos.lv3')); });
+    qsa('.curso-medit-title').forEach(function (el) { set(el, t('cursos.medit.title')); });
+    set(qs('.curso-palestra-title'),  t('cursos.palestra.title'));
+    set(qs('.curso-ritual-title'),    t('cursos.ritual.title'));
+    set(qs('.curso-intuicao-title'),  t('cursos.intuicao.title'));
+    set(qs('.curso-medit1-desc'),     t('cursos.medit1.desc'));
+    set(qs('.curso-medit2-desc'),     t('cursos.medit2.desc'));
+    set(qs('.curso-medit3-desc'),     t('cursos.medit3.desc'));
+    set(qs('.curso-palestra-desc'),   t('cursos.palestra.desc'));
+    set(qs('.curso-ritual-desc'),     t('cursos.ritual.desc'));
+    set(qs('.curso-intuicao-desc'),   t('cursos.intuicao.desc'));
+    qsa('.curso-medit1-price,.curso-medit2-price,.curso-medit3-price').forEach(function (el) { set(el, t('cursos.medit.price')); });
+    set(qs('.curso-palestra-price'),  t('cursos.palestra.price'));
+    set(qs('.curso-ritual-price'),    t('cursos.ritual.price'));
+    set(qs('.curso-intuicao-price'),  t('cursos.intuicao.price'));
+
     // ── Contato
     set(qs('.contato-title'), t('contato.title'));
     set(qs('.contato-desc'),  t('contato.desc'));
