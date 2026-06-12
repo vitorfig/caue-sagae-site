@@ -53,15 +53,11 @@
     .blob2 { position: absolute; bottom: -80px; left: -80px; width: 380px; height: 380px; background: var(--tan); opacity: .35; border-radius: 40% 60% 30% 70% / 60% 40% 60% 40%; pointer-events: none; }
     .hero-inner { display: flex; align-items: center; gap: 6rem; max-width: 1100px; margin: 0 auto; position: relative; z-index: 2; flex-wrap: wrap; }
 
-    /* Book cover CSS */
+    /* Book cover photo */
     .book-cover {
-      flex-shrink: 0; width: 240px;
-      background: #fff; border-radius: .75rem;
+      flex-shrink: 0; width: 240px; border-radius: 0;
       box-shadow: 0 24px 60px rgba(0,0,0,.18), 0 2px 8px rgba(0,0,0,.08);
-      padding: 2.25rem 1.75rem 1.75rem;
-      display: flex; flex-direction: column; align-items: center; gap: 1.25rem;
-      border: 1px solid #e8e8e8;
-      transition: transform .3s;
+      transition: transform .3s; display: block;
     }
     .book-cover:hover { transform: rotate(-2deg) scale(1.03); }
     .amor { font-family: Georgia, serif; font-style: italic; font-size: 2.4rem; color: #c0392b; line-height: 1; }
@@ -82,7 +78,7 @@
     #destaques { background: var(--dark); padding: 5rem 4rem; }
     .dest-inner { max-width: 1000px; margin: 0 auto; }
     .dest-title { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem,3vw,2.4rem); color: var(--white); text-align: center; margin-bottom: 3rem; }
-    .dest-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
+    .dest-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
     .dest-card { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.12); border-radius: 1.25rem; padding: 1.75rem; }
     .dest-icon { font-size: 1.75rem; margin-bottom: .75rem; }
     .dest-card p { font-size: .95rem; color: rgba(255,255,255,.82); line-height: 1.7; font-style: italic; }
@@ -110,6 +106,7 @@
       .hero-inner { gap: 3rem; justify-content: center; text-align: center; }
       .hero-btns { justify-content: center; }
       #destaques, #autor { padding: 4rem 1.5rem; }
+      .dest-grid { grid-template-columns: repeat(2, 1fr); }
       .hamburger { display: flex; }
       .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--bg); flex-direction: column; padding: 1.25rem 1.5rem; gap: .9rem; border-bottom: 1px solid rgba(45,80,22,.1); }
       .nav-links.open { display: flex; }
@@ -144,19 +141,7 @@
   <div class="blob1"></div>
   <div class="blob2"></div>
   <div class="hero-inner">
-    <div class="book-cover">
-      <div style="text-align:center;line-height:1.1;">
-        <div class="amor">Amor</div>
-        <div class="e-sorte"><sup>e</sup> Sorte</div>
-      </div>
-      <svg viewBox="0 0 60 70" width="65" fill="none">
-        <circle cx="20" cy="20" r="13" fill="#3a7d1e"/><circle cx="40" cy="20" r="13" fill="#3a7d1e"/>
-        <circle cx="20" cy="38" r="13" fill="#3a7d1e"/><circle cx="40" cy="38" r="13" fill="#3a7d1e"/>
-        <rect x="27" y="36" width="6" height="12" rx="3" fill="#3a7d1e"/>
-        <path d="M18 49 C18 44.6 21.6 41 26 41 C28.2 41 30 42.8 30 45 C30 42.8 31.8 41 34 41 C38.4 41 42 44.6 42 49 C42 53.4 38.4 57 34 57 L26 57 C21.6 57 18 53.4 18 49Z" fill="#c0392b"/>
-      </svg>
-      <div class="book-author">CONTOS DE<br>CAUÊ SAGAE DE OLIVEIRA</div>
-    </div>
+    <img src="livro-amor-e-sorte.jpg" alt="Livro Amor e Sorte — Cauê Sagae" class="book-cover">
 
     <div class="hero-text">
       <span class="page-tag">📚 Livro</span>
@@ -168,13 +153,9 @@
         <p>Descreve como me conectei com a intuição e o quanto isso ajuda no dia a dia. Compartilho a meditação de criação de realidade, que me auxiliou a arrecadar <strong>R$ 13.000 em duas semanas</strong> para fazer um curso na Espanha. Entre outros relatos inspiradores de muitos ensinamentos que a vida me proporcionou.</p>
       </div>
       <div class="hero-btns">
-        <a href="https://www.amazon.com.br/Amor-Sorte-Contos-Sagae-Oliveira-ebook/dp/B092PDS6F2" target="_blank" class="btn btn-amazon">
-          📖 Comprar na Amazon
-        </a>
         <a href="https://wa.me/5551999433373?text=Olá%20Cauê!%20Quero%20comprar%20o%20livro%20Amor%20e%20Sorte%20em%20português!" target="_blank" class="btn btn-green">
           📚 Livro em português — R$30,00
         </a>
-        <a href="index.html#contato" class="btn btn-outline">Falar com Cauê</a>
       </div>
     </div>
   </div>
@@ -214,8 +195,7 @@
       <p>Com uma abordagem universalista, Cauê percorreu o mundo participando de retiros na França, Suíça, Índia, Peru, Espanha, Portugal, Tailândia e Bali. Já entregou mais de 15.000 trevos de quatro folhas como gesto de amor e sorte.</p>
     </div>
     <div class="autor-btns">
-      <a href="https://www.amazon.com.br/Amor-Sorte-Contos-Sagae-Oliveira-ebook/dp/B092PDS6F2" target="_blank" class="btn btn-amazon">📖 Comprar na Amazon</a>
-      <a href="index.html" class="btn btn-green">Voltar ao site</a>
+      <a href="https://wa.me/5551999433373?text=Olá%20Cauê!%20Quero%20comprar%20o%20livro%20Amor%20e%20Sorte%20em%20português!" target="_blank" class="btn btn-green">📚 Livro em português — R$30,00</a>
     </div>
   </div>
 </section>
