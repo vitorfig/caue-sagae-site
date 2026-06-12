@@ -99,15 +99,18 @@
     .svc-body p:last-child { margin-bottom: 0; }
     .svc-body strong { color: var(--white); }
 
-    .highlight-box {
-      margin: 1.75rem 0;
-      padding: 1.5rem 1.75rem;
-      background: rgba(127,176,105,.12);
-      border-left: 3px solid var(--light);
-      border-radius: 0 1rem 1rem 0;
-    }
-    .highlight-box p { margin-bottom: .6rem; font-size: .97rem; color: rgba(255,255,255,.85); }
-    .highlight-box p:last-child { margin-bottom: 0; }
+    .levels-container { display: flex; flex-direction: column; gap: .85rem; margin: 1.5rem 0; }
+    .level-card { padding: 1.2rem 1.4rem; background: rgba(127,176,105,.1); border: 1px solid rgba(127,176,105,.28); border-radius: 1rem; }
+    .level-title { font-family: 'Playfair Display', serif; font-size: 1.05rem; color: var(--light); margin-bottom: .35rem; }
+    .level-prereq { font-size: .78rem; color: rgba(255,255,255,.48); font-style: italic; display: block; margin-bottom: .6rem; }
+    .level-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: .28rem; }
+    .level-list li { font-size: .875rem; color: rgba(255,255,255,.82); padding-left: 1.1rem; position: relative; line-height: 1.5; }
+    .level-list li::before { content: "→"; position: absolute; left: 0; color: var(--light); font-size: .75rem; top: .05rem; }
+    .investment-box { padding: 1.2rem 1.4rem; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.14); border-radius: 1rem; margin-top: .85rem; }
+    .investment-title { color: var(--light); font-weight: 700; font-size: .92rem; margin-bottom: .65rem; }
+    .investment-item { font-size: .9rem; color: rgba(255,255,255,.85); margin-bottom: .22rem; }
+    .investment-item strong { color: #fff; }
+    .investment-note { font-size: .8rem; color: rgba(255,255,255,.48); margin-top: .55rem; font-style: italic; }
 
     .cta-box {
       margin-top: 2rem;
@@ -157,22 +160,60 @@
     <div>
       <span class="svc-tag">🌹 Meditação</span>
       <div class="badges">
-        <span class="badge badge-dim">Individual ou Grupo · 5h</span>
-        <span class="badge badge-price">R$ 490</span>
+        <span class="badge badge-dim">Individual ou Grupo · 1h30/nível</span>
+        <span class="badge badge-price">R$ 150 / nível</span>
       </div>
       <h1 class="svc-title">Meditação das Rosas</h1>
       <p class="svc-subtitle">níveis 1, 2 e 3 — Limpeza energética e reconexão</p>
       <div class="svc-body">
-        <p>Prática de limpeza energética e reconexão com a própria verdade, fortalecendo a intuição. <strong>Ferramentas para quem deseja mais leveza, presença e alinhamento.</strong></p>
-        <p>Foi um encontro muito especial, focado em <strong>proteção energética, limpeza energética, emocional e mental</strong>, além do fortalecimento do poder pessoal.</p>
+        <p class="medit-intro">Prática de limpeza energética e reconexão com a própria verdade, fortalecendo a intuição. <strong>Ferramentas para quem deseja mais leveza, presença e alinhamento.</strong></p>
 
-        <div class="highlight-box">
-          <p>🌹 <strong>Nível 1</strong> — Abertura e purificação do campo energético</p>
-          <p>🌹 <strong>Nível 2</strong> — Aprofundamento da intuição e presença</p>
-          <p>🌹 <strong>Nível 3</strong> — Integração e alinhamento da essência</p>
+        <div class="levels-container">
+          <div class="level-card">
+            <h3 class="level-title">🌹 Nível 1</h3>
+            <ul class="level-list">
+              <li>Limpar a sua Aura</li>
+              <li>Tomar consciência da sua Aura</li>
+              <li>Enraizar-se e ter presença para a sua meditação e para a sua vida</li>
+              <li>Proteger a sua Aura e separar a sua energia da energia dos outros</li>
+              <li>Abrir-se para receber a energia do Cosmos e da Terra</li>
+              <li>Recuperar a sua Energia dispersa</li>
+            </ul>
+          </div>
+          <div class="level-card">
+            <h3 class="level-title">🌹 Nível 2</h3>
+            <span class="level-prereq">Pré-requisito: Nível 1 🍀</span>
+            <ul class="level-list">
+              <li>Descobrir o que a sua Aura carrega</li>
+              <li>Transmutar energias do passado e do presente</li>
+              <li>Conhecer e limpar os seus 7 chakras</li>
+              <li>Entender como se estruturam as 7 camadas da Aura e como limpá-las</li>
+              <li>Proteger e limpar energeticamente os ambientes físicos</li>
+              <li>Criar o seu Espaço Sagrado, um centro dedicado ao seu Espírito na sua consciência</li>
+            </ul>
+          </div>
+          <div class="level-card">
+            <h3 class="level-title">🌹 Nível 3</h3>
+            <span class="level-prereq">Pré-requisito: Níveis 1 e 2 🍀</span>
+            <ul class="level-list">
+              <li>Ter contato com o conceito de cinco corpos</li>
+              <li>Acordos Espirituais e Quebra de Acordos</li>
+              <li>Laços Energéticos</li>
+              <li>Limpeza de Energias Sexuais</li>
+              <li>Limpeza do Analisador</li>
+              <li>Criação de Realidade</li>
+            </ul>
+          </div>
         </div>
 
-        <p>Disponível em sessões individuais ou em grupo. Uma experiência que transforma silenciosamente tudo que estava pesado.</p>
+        <div class="investment-box">
+          <p class="investment-title">💎 Investimento</p>
+          <p class="investment-item">Nível 1 — <strong>R$ 150</strong></p>
+          <p class="investment-item">Nível 2 — <strong>R$ 150</strong></p>
+          <p class="investment-item">Nível 3 — <strong>R$ 150</strong></p>
+          <p class="investment-item" style="margin-top:.45rem;">Todos juntos — <strong>R$ 450</strong> no pix ou parcelado no cartão</p>
+          <p class="investment-note">🎓 Curso gravado · 1h30 por nível · Acompanha apostila e gravações</p>
+        </div>
       </div>
       <div class="cta-box">
         <p class="cta-label">Agendar sessão</p>

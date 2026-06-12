@@ -212,7 +212,10 @@ var TRANSLATIONS = {
     pt: "Meditação", en: "Meditation", es: "Meditación", fr: "Méditation"
   },
   "medit.badge": {
-    pt: "Individual ou Grupo · 5h", en: "Individual or Group · 5h", es: "Individual o Grupo · 5h", fr: "Individuel ou Groupe · 5h"
+    pt: "Individual ou Grupo · 1h30/nível", en: "Individual or Group · 1h30/level", es: "Individual o Grupo · 1h30/nivel", fr: "Individuel ou Groupe · 1h30/niveau"
+  },
+  "medit.badge_price": {
+    pt: "R$ 150 / nível", en: "€ 30 / level", es: "€ 30 / nivel", fr: "€ 30 / niveau"
   },
   "medit.title": {
     pt: "Meditação das Rosas (níveis 1, 2 e 3)",
@@ -224,16 +227,73 @@ var TRANSLATIONS = {
     pt: "Limpeza energética e reconexão", en: "Energy cleansing and reconnection", es: "Limpieza energética y reconexión", fr: "Nettoyage énergétique et reconnexion"
   },
   "medit.p1": {
-    pt: 'Prática de limpeza energética e reconexão com a própria verdade, fortalecendo a intuição. <strong>Ferramentas para quem deseja mais leveza, presença e alinhamento.</strong>',
-    en: 'A practice of energy cleansing and reconnecting with one\'s own truth, strengthening intuition. <strong>Tools for those seeking more lightness, presence and alignment.</strong>',
-    es: 'Práctica de limpieza energética y reconexión con la propia verdad, fortaleciendo la intuición. <strong>Herramientas para quienes desean más ligereza, presencia y alineación.</strong>',
-    fr: 'Une pratique de nettoyage énergétique et de reconnexion avec sa propre vérité, renforçant l\'intuition. <strong>Des outils pour ceux qui recherchent plus de légèreté, de présence et d\'alignement.</strong>'
+    pt: 'Prática de limpeza energética e reconexão com a própria verdade, fortalecendo a intuição. Disponível em <strong>3 níveis progressivos</strong> — cada um aprofundando ferramentas de proteção, transmutação e criação de realidade.',
+    en: 'A practice of energy cleansing and reconnecting with your own truth, strengthening intuition. Available in <strong>3 progressive levels</strong> — each deepening tools for protection, transmutation and reality creation.',
+    es: 'Práctica de limpieza energética y reconexión con la propia verdad, fortaleciendo la intuición. Disponible en <strong>3 niveles progresivos</strong> — cada uno profundizando herramientas de protección, transmutación y creación de realidad.',
+    fr: 'Une pratique de nettoyage énergétique et de reconnexion avec sa propre vérité, renforçant l\'intuition. Disponible en <strong>3 niveaux progressifs</strong> — chacun approfondissant des outils de protection, de transmutation et de création de réalité.'
   },
   "medit.p2": {
-    pt: 'Foi um encontro muito especial, focado em <strong>proteção energética, limpeza energética, emocional e mental</strong>, além do fortalecimento do poder pessoal.',
-    en: 'It was a very special gathering, focused on <strong>energetic protection, energetic, emotional and mental cleansing</strong>, as well as strengthening personal power.',
-    es: 'Fue un encuentro muy especial, enfocado en <strong>protección energética, limpieza energética, emocional y mental</strong>, además del fortalecimiento del poder personal.',
-    fr: 'Ce fut une rencontre très spéciale, axée sur la <strong>protection énergétique, le nettoyage énergétique, émotionnel et mental</strong>, ainsi que le renforcement du pouvoir personnel.'
+    pt: 'Curso gravado com <strong>1h30 por nível</strong>, acompanha apostila e gravações. Atendimento individual ou em grupo.',
+    en: 'Recorded course with <strong>1h30 per level</strong>, includes workbook and recordings. Individual or group sessions.',
+    es: 'Curso grabado con <strong>1h30 por nivel</strong>, incluye apostilla y grabaciones. Sesiones individuales o en grupo.',
+    fr: 'Cours enregistré avec <strong>1h30 par niveau</strong>, comprend guide et enregistrements. Séances individuelles ou en groupe.'
+  },
+  "medit.level1.title": {
+    pt: "🌹 Nível 1", en: "🌹 Level 1", es: "🌹 Nivel 1", fr: "🌹 Niveau 1"
+  },
+  "medit.level2.title": {
+    pt: "🌹 Nível 2", en: "🌹 Level 2", es: "🌹 Nivel 2", fr: "🌹 Niveau 2"
+  },
+  "medit.level3.title": {
+    pt: "🌹 Nível 3", en: "🌹 Level 3", es: "🌹 Nivel 3", fr: "🌹 Niveau 3"
+  },
+  "medit.level2.prereq": {
+    pt: "Pré-requisito: Nível 1 🍀", en: "Prerequisite: Level 1 🍀", es: "Prerrequisito: Nivel 1 🍀", fr: "Prérequis : Niveau 1 🍀"
+  },
+  "medit.level3.prereq": {
+    pt: "Pré-requisito: Níveis 1 e 2 🍀", en: "Prerequisite: Levels 1 and 2 🍀", es: "Prerrequisito: Niveles 1 y 2 🍀", fr: "Prérequis : Niveaux 1 et 2 🍀"
+  },
+  "medit.level1.items": {
+    pt: "<li>Limpar a sua Aura</li><li>Tomar consciência da sua Aura</li><li>Enraizar-se e ter presença para a sua meditação e para a sua vida</li><li>Proteger a sua Aura e separar a sua energia da energia dos outros</li><li>Abrir-se para receber a energia do Cosmos e da Terra</li><li>Recuperar a sua Energia dispersa</li>",
+    en: "<li>Cleanse your Aura</li><li>Become aware of your Aura</li><li>Ground yourself and be present in your meditation and in your life</li><li>Protect your Aura and separate your energy from the energy of others</li><li>Open yourself to receive the energy of the Cosmos and the Earth</li><li>Recover your scattered Energy</li>",
+    es: "<li>Limpiar tu Aura</li><li>Tomar consciencia de tu Aura</li><li>Enraizarte y tener presencia en tu meditación y en tu vida</li><li>Proteger tu Aura y separar tu energía de la energía de los demás</li><li>Abrirte para recibir la energía del Cosmos y de la Tierra</li><li>Recuperar tu Energía dispersa</li>",
+    fr: "<li>Nettoyer votre Aura</li><li>Prendre conscience de votre Aura</li><li>Vous ancrer et être présent(e) dans votre méditation et dans votre vie</li><li>Protéger votre Aura et séparer votre énergie de celle des autres</li><li>Vous ouvrir pour recevoir l'énergie du Cosmos et de la Terre</li><li>Récupérer votre Énergie dispersée</li>"
+  },
+  "medit.level2.items": {
+    pt: "<li>Descobrir o que a sua Aura carrega</li><li>Transmutar energias do passado e do presente</li><li>Conhecer e limpar os seus 7 chakras</li><li>Entender como se estruturam as 7 camadas da Aura e como limpá-las</li><li>Proteger e limpar energeticamente os ambientes físicos</li><li>Criar o seu Espaço Sagrado, um centro dedicado ao seu Espírito na sua consciência</li>",
+    en: "<li>Discover what your Aura carries</li><li>Transmute energies from the past and present</li><li>Know and cleanse your 7 chakras</li><li>Understand how the 7 layers of the Aura are structured and how to cleanse them</li><li>Energetically protect and cleanse physical spaces</li><li>Create your Sacred Space, a center dedicated to your Spirit in your consciousness</li>",
+    es: "<li>Descubrir qué lleva tu Aura</li><li>Transmutar energías del pasado y del presente</li><li>Conocer y limpiar tus 7 chakras</li><li>Entender cómo se estructuran las 7 capas del Aura y cómo limpiarlas</li><li>Proteger y limpiar energéticamente los ambientes físicos</li><li>Crear tu Espacio Sagrado, un centro dedicado a tu Espíritu en tu consciencia</li>",
+    fr: "<li>Découvrir ce que votre Aura porte</li><li>Transmuter les énergies du passé et du présent</li><li>Connaître et nettoyer vos 7 chakras</li><li>Comprendre comment s'organisent les 7 couches de l'Aura et comment les nettoyer</li><li>Protéger et nettoyer énergétiquement les espaces physiques</li><li>Créer votre Espace Sacré, un centre dédié à votre Esprit dans votre conscience</li>"
+  },
+  "medit.level3.items": {
+    pt: "<li>Ter contato com o conceito de cinco corpos</li><li>Acordos Espirituais e Quebra de Acordos</li><li>Laços Energéticos</li><li>Limpeza de Energias Sexuais</li><li>Limpeza do Analisador</li><li>Criação de Realidade</li>",
+    en: "<li>Connect with the concept of five bodies</li><li>Spiritual Agreements and Breaking of Agreements</li><li>Energy Ties</li><li>Cleansing of Sexual Energies</li><li>Cleansing of the Analyzer</li><li>Reality Creation</li>",
+    es: "<li>Tener contacto con el concepto de cinco cuerpos</li><li>Acuerdos Espirituales y Ruptura de Acuerdos</li><li>Lazos Energéticos</li><li>Limpieza de Energías Sexuales</li><li>Limpieza del Analizador</li><li>Creación de Realidad</li>",
+    fr: "<li>Entrer en contact avec le concept des cinq corps</li><li>Accords Spirituels et Rupture d'Accords</li><li>Liens Énergétiques</li><li>Nettoyage des Énergies Sexuelles</li><li>Nettoyage de l'Analyseur</li><li>Création de Réalité</li>"
+  },
+  "medit.invest.title": {
+    pt: "💎 Investimento", en: "💎 Investment", es: "💎 Inversión", fr: "💎 Investissement"
+  },
+  "medit.invest.l1": {
+    pt: "Nível 1 — <strong>R$ 150</strong>", en: "Level 1 — <strong>€ 30</strong>", es: "Nivel 1 — <strong>€ 30</strong>", fr: "Niveau 1 — <strong>€ 30</strong>"
+  },
+  "medit.invest.l2": {
+    pt: "Nível 2 — <strong>R$ 150</strong>", en: "Level 2 — <strong>€ 30</strong>", es: "Nivel 2 — <strong>€ 30</strong>", fr: "Niveau 2 — <strong>€ 30</strong>"
+  },
+  "medit.invest.l3": {
+    pt: "Nível 3 — <strong>R$ 150</strong>", en: "Level 3 — <strong>€ 30</strong>", es: "Nivel 3 — <strong>€ 30</strong>", fr: "Niveau 3 — <strong>€ 30</strong>"
+  },
+  "medit.invest.bundle": {
+    pt: "Todos juntos — <strong>R$ 450</strong> no pix ou parcelado no cartão",
+    en: "All together — <strong>€ 80</strong> via bank transfer or card installments",
+    es: "Todos juntos — <strong>€ 80</strong> por transferencia o a plazos con tarjeta",
+    fr: "Tous ensemble — <strong>€ 80</strong> par virement ou paiement en plusieurs fois"
+  },
+  "medit.invest.note": {
+    pt: "🎓 Curso gravado · 1h30 por nível · Acompanha apostila e gravações",
+    en: "🎓 Recorded course · 1h30 per level · Includes workbook and recordings",
+    es: "🎓 Curso grabado · 1h30 por nivel · Incluye apostilla y grabaciones",
+    fr: "🎓 Cours enregistré · 1h30 par niveau · Comprend le guide et les enregistrements"
   },
   "medit.btn": {
     pt: "💬 Agendar Meditação", en: "💬 Book Meditation", es: "💬 Agendar Meditación", fr: "💬 Réserver Méditation"
@@ -492,6 +552,15 @@ var TRANSLATIONS = {
   },
 
   // Service prices (BRL for PT, EUR for EN/ES/FR)
+  "price.ritual": {
+    pt: "R$ 97", en: "€ 18", es: "€ 18", fr: "€ 18"
+  },
+  "price.intuicao": {
+    pt: "R$ 97", en: "€ 18", es: "€ 18", fr: "€ 18"
+  },
+  "price.palestra": {
+    pt: "R$ 47", en: "€ 9", es: "€ 9", fr: "€ 9"
+  },
   "price.aura": {
     pt: "R$ 100 – R$ 400", en: "€ 20 – € 70", es: "€ 20 – € 70", fr: "€ 20 – € 70"
   },
@@ -499,7 +568,7 @@ var TRANSLATIONS = {
     pt: "R$ 350", en: "€ 60", es: "€ 60", fr: "€ 60"
   },
   "price.meditacao": {
-    pt: "R$ 490", en: "€ 80", es: "€ 80", fr: "€ 80"
+    pt: "R$ 150 / nível", en: "€ 30 / level", es: "€ 30 / nivel", fr: "€ 30 / niveau"
   },
   "price.rebirthing": {
     pt: "R$ 600", en: "€ 100", es: "€ 100", fr: "€ 100"

@@ -293,7 +293,7 @@
     var typeKeys  = ['pricing.type_individual','pricing.type_individual','pricing.type_ind_group','pricing.type_individual','pricing.type_ind_group','pricing.type_individual','pricing.type_ind_group','pricing.type_corp_group'];
     var durFixed  = ['1h','1h','5h','1h','3h',null,null,null];
     var durKeys   = [null,null,null,null,null,'pricing.personalized','pricing.personalized','pricing.lecture'];
-    var priceKeys = ['price.aura','price.massagem','price.meditacao','price.rebirthing','price.wellness',null,null,null];
+    var priceKeys = ['price.aura','price.massagem','price.meditacao','price.rebirthing','price.wellness','price.ritual','price.intuicao','price.palestra'];
 
     qsa('#servicos .price-row').forEach(function (row, i) {
       var nameEl = qs('.pr-name', row);
@@ -310,7 +310,7 @@
       var durEl = qs('.pr-dur', row);
       if (durEl) set(durEl, durFixed[i] !== null ? durFixed[i] : (durKeys[i] ? t(durKeys[i]) : null));
       var priceEl = qs('.pr-price', row);
-      if (priceEl) set(priceEl, priceKeys[i] ? t(priceKeys[i]) : t('pricing.consulte'));
+      if (priceEl) set(priceEl, t(priceKeys[i]));
     });
 
     // ── Mídia
@@ -488,13 +488,37 @@
      MEDITAÇÃO DAS ROSAS PAGE
   ═══════════════════════════════════════════════════════ */
   function applyMeditacaoRosas() {
-    set(qs('.section-tag'), t('medit.tag'));
-    set(qs('h1, .section-title'), t('medit.title'));
-    set(qs('.section-title + p, .section-subtitle'), t('medit.subtitle'));
-    var ps = qsa('.content-body p, .massagem-body p');
-    set(ps[0], t('medit.p1'), true);
-    set(ps[1], t('medit.p2'), true);
-    set(qs('.btn-wa'), t('medit.btn'));
+    set(qs('.svc-tag'),      t('medit.tag'));
+    set(qs('.svc-title'),    t('medit.title'));
+    set(qs('.svc-subtitle'), t('medit.subtitle'));
+    set(qs('.badge-dim'),    t('medit.badge'));
+    set(qs('.badge-price'),  t('medit.badge_price'));
+    set(qs('.medit-intro'),  t('medit.p1'), true);
+
+    var lvlTitles = qsa('.level-title');
+    set(lvlTitles[0], t('medit.level1.title'));
+    set(lvlTitles[1], t('medit.level2.title'));
+    set(lvlTitles[2], t('medit.level3.title'));
+
+    var prereqs = qsa('.level-prereq');
+    set(prereqs[0], t('medit.level2.prereq'));
+    set(prereqs[1], t('medit.level3.prereq'));
+
+    var lists = qsa('.level-list');
+    if (lists[0] && t('medit.level1.items')) lists[0].innerHTML = t('medit.level1.items');
+    if (lists[1] && t('medit.level2.items')) lists[1].innerHTML = t('medit.level2.items');
+    if (lists[2] && t('medit.level3.items')) lists[2].innerHTML = t('medit.level3.items');
+
+    set(qs('.investment-title'), t('medit.invest.title'));
+    var inv = qsa('.investment-item');
+    set(inv[0], t('medit.invest.l1'), true);
+    set(inv[1], t('medit.invest.l2'), true);
+    set(inv[2], t('medit.invest.l3'), true);
+    set(inv[3], t('medit.invest.bundle'), true);
+    set(qs('.investment-note'), t('medit.invest.note'));
+
+    set(qs('.btn-wa'),    t('medit.btn'));
+    set(qs('.cta-label'), t('label.schedule'));
   }
 
   /* ═══════════════════════════════════════════════════════
