@@ -782,13 +782,7 @@
     </svg>
     <span class="nav-logo-text">Cauê Sagae</span>
   </a>
-  <ul class="nav-links" id="navLinks">
-    <li><a href="#sobre">Sobre</a></li>
-    <li><a href="trevos.html">Trevos do Amor</a></li>
-    <li><a href="#terapias">Serviços</a></li>
-    <li><a href="meditacoes.html">Meditações Gratuitas</a></li>
-    <li><a href="#contato" class="nav-cta">Contato</a></li>
-  </ul>
+  <ul class="nav-links" id="navLinks"></ul>
   <button class="hamburger" id="hamburger" aria-label="Abrir menu">
     <span></span><span></span><span></span>
   </button>
@@ -1335,8 +1329,8 @@
       <p>Uma contação de histórias da minha vida, de como criei o <strong>Trevo do Amor</strong>, um presente entregue para mais de 15.000 pessoas, tocando profundamente suas vidas e a minha.</p>
       <p>A mulher em Paris que estava desempregada, ganhou um trevo e conseguiu emprego no dia seguinte. O surfista classificado para Bali. O rapaz cujo casamento foi salvo por um trevo.</p>
       <div class="livro-btns">
+        <a href="https://wa.me/5551999433373?text=Olá%20Cauê!%20Quero%20comprar%20o%20livro%20Amor%20e%20Sorte%20em%20português!" target="_blank" class="btn" style="background:#ff9900;color:#111;box-shadow:0 4px 18px rgba(255,153,0,.3);">📚 Livro físico — R$30,00</a>
         <a href="livro.html" class="btn" style="background:var(--dark);color:#fff;">Saber mais</a>
-        <a href="https://wa.me/5551999433373?text=Olá%20Cauê!%20Quero%20comprar%20o%20livro%20Amor%20e%20Sorte%20em%20português!" target="_blank" class="btn btn-green">📚 Livro físico — R$30,00</a>
       </div>
     </div>
   </div>
@@ -1390,14 +1384,6 @@
 </a>
 
 <script>
-  // Mobile nav toggle
-  document.getElementById('hamburger').addEventListener('click', () => {
-    document.getElementById('navLinks').classList.toggle('open');
-  });
-  document.querySelectorAll('.nav-links a').forEach(a => {
-    a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'));
-  });
-
   // Navbar: transparent on hero, solid on scroll
   const navbar = document.getElementById('navbar');
   const heroHeight = document.getElementById('hero').offsetHeight;
@@ -1492,5 +1478,6 @@
   midiaModal.addEventListener('click', e => { if (e.target === midiaModal) closeMidiaModal(); });
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMidiaModal(); });
 </script>
+<script src="nav.js"></script>
 </body>
 </html>
