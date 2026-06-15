@@ -113,10 +113,10 @@ var TRANSLATIONS = {
     pt: "🍀 Trevo do Amor", en: "🍀 Love Clover", es: "🍀 Trébol del Amor", fr: "🍀 Trèfle d'Amour"
   },
   "trevo.title": {
-    pt: "Um dos maiores entregadores de sorte e amor no mundo!",
-    en: "One of the greatest deliverers of luck and love in the world!",
-    es: "¡Uno de los mayores repartidores de suerte y amor en el mundo!",
-    fr: "L'un des plus grands livreurs de chance et d'amour au monde !"
+    pt: "Mais de 15 mil trevos de quatro folhas entregues pelo mundo!",
+    en: "Over 15 thousand four-leaf clovers delivered around the world!",
+    es: "¡Más de 15 mil tréboles de cuatro hojas entregados por el mundo!",
+    fr: "Plus de 15 000 trèfles à quatre feuilles livrés dans le monde !"
   },
   "trevo.desc1": {
     pt: "Uma vida dedicada à cura e ao autoconhecimento.",
@@ -125,10 +125,10 @@ var TRANSLATIONS = {
     fr: "Une vie dédiée à la guérison et à la connaissance de soi."
   },
   "trevo.desc": {
-    pt: "Mais de 15.000 trevos de quatro folhas entregues em 12 países como gesto genuíno de amor e sorte — cada entrega, uma história.",
-    en: "Over 15,000 four-leaf clovers delivered in 12 countries as a genuine gesture of love and luck — each delivery, a story.",
-    es: "Más de 15.000 tréboles de cuatro hojas entregados en 12 países como gesto genuino de amor y suerte — cada entrega, una historia.",
-    fr: "Plus de 15 000 trèfles à quatre feuilles livrés dans 12 pays comme un geste authentique d'amour et de chance — chaque livraison, une histoire."
+    pt: "Mais de 15.000 trevos de quatro folhas entregues em +12 países como gesto genuíno de amor e sorte cada entrega, uma história.",
+    en: "Over 15,000 four-leaf clovers delivered in +12 countries as a genuine gesture of love and luck, each delivery, a story.",
+    es: "Más de 15.000 tréboles de cuatro hojas entregados en +12 países como gesto genuino de amor y suerte cada entrega, una historia.",
+    fr: "Plus de 15 000 trèfles à quatre feuilles livrés dans +12 pays comme un geste authentique d'amour et de chance chaque livraison, une histoire."
   },
   "trevo.stat_clovers": {
     pt: "Trevos entregues", en: "Clovers delivered", es: "Tréboles entregados", fr: "Trèfles livrés"
