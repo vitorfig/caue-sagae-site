@@ -113,9 +113,9 @@ var TRANSLATIONS = {
     pt: "🍀 Trevo do Amor", en: "🍀 Love Clover", es: "🍀 Trébol del Amor", fr: "🍀 Trèfle d'Amour"
   },
   "trevo.title": {
-    pt: "Mais de 15 mil trevos de quatro folhas entregues pelo mundo!",
-    en: "Over 15 thousand four-leaf clovers delivered around the world!",
-    es: "¡Más de 15 mil tréboles de cuatro hojas entregados por el mundo!",
+    pt: "Mais de 15.000 trevos de quatro folhas entregues pelo mundo!",
+    en: "Over 15,000 four-leaf clovers delivered around the world!",
+    es: "¡Más de 15.000 tréboles de cuatro hojas entregados por el mundo!",
     fr: "Plus de 15 000 trèfles à quatre feuilles livrés dans le monde !"
   },
   "trevo.desc1": {
