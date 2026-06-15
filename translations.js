@@ -125,10 +125,10 @@ var TRANSLATIONS = {
     fr: "Une vie dédiée à la guérison et à la connaissance de soi."
   },
   "trevo.desc": {
-    pt: "Mais de 15.000 trevos de quatro folhas entregues em +12 países como gesto genuíno de amor e sorte cada entrega, uma história.",
+    pt: "Mais de 15.000 trevos de quatro folhas entregues em +12 países como gesto genuíno de amor e sorte, cada entrega, uma história.",
     en: "Over 15,000 four-leaf clovers delivered in +12 countries as a genuine gesture of love and luck, each delivery, a story.",
-    es: "Más de 15.000 tréboles de cuatro hojas entregados en +12 países como gesto genuino de amor y suerte cada entrega, una historia.",
-    fr: "Plus de 15 000 trèfles à quatre feuilles livrés dans +12 pays comme un geste authentique d'amour et de chance chaque livraison, une histoire."
+    es: "Más de 15.000 tréboles de cuatro hojas entregados en +12 países como gesto genuino de amor y suerte, cada entrega, una historia.",
+    fr: "Plus de 15 000 trèfles à quatre feuilles livrés dans +12 pays comme un geste authentique d'amour et de chance, chaque livraison, une histoire."
   },
   "trevo.stat_clovers": {
     pt: "Trevos entregues", en: "Clovers delivered", es: "Tréboles entregados", fr: "Trèfles livrés"
