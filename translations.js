@@ -412,9 +412,6 @@ var TRANSLATIONS = {
   "wellness.practice2": {
     pt: "Meditação das Rosas (Rose Meditation)", en: "Rose Meditation", es: "Meditación de las Rosas", fr: "Méditation des Roses"
   },
-  "wellness.practice3": {
-    pt: "Terapia de contraste (sauna e gelo)", en: "Contrast therapy (sauna and ice)", es: "Terapia de contraste (sauna y hielo)", fr: "Thérapie de contraste (sauna et glace)"
-  },
   "wellness.practice4": {
     pt: "Leitura da Aura", en: "Aura Reading", es: "Lectura del Aura", fr: "Lecture de l'Aura"
   },
