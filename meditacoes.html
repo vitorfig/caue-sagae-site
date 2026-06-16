@@ -58,6 +58,25 @@
     .hero-desc { font-size: 1.05rem; color: rgba(255,255,255,.75); max-width: 560px; margin: 0 auto 2.5rem; line-height: 1.75; position: relative; }
     .hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; position: relative; }
 
+    /* INTRO VIDEO */
+    #intro-video { background: var(--dark); padding: 5rem 4rem; }
+    .intro-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1.1fr 1fr; gap: 4rem; align-items: center; }
+    .intro-video-wrap { position: relative; border-radius: 1.5rem; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,.5); cursor: pointer; background: #000; }
+    .intro-video-wrap img { width: 100%; display: block; object-fit: cover; aspect-ratio: 16/9; transition: transform .3s; }
+    .intro-video-wrap:hover img { transform: scale(1.03); }
+    .intro-video-wrap video { width: 100%; display: none; }
+    .intro-video-wrap.playing img { display: none; }
+    .intro-video-wrap.playing video { display: block; }
+    .intro-play-btn { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 72px; height: 72px; border-radius: 50%; background: rgba(45,80,22,.85); display: flex; align-items: center; justify-content: center; transition: transform .2s, background .2s; pointer-events: none; }
+    .intro-video-wrap:hover .intro-play-btn { transform: translate(-50%,-50%) scale(1.1); background: var(--mid); }
+    .intro-video-wrap.playing .intro-play-btn { display: none; }
+    .intro-play-btn svg { width: 28px; height: 28px; fill: white; margin-left: 4px; }
+    .intro-tag { display: inline-block; background: rgba(127,176,105,.18); color: var(--light); font-size: .72rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; padding: .35rem 1rem; border-radius: 2rem; margin-bottom: 1.25rem; }
+    .intro-title { font-family: 'Playfair Display', serif; font-size: clamp(1.5rem,2.5vw,2rem); color: var(--white); line-height: 1.3; margin-bottom: 1.5rem; }
+    .intro-body p { font-size: .95rem; color: rgba(255,255,255,.72); line-height: 1.85; }
+    .intro-body p + p { margin-top: 1rem; }
+    .intro-body strong { color: rgba(255,255,255,.95); }
+
     /* VIDEOS */
     #videos { background: var(--bg-alt); padding: 6rem 4rem; }
     .videos-inner { max-width: 1100px; margin: 0 auto; }
@@ -112,7 +131,8 @@
 
     @media (max-width: 800px) {
       nav { padding: .9rem 1.25rem; }
-      #hero, #videos, #sobre-medit, #cta { padding: 4rem 1.5rem; }
+      #intro-video, #hero, #videos, #sobre-medit, #cta { padding: 4rem 1.5rem; }
+      .intro-grid { grid-template-columns: 1fr; gap: 2rem; }
       #hero { padding-top: 7rem; }
       .videos-grid { grid-template-columns: 1fr; gap: 1.5rem; }
       .sobre-inner { grid-template-columns: 1fr; gap: 2rem; }
@@ -138,6 +158,27 @@
   <span class="hero-tag">🌹 Gratuito</span>
   <h1 class="hero-title">Meditações Guiadas</h1>
   <p class="hero-desc">Práticas gratuitas para quem deseja se conectar com sua essência, liberar tensões e cultivar mais presença no dia a dia.</p>
+</section>
+
+<!-- INTRO VIDEO -->
+<section id="intro-video">
+  <div class="intro-grid">
+    <div class="intro-video-wrap" id="introWrap">
+      <img src="med-intro.jpg" alt="Introdução à Meditação" />
+      <video src="med-intro.mp4" controls></video>
+      <div class="intro-play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+    </div>
+    <div>
+      <span class="intro-tag">Antes de começar</span>
+      <h2 class="intro-title">O objetivo não é parar a mente — é observá-la</h2>
+      <div class="intro-body">
+        <p>Quando um pensamento chega e traz um insight, algo produtivo para você nesse momento, deixe ele correr. Absorva o que ele tem a dizer. Depois, dê tchau e deixa ir.</p>
+        <p>Quando vier um pensamento que não te serve — pare ele. <strong>Diga não. Tchau, pensamento.</strong> E deixa outro vir.</p>
+        <p>Você não controla o que chega na mente. Mas pode decidir se vai continuar alimentando aquele pensamento ou não. <strong>Esse é o seu empoderamento.</strong></p>
+        <p>Nessa observação — de um pensamento e outro — você vai encontrar momentos de silêncio e de vazio. Não forçados. Simplesmente naturais.</p>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- VÍDEOS -->
@@ -231,9 +272,10 @@
         <p>Ferramentas para quem deseja mais leveza, presença e alinhamento — disponível em três níveis progressivos de profundidade.</p>
         <p>Mais de <strong>10 mil pessoas</strong> já vivenciaram essa prática com Cauê ao redor do mundo.</p>
       </div>
-      <a href="https://wa.me/5551999433373" target="_blank" class="btn btn-wa" style="margin-top:2rem;">
-        💬 Agendar sessão presencial
-      </a>
+      <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:2rem;">
+        <a href="meditacao-rosas.html" class="btn btn-green">🌹 Meditação das Rosas</a>
+        <a href="https://wa.me/5551999433373" target="_blank" class="btn btn-wa">💬 Agendar sessão</a>
+      </div>
     </div>
     <div class="sobre-card">
       <h3>Níveis disponíveis</h3>
@@ -269,7 +311,7 @@
 </a>
 
 <script>
-  document.querySelectorAll('.video-wrap').forEach(function(wrap) {
+  document.querySelectorAll('.video-wrap, #introWrap').forEach(function(wrap) {
     wrap.addEventListener('click', function() {
       if (wrap.classList.contains('playing')) return;
       wrap.classList.add('playing');
