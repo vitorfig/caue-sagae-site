@@ -709,15 +709,13 @@
       100% { transform: translateX(-50%); }
     }
     .parceiro-logo {
-      height: 80px; width: 200px;
+      height: 200px; width: 500px;
       object-fit: contain; flex-shrink: 0;
-      padding: 1rem 2rem;
-      background: rgba(255,255,255,.92);
-      border-radius: .75rem;
-      margin: 0 1.25rem;
-      transition: background .3s;
+      padding: 0 3rem;
+      filter: brightness(0) invert(1);
+      opacity: .7; transition: opacity .3s;
     }
-    .parceiro-logo:hover { background: rgba(255,255,255,1); }
+    .parceiro-logo:hover { opacity: 1; }
 
     /* ── CONTATO ─────────────────────────────── */
     #contato { background: var(--dark); text-align: center; }
