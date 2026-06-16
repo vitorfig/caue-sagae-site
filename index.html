@@ -1613,7 +1613,7 @@
     </div>
     <div>
       <span class="medit-cta-badge">🎁 Gratuito</span>
-      <h2 class="medit-cta-title">7 Meditações Guiadas de Presente</h2>
+      <h2 class="medit-cta-title">7 Meditações Guiadas Gratuitas de Presente</h2>
       <div class="medit-cta-body">
         <p>Para te ajudar a começar — ou aprofundar — sua prática, reuni <strong>7 meditações guiadas completamente gratuitas</strong>.</p>
         <p>Da Meditação Inicial à Meditação da Boa Sorte, cada prática foi criada para trazer mais presença, leveza e conexão com o momento presente.</p>
@@ -1764,29 +1764,6 @@
   });
 
 
-  // Mídia cards → open modal with sound
-  const midiaModal    = document.getElementById('midiaModal');
-  const midiaModalVid = document.getElementById('midiaModalVideo');
-
-  document.querySelectorAll('.midia-card').forEach(card => {
-    card.addEventListener('click', () => {
-      const src   = card.dataset.src;
-      const start = parseFloat(card.dataset.start) || 0;
-      midiaModalVid.src = src;
-      midiaModal.style.display = 'flex';
-      midiaModalVid.currentTime = start;
-      midiaModalVid.muted = false;
-      midiaModalVid.play().catch(() => {});
-    });
-  });
-
-  function closeMidiaModal() {
-    midiaModal.style.display = 'none';
-    midiaModalVid.pause();
-    midiaModalVid.src = '';
-  }
-  midiaModal.addEventListener('click', e => { if (e.target === midiaModal) closeMidiaModal(); });
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMidiaModal(); });
 </script>
 <script>
 (function () {
@@ -1857,6 +1834,35 @@
       }
     });
   })();
+</script>
+<script>
+  /* Mídia modal — isolated block so errors elsewhere don't break it */
+  window.closeMidiaModal = function() {
+    var m = document.getElementById('midiaModal');
+    var v = document.getElementById('midiaModalVideo');
+    if (!m || !v) return;
+    m.style.display = 'none';
+    v.pause();
+    v.src = '';
+  };
+  document.addEventListener('DOMContentLoaded', function() {
+    var modal = document.getElementById('midiaModal');
+    var vid   = document.getElementById('midiaModalVideo');
+    if (!modal || !vid) return;
+    document.querySelectorAll('.midia-card').forEach(function(card) {
+      card.addEventListener('click', function() {
+        var src = card.dataset.src;
+        if (!src) return;
+        vid.src = src;
+        vid.currentTime = parseFloat(card.dataset.start) || 0;
+        vid.muted = false;
+        modal.style.display = 'flex';
+        vid.play().catch(function() {});
+      });
+    });
+    modal.addEventListener('click', function(e) { if (e.target === modal) window.closeMidiaModal(); });
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') window.closeMidiaModal(); });
+  });
 </script>
 <script src="translations.js"></script>
 <script src="nav.js"></script>
