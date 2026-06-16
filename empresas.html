@@ -361,10 +361,24 @@
 </a>
 
 <script>
-  document.querySelectorAll('.exp-video-wrap').forEach(function(wrap) {
+  var wraps = document.querySelectorAll('.exp-video-wrap');
+  wraps.forEach(function(wrap, index) {
     var video = wrap.querySelector('video');
     var btn = wrap.querySelector('.exp-sound-btn');
     if (!video || !btn) return;
+
+    if (index === 0) {
+      btn.textContent = '🔊 Som ativado';
+      btn.classList.add('on');
+      video.muted = false;
+      video.play().catch(function() {
+        video.muted = true;
+        video.play();
+        btn.textContent = '🔇 Ativar som';
+        btn.classList.remove('on');
+      });
+    }
+
     btn.addEventListener('click', function(e) {
       e.stopPropagation();
       if (video.muted) {
