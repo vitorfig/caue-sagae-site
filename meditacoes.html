@@ -60,22 +60,27 @@
 
     /* VIDEOS */
     #videos { background: var(--bg-alt); padding: 6rem 4rem; }
-    .videos-inner { max-width: 1000px; margin: 0 auto; }
+    .videos-inner { max-width: 1100px; margin: 0 auto; }
     .section-tag { display: inline-block; background: rgba(127,176,105,.18); color: var(--mid); font-size: .75rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; padding: .35rem 1rem; border-radius: 2rem; margin-bottom: 1rem; }
     .section-title { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem,3vw,2.4rem); color: var(--dark); margin-bottom: 3rem; }
-    .videos-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+    .videos-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+    .videos-grid > .video-card:last-child:nth-child(3n+1) { grid-column: 2; }
+    .videos-grid > .video-card:last-child:nth-child(3n+2) { grid-column: 2 / span 2; }
     .video-card { background: var(--white); border-radius: 1.5rem; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,.07); transition: transform .3s, box-shadow .3s; }
     .video-card:hover { transform: translateY(-5px); box-shadow: 0 14px 35px rgba(0,0,0,.11); }
     .video-wrap { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; cursor: pointer; background: #000; }
-    .video-wrap iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+    .video-wrap video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; display: none; }
+    .video-wrap.playing video { display: block; }
     .video-thumb { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .3s; }
+    .video-wrap.playing .video-thumb { display: none; }
     .video-wrap:hover .video-thumb { transform: scale(1.04); }
-    .play-btn { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 64px; height: 64px; border-radius: 50%; background: rgba(255,0,0,.9); display: flex; align-items: center; justify-content: center; transition: transform .2s, background .2s; pointer-events: none; }
-    .video-wrap:hover .play-btn { transform: translate(-50%,-50%) scale(1.12); background: #ff0000; }
+    .play-btn { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 64px; height: 64px; border-radius: 50%; background: rgba(45,80,22,.85); display: flex; align-items: center; justify-content: center; transition: transform .2s, background .2s; pointer-events: none; }
+    .video-wrap:hover .play-btn { transform: translate(-50%,-50%) scale(1.12); background: var(--dark); }
+    .video-wrap.playing .play-btn { display: none; }
     .play-btn svg { width: 24px; height: 24px; fill: white; margin-left: 4px; }
-    .video-body { padding: 1.4rem 1.5rem; }
-    .video-title { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--dark); margin-bottom: .4rem; }
-    .video-desc { font-size: .875rem; color: var(--muted); line-height: 1.6; }
+    .video-body { padding: 1.2rem 1.4rem; }
+    .video-title { font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--dark); margin-bottom: .3rem; }
+    .video-desc { font-size: .82rem; color: var(--muted); line-height: 1.6; }
 
     /* SOBRE MEDITAÇÃO */
     #sobre-medit { background: var(--dark); padding: 6rem 4rem; }
@@ -109,7 +114,8 @@
       nav { padding: .9rem 1.25rem; }
       #hero, #videos, #sobre-medit, #cta { padding: 4rem 1.5rem; }
       #hero { padding-top: 7rem; }
-      .videos-grid, .sobre-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .videos-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+      .sobre-inner { grid-template-columns: 1fr; gap: 2rem; }
       .hamburger { display: flex; }
       .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--bg); flex-direction: column; padding: 1.25rem 1.5rem; gap: .9rem; border-bottom: 1px solid rgba(45,80,22,.1); }
       .nav-links.open { display: flex; }
@@ -145,23 +151,73 @@
     <h2 class="section-title">Pratique agora</h2>
     <div class="videos-grid">
       <div class="video-card">
-        <div class="video-wrap" data-vid="Mexm-fiJHFQ">
-          <img class="video-thumb" src="https://img.youtube.com/vi/Mexm-fiJHFQ/hqdefault.jpg" alt="Meditação das Rosas" />
+        <div class="video-wrap">
+          <img class="video-thumb" src="med-inicial.jpg" alt="Meditação Inicial" />
+          <video src="med-inicial.mp4" controls></video>
           <div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
         </div>
         <div class="video-body">
-          <h3 class="video-title">Meditação das Rosas</h3>
-          <p class="video-desc">Uma prática de limpeza energética e reconexão com a sua essência mais profunda. Ideal para quem busca leveza e clareza.</p>
+          <h3 class="video-title">Meditação Inicial</h3>
         </div>
       </div>
       <div class="video-card">
-        <div class="video-wrap" data-vid="zkIq7LPZ_Hg">
-          <img class="video-thumb" src="https://img.youtube.com/vi/zkIq7LPZ_Hg/hqdefault.jpg" alt="Meditação Guiada" />
+        <div class="video-wrap">
+          <img class="video-thumb" src="med-7min.jpg" alt="Meditação de 7 Minutos" />
+          <video src="med-7min.mp4" controls></video>
           <div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
         </div>
         <div class="video-body">
-          <h3 class="video-title">Meditação Guiada</h3>
-          <p class="video-desc">Uma jornada de presença, respiração e conexão com o momento presente. Para aliviar tensões e centrar a mente.</p>
+          <h3 class="video-title">Meditação de 7 Minutos</h3>
+        </div>
+      </div>
+      <div class="video-card">
+        <div class="video-wrap">
+          <img class="video-thumb" src="med-6min.jpg" alt="Meditação de 6 Minutos" />
+          <video src="med-6min.mp4" controls></video>
+          <div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+        </div>
+        <div class="video-body">
+          <h3 class="video-title">Meditação de 6 Minutos</h3>
+        </div>
+      </div>
+      <div class="video-card">
+        <div class="video-wrap">
+          <img class="video-thumb" src="med-10min.jpg" alt="Meditação de 10 Minutos" />
+          <video src="med-10min.mp4" controls></video>
+          <div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+        </div>
+        <div class="video-body">
+          <h3 class="video-title">Meditação de 10 Minutos</h3>
+        </div>
+      </div>
+      <div class="video-card">
+        <div class="video-wrap">
+          <img class="video-thumb" src="med-respiracao.jpg" alt="Meditação da Respiração" />
+          <video src="med-respiracao.mp4" controls></video>
+          <div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+        </div>
+        <div class="video-body">
+          <h3 class="video-title">Meditação da Respiração</h3>
+        </div>
+      </div>
+      <div class="video-card">
+        <div class="video-wrap">
+          <img class="video-thumb" src="med-ballon.jpg" alt="Meditação Ballon" />
+          <video src="med-ballon.mp4" controls></video>
+          <div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+        </div>
+        <div class="video-body">
+          <h3 class="video-title">Meditação Ballon</h3>
+        </div>
+      </div>
+      <div class="video-card">
+        <div class="video-wrap">
+          <img class="video-thumb" src="med-boa-sorte.jpg" alt="Meditação da Boa Sorte" />
+          <video src="med-boa-sorte.mp4" controls></video>
+          <div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+        </div>
+        <div class="video-body">
+          <h3 class="video-title">Meditação da Boa Sorte</h3>
         </div>
       </div>
     </div>
@@ -216,6 +272,16 @@
   <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
 </a>
 
+<script>
+  document.querySelectorAll('.video-wrap').forEach(function(wrap) {
+    wrap.addEventListener('click', function() {
+      if (wrap.classList.contains('playing')) return;
+      wrap.classList.add('playing');
+      var video = wrap.querySelector('video');
+      if (video) { video.play(); }
+    });
+  });
+</script>
 <script src="translations.js"></script>
 <script src="nav.js"></script>
 <script src="i18n.js"></script>
