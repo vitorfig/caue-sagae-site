@@ -927,7 +927,7 @@ var TRANSLATIONS = {
     fr: 'Un récit de ma vie. Il raconte comment j\'ai créé le <strong>Trèfle de l\'Amour</strong>, un cadeau livré à plus de dix mille personnes, touchant profondément leurs vies et la mienne.'
   },
   "livro.btn_amazon": {
-    pt: "📖 Comprar na Amazon", en: "📖 Buy on Amazon", es: "📖 Comprar en Amazon", fr: "📖 Acheter sur Amazon"
+    pt: "📖 Comprar Ebook", en: "📖 Buy Ebook", es: "📖 Comprar Ebook", fr: "📖 Acheter Ebook"
   },
   "livro.btn_talk": {
     pt: "Falar com Cauê", en: "Talk to Cauê", es: "Hablar con Cauê", fr: "Parler à Cauê"
@@ -1047,10 +1047,10 @@ var TRANSLATIONS = {
     fr: "La femme à Paris qui était au chômage, a reçu un trèfle et a trouvé un emploi le lendemain. Le surfeur sélectionné pour Bali. L'homme dont le mariage a été sauvé par un trèfle."
   },
   "livro.index_btn_buy": {
-    pt: "📚 Livro físico — R$30,00",
-    en: "📚 Physical book — R$30.00",
-    es: "📚 Libro físico — R$30,00",
-    fr: "📚 Livre physique — R$30,00"
+    pt: "📚 Ebook — R$30,00",
+    en: "📚 Ebook — R$30.00",
+    es: "📚 Ebook — R$30,00",
+    fr: "📚 Ebook — R$30,00"
   },
   "livro.index_btn_more": {
     pt: "Saber mais", en: "Learn more", es: "Saber más", fr: "En savoir plus"
