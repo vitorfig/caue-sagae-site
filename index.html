@@ -685,16 +685,22 @@
     .midia-card:hover .midia-play-overlay { opacity: 1; }
     .midia-play-overlay svg { filter: drop-shadow(0 2px 8px rgba(0,0,0,.6)); }
 
-    /* ── PARCEIROS ───────────────────────────── */
-    #parceiros { background: var(--bg-alt); padding: 4rem 0; overflow: hidden; }
-    .parceiros-inner { text-align: center; margin-bottom: 2.5rem; }
-    .parceiros-title { font-family: 'Playfair Display', serif; font-size: clamp(1.4rem,2.5vw,1.9rem); color: var(--dark); margin-bottom: .4rem; }
-    .parceiros-sub { font-size: .875rem; color: var(--muted); }
-    .parceiros-outer { overflow: hidden; }
+    /* ── PARCEIROS (strip inside #corporativo) ── */
+    .parceiros-strip {
+      border-top: 1px solid rgba(255,255,255,.1);
+      padding: 2.5rem 0 3rem;
+      overflow: hidden;
+    }
+    .parceiros-label {
+      text-align: center;
+      font-size: .72rem; font-weight: 600; letter-spacing: .12em;
+      text-transform: uppercase; color: rgba(255,255,255,.4);
+      margin-bottom: 1.75rem;
+    }
     .parceiros-track {
-      display: flex; align-items: center; gap: 3rem;
+      display: flex; align-items: center; gap: 3.5rem;
       width: max-content;
-      animation: marquee-parceiros 22s linear infinite;
+      animation: marquee-parceiros 24s linear infinite;
     }
     .parceiros-track:hover { animation-play-state: paused; }
     @keyframes marquee-parceiros {
@@ -702,12 +708,12 @@
       100% { transform: translateX(-50%); }
     }
     .parceiro-logo {
-      height: 64px; width: auto; max-width: 160px;
-      object-fit: contain; filter: grayscale(30%);
-      opacity: .85; transition: opacity .3s, filter .3s;
-      flex-shrink: 0;
+      height: 48px; width: auto; max-width: 140px;
+      object-fit: contain; flex-shrink: 0;
+      filter: brightness(0) invert(1);
+      opacity: .55; transition: opacity .3s;
     }
-    .parceiro-logo:hover { opacity: 1; filter: grayscale(0%); }
+    .parceiro-logo:hover { opacity: .9; }
 
     /* ── CONTATO ─────────────────────────────── */
     #contato { background: var(--dark); text-align: center; }
@@ -1362,29 +1368,23 @@
       </div>
     </div>
   </div>
-</section>
 
-<!-- ══ PARCEIROS ══════════════════════════════════════════ -->
-<section id="parceiros">
-  <div class="parceiros-inner inner">
-    <h2 class="parceiros-title">Clientes e Parceiros</h2>
-    <p class="parceiros-sub">Empresas e espaços que já viveram essa experiência</p>
-  </div>
-  <div class="parceiros-outer">
-    <div class="parceiros-track" id="parceirosTrack">
-      <img class="parceiro-logo" src="parceiro-nestle.jpg"   alt="Nestlé"/>
-      <img class="parceiro-logo" src="parceiro-allianz.png"  alt="Allianz Parque"/>
-      <img class="parceiro-logo" src="parceiro-kontrast.jpg" alt="Kontrast Club"/>
-      <img class="parceiro-logo" src="parceiro-bazaar.jpg"   alt="Bazaar"/>
+  <!-- logos clientes -->
+  <div class="parceiros-strip">
+    <p class="parceiros-label">Clientes &amp; Parceiros</p>
+    <div class="parceiros-track">
+      <img class="parceiro-logo" src="parceiro-nestle.jpg"    alt="Nestlé"/>
+      <img class="parceiro-logo" src="parceiro-allianz.png"   alt="Allianz Parque"/>
+      <img class="parceiro-logo" src="parceiro-kontrast.jpg"  alt="Kontrast Club"/>
+      <img class="parceiro-logo" src="parceiro-bazaar.jpg"    alt="Bazaar"/>
       <img class="parceiro-logo" src="parceiro-agrivalle.jpg" alt="Agrivalle"/>
-      <img class="parceiro-logo" src="parceiro-fruto.jpg"    alt="Espaço Fruto da Vida"/>
-      <!-- duplicadas para loop contínuo -->
-      <img class="parceiro-logo" src="parceiro-nestle.jpg"   alt="Nestlé"/>
-      <img class="parceiro-logo" src="parceiro-allianz.png"  alt="Allianz Parque"/>
-      <img class="parceiro-logo" src="parceiro-kontrast.jpg" alt="Kontrast Club"/>
-      <img class="parceiro-logo" src="parceiro-bazaar.jpg"   alt="Bazaar"/>
+      <img class="parceiro-logo" src="parceiro-fruto.jpg"     alt="Espaço Fruto da Vida"/>
+      <img class="parceiro-logo" src="parceiro-nestle.jpg"    alt="Nestlé"/>
+      <img class="parceiro-logo" src="parceiro-allianz.png"   alt="Allianz Parque"/>
+      <img class="parceiro-logo" src="parceiro-kontrast.jpg"  alt="Kontrast Club"/>
+      <img class="parceiro-logo" src="parceiro-bazaar.jpg"    alt="Bazaar"/>
       <img class="parceiro-logo" src="parceiro-agrivalle.jpg" alt="Agrivalle"/>
-      <img class="parceiro-logo" src="parceiro-fruto.jpg"    alt="Espaço Fruto da Vida"/>
+      <img class="parceiro-logo" src="parceiro-fruto.jpg"     alt="Espaço Fruto da Vida"/>
     </div>
   </div>
 </section>
