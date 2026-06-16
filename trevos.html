@@ -297,11 +297,11 @@
           <span>914</span>
         </div>
       </div>
-      <button class="featured-sound-btn" id="featuredSoundBtn">🔇 Ativar som</button>
+      <button class="featured-sound-btn" id="featuredSoundBtn">🔊 Som ativado</button>
     </div>
     <!-- Texto à direita -->
     <div class="featured-text">
-      <span class="featured-text-tag">🔥 Viral no TikTok</span>
+      <span class="featured-text-tag">📸 Viral no Instagram</span>
       <h2>78 mil pessoas se emocionaram com essa entrega</h2>
       <p>Um trevo de quatro folhas entregue para a atendente do guichê do aeroporto. Um gesto simples — e genuíno — que tocou o coração de mais de 78 mil pessoas ao redor do mundo.</p>
       <div class="featured-text-stats">
@@ -468,10 +468,9 @@
       soundBtn.style.borderColor = '';
     }
     // Tenta abrir com som; se browser bloquear, cai no mudo
+    setSoundOn();
     featuredVid.muted = false;
-    featuredVid.play().then(function() {
-      setSoundOn();
-    }).catch(function() {
+    featuredVid.play().catch(function() {
       featuredVid.muted = true;
       featuredVid.play();
       setSoundOff();
