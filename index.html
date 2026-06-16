@@ -438,20 +438,36 @@
     .trevo-mundo-stats { display: flex; gap: 2.5rem; margin-top: 2rem; flex-wrap: wrap; }
     .tms-num { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: var(--white); font-weight: 700; }
     .tms-lbl { font-size: .78rem; color: rgba(255,255,255,.6); margin-top: .2rem; }
-    .trevo-slideshow {
-      position: relative; aspect-ratio: 9/16;
-      border-radius: 1.5rem; overflow: hidden;
-      box-shadow: 0 24px 60px rgba(0,0,0,.45);
-      background: #000;
-      max-height: 580px; justify-self: center; width: 100%;
+    .trevo-videos-col {
+      display: grid; grid-template-columns: 1.3fr 1fr;
+      gap: .75rem; align-items: stretch; max-height: 580px;
     }
-    .trevo-slide {
-      position: absolute; inset: 0;
-      width: 100%; height: 100%;
-      object-fit: cover;
-      opacity: 0; transition: opacity .25s ease;
+    .trevo-tiktok-wrap {
+      position: relative; border-radius: 1.25rem; overflow: hidden;
+      background: #000; box-shadow: 0 20px 50px rgba(0,0,0,.5);
     }
-    .trevo-slide.active { opacity: 1; }
+    .trevo-tiktok-wrap video {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+    }
+    .trevo-tiktok-stats {
+      position: absolute; right: 10px; bottom: 48px;
+      display: flex; flex-direction: column; gap: 18px; align-items: center;
+    }
+    .tts-item {
+      display: flex; flex-direction: column; align-items: center; gap: 3px;
+    }
+    .tts-item svg { filter: drop-shadow(0 1px 3px rgba(0,0,0,.8)); }
+    .tts-item span {
+      color: #fff; font-size: .7rem; font-weight: 700;
+      text-shadow: 0 1px 4px rgba(0,0,0,.9); line-height: 1;
+    }
+    .trevo-secondary-wrap {
+      border-radius: 1.25rem; overflow: hidden;
+      background: #000; box-shadow: 0 20px 50px rgba(0,0,0,.5);
+    }
+    .trevo-secondary-wrap video {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+    }
 
     /* ── TERAPIAS ────────────────────────────── */
     #terapias { background: var(--dark); color: var(--white); }
@@ -797,7 +813,10 @@
       .midia-grid,
       .trevo-mundo-grid { grid-template-columns: 1fr; gap: 2.5rem; }
       #trevo-mundo { padding: 4rem 1.5rem; }
-      .trevo-slideshow { max-height: 420px; }
+      .trevo-videos-col { max-height: 420px; }
+      .trevo-tiktok-stats { right: 6px; bottom: 36px; gap: 12px; }
+      .tts-item svg { width: 22px; height: 22px; }
+      .tts-item span { font-size: .62rem; }
       .contato-cards { flex-direction: column; align-items: center; }
       nav { padding: .9rem 1.25rem; }
 
@@ -932,16 +951,37 @@
         </a>
       </div>
     </div>
-    <div class="trevo-slideshow" id="trevoSlideshow">
-      <img  src="trevo-caue.jpg"  alt="Cauê Sagae" class="trevo-slide active" data-duration="3000" />
-      <video class="trevo-slide" muted playsinline preload="none" data-duration="5000"><source src="trevo-1.mp4" type="video/mp4"/></video>
-      <video class="trevo-slide" muted playsinline preload="none" data-duration="5000"><source src="trevo-2.mp4" type="video/mp4"/></video>
-      <video class="trevo-slide" muted playsinline preload="none" data-duration="5000"><source src="trevo-3.mp4" type="video/mp4"/></video>
-      <video class="trevo-slide" muted playsinline preload="none" data-duration="5000"><source src="trevo-4.mp4" type="video/mp4"/></video>
-      <video class="trevo-slide" muted playsinline preload="none" data-duration="5000"><source src="trevo-5.mp4" type="video/mp4"/></video>
-      <video class="trevo-slide" muted playsinline preload="none" data-duration="5000"><source src="trevo-6.mp4" type="video/mp4"/></video>
-      <video class="trevo-slide" muted playsinline preload="none" data-duration="5000"><source src="trevo-7.mp4" type="video/mp4"/></video>
-      <video class="trevo-slide" muted playsinline preload="none" data-duration="5000"><source src="trevo-8.mp4" type="video/mp4"/></video>
+    <div class="trevo-videos-col">
+      <!-- Video destaque (trevo 10) com stats estilo TikTok -->
+      <div class="trevo-tiktok-wrap">
+        <video autoplay muted playsinline loop preload="auto">
+          <source src="trevo-10.mp4" type="video/mp4"/>
+        </video>
+        <div class="trevo-tiktok-stats">
+          <div class="tts-item">
+            <svg viewBox="0 0 24 24" fill="white" width="28" height="28"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+            <span>78K</span>
+          </div>
+          <div class="tts-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" width="28" height="28"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            <span>344</span>
+          </div>
+          <div class="tts-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" width="28" height="28"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><path d="M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
+            <span>570</span>
+          </div>
+          <div class="tts-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" width="28" height="28"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2" fill="white" stroke="none"/></svg>
+            <span>914</span>
+          </div>
+        </div>
+      </div>
+      <!-- Video trevo 9 -->
+      <div class="trevo-secondary-wrap">
+        <video autoplay muted playsinline loop preload="auto">
+          <source src="trevo-9.mp4" type="video/mp4"/>
+        </video>
+      </div>
     </div>
   </div>
 </section>
