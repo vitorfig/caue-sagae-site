@@ -67,9 +67,38 @@
     .clover-deco svg { width: 80px; height: 90px; }
     .clover-deco .globe { font-size: 5rem; line-height: 1; }
 
+    /* VÍDEO DESTAQUE */
+    #featured-video {
+      background: var(--dark);
+      padding: 0 2rem 3rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .featured-label {
+      font-size: .75rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+      color: rgba(255,255,255,.55); margin-bottom: 1.25rem;
+    }
+    .featured-wrap {
+      position: relative;
+      width: 100%; max-width: 360px;
+      aspect-ratio: 9/16;
+      border-radius: 1.5rem; overflow: hidden;
+      background: #000;
+      box-shadow: 0 30px 70px rgba(0,0,0,.55);
+    }
+    .featured-wrap video { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .featured-stats {
+      position: absolute; right: 14px; bottom: 60px;
+      display: flex; flex-direction: column; gap: 20px; align-items: center;
+    }
+    .fts-item { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+    .fts-item svg { filter: drop-shadow(0 1px 4px rgba(0,0,0,.9)); }
+    .fts-item span { color: #fff; font-size: .78rem; font-weight: 700; text-shadow: 0 1px 5px rgba(0,0,0,.9); }
+
     /* GRID DE VÍDEOS */
     #videos {
-      padding: 5rem 3rem 6rem;
+      padding: 2rem 3rem 6rem;
       background: var(--dark);
     }
     .videos-grid {
@@ -171,12 +200,13 @@
 
     @media (max-width: 900px) {
       .videos-grid { grid-template-columns: repeat(2, 1fr); }
-      #videos { padding: 4rem 1.5rem; }
+      #videos { padding: 2rem 1.5rem 4rem; }
     }
     @media (max-width: 500px) {
       .videos-grid { grid-template-columns: repeat(2, 1fr); gap: .75rem; }
       #hero, #cta { padding: 4rem 1.5rem; }
       #hero { padding-top: 7rem; }
+      .featured-wrap { max-width: 280px; }
     }
     @media (max-width: 800px) {
       .hamburger { display: flex; }
@@ -220,6 +250,34 @@
   <p class="hero-desc">
     Mais de 15.000 trevos de quatro folhas entregues ao redor do mundo como gesto de amor e sorte. Cada trevo carrega uma história. Clique em qualquer vídeo para assistir com som.
   </p>
+</section>
+
+<!-- VÍDEO DESTAQUE -->
+<section id="featured-video">
+  <p class="featured-label">🔥 Vídeo em destaque</p>
+  <div class="featured-wrap">
+    <video autoplay muted playsinline loop preload="auto">
+      <source src="trevo-10.mp4" type="video/mp4"/>
+    </video>
+    <div class="featured-stats">
+      <div class="fts-item">
+        <svg viewBox="0 0 24 24" fill="white" width="32" height="32"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+        <span>78K</span>
+      </div>
+      <div class="fts-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" width="32" height="32"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        <span>344</span>
+      </div>
+      <div class="fts-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" width="32" height="32"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><path d="M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
+        <span>570</span>
+      </div>
+      <div class="fts-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" width="32" height="32"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2" fill="white" stroke="none"/></svg>
+        <span>914</span>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- GRID DE VÍDEOS -->
