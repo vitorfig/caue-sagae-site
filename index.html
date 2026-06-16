@@ -698,9 +698,9 @@
       margin-bottom: 1.75rem;
     }
     .parceiros-track {
-      display: flex; align-items: center; gap: 3.5rem;
+      display: flex; align-items: center;
       width: max-content;
-      animation: marquee-parceiros 24s linear infinite;
+      animation: marquee-parceiros 28s linear infinite;
     }
     .parceiros-track:hover { animation-play-state: paused; }
     @keyframes marquee-parceiros {
@@ -708,8 +708,9 @@
       100% { transform: translateX(-50%); }
     }
     .parceiro-logo {
-      height: 48px; width: auto; max-width: 140px;
+      height: 72px; width: 180px;
       object-fit: contain; flex-shrink: 0;
+      padding: 0 2.5rem;
       filter: brightness(0) invert(1);
       opacity: .55; transition: opacity .3s;
     }
