@@ -640,7 +640,7 @@ var TRANSLATIONS = {
     pt: "Falar com Cauê", en: "Talk to Cauê", es: "Hablar con Cauê", fr: "Parler à Cauê"
   },
   "trevos.btn_back": {
-    pt: "Voltar ao site", en: "Back to site", es: "Volver al sitio", fr: "Retour au site"
+    pt: "Voltar", en: "Back", es: "Volver", fr: "Retour"
   },
   "trevos.watch": {
     pt: "▶ assistir", en: "▶ watch", es: "▶ ver", fr: "▶ regarder"
@@ -750,7 +750,7 @@ var TRANSLATIONS = {
     pt: "Agendar sessão", en: "Book a session", es: "Agendar sesión", fr: "Réserver une séance"
   },
   "meditacoes.btn_back": {
-    pt: "Voltar ao site", en: "Back to site", es: "Volver al sitio", fr: "Retour au site"
+    pt: "Voltar", en: "Back", es: "Volver", fr: "Retour"
   },
 
   // ─── LEITURA AURA PAGE ───────────────────────────────
@@ -844,7 +844,7 @@ var TRANSLATIONS = {
     pt: "Levar para minha empresa", en: "Bring to my company", es: "Llevar a mi empresa", fr: "Amener dans mon entreprise"
   },
   "empresas.btn_back": {
-    pt: "← Voltar ao site", en: "← Back to site", es: "← Volver al sitio", fr: "← Retour au site"
+    pt: "← Voltar", en: "← Back", es: "← Volver", fr: "← Retour"
   },
   "empresas.exp1_tag": {
     pt: "Experiência 1", en: "Experience 1", es: "Experiencia 1", fr: "Expérience 1"
@@ -907,7 +907,7 @@ var TRANSLATIONS = {
     pt: "Entrar em contato", en: "Get in touch", es: "Contactar", fr: "Nous contacter"
   },
   "empresas.cta_back": {
-    pt: "Voltar ao site", en: "Back to site", es: "Volver al sitio", fr: "Retour au site"
+    pt: "Voltar", en: "Back", es: "Volver", fr: "Retour"
   },
 
   // ─── LIVRO PAGE ──────────────────────────────────────
@@ -951,7 +951,7 @@ var TRANSLATIONS = {
     fr: "Avec une approche universaliste, Cauê a parcouru le monde en participant à des retraites en France, Suisse, Inde, Pérou, Espagne, Portugal, Thaïlande et Bali. Il a livré plus de 15 000 trèfles à quatre feuilles comme geste d'amour et de chance."
   },
   "livro.btn_back": {
-    pt: "Voltar ao site", en: "Back to site", es: "Volver al sitio", fr: "Retour au site"
+    pt: "Voltar", en: "Back", es: "Volver", fr: "Retour"
   },
   "livro.book_author": {
     pt: "CONTOS DE<br>CAUÊ SAGAE DE OLIVEIRA", en: "TALES BY<br>CAUÊ SAGAE DE OLIVEIRA", es: "CUENTOS DE<br>CAUÊ SAGAE DE OLIVEIRA", fr: "CONTES DE<br>CAUÊ SAGAE DE OLIVEIRA"
