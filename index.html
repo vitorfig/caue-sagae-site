@@ -685,6 +685,29 @@
     .midia-card:hover .midia-play-overlay { opacity: 1; }
     .midia-play-overlay svg { filter: drop-shadow(0 2px 8px rgba(0,0,0,.6)); }
 
+    /* ── MEDITAÇÕES CTA ─────────────────────── */
+    #meditacoes-cta { background: var(--bg-alt); }
+    .medit-cta-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 5rem; align-items: center;
+    }
+    .medit-cta-video-wrap {
+      position: relative; border-radius: 1.5rem; overflow: hidden;
+      box-shadow: 0 16px 48px rgba(0,0,0,.18);
+    }
+    .medit-cta-video-wrap video { width: 100%; display: block; }
+    .medit-sound-btn {
+      position: absolute; bottom: 14px; left: 50%; transform: translateX(-50%);
+      background: rgba(0,0,0,.6); color: #fff; border: 1px solid rgba(255,255,255,.3);
+      padding: .4rem 1.1rem; border-radius: 2rem; font-size: .8rem; font-weight: 600;
+      cursor: pointer; white-space: nowrap; transition: background .2s;
+    }
+    .medit-sound-btn.on { background: rgba(37,211,102,.5); border-color: rgba(37,211,102,.7); }
+    .medit-cta-badge { display: inline-block; background: rgba(127,176,105,.18); color: var(--mid); font-size: .75rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; padding: .35rem 1rem; border-radius: 2rem; margin-bottom: 1.25rem; }
+    .medit-cta-title { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem,2.8vw,2.4rem); color: var(--dark); line-height: 1.25; margin-bottom: 1.25rem; }
+    .medit-cta-body p { font-size: .97rem; color: var(--text); line-height: 1.8; }
+    .medit-cta-body p + p { margin-top: .85rem; }
+
     /* ── PARCEIROS (strip inside #corporativo) ── */
     .parceiros-strip {
       padding: 3rem 0 3.5rem;
@@ -709,9 +732,9 @@
       100% { transform: translateX(-50%); }
     }
     .parceiro-logo {
-      height: 150px; width: auto; max-width: 360px;
+      height: 150px; width: 260px;
       object-fit: contain; flex-shrink: 0;
-      margin: 0 4rem;
+      margin: 0 3.5rem;
       clip-path: inset(0 round .75rem);
       opacity: .85; transition: opacity .3s;
     }
@@ -861,6 +884,7 @@
       #renascimento .inner.massagem-grid,
       #wellness-experience .inner.massagem-grid,
       #corporativo .inner.corp-grid { grid-template-columns: 1fr !important; gap: 2.5rem !important; }
+      .medit-cta-grid { grid-template-columns: 1fr; gap: 2.5rem; }
       #renascimento, #wellness-experience { padding: 4rem 1.5rem !important; }
 
       /* Vídeo após texto no mobile */
@@ -1578,6 +1602,30 @@
   </div>
 </section>
 
+<!-- ══ MEDITAÇÕES CTA ══════════════════════════════════ -->
+<section id="meditacoes-cta">
+  <div class="inner medit-cta-grid">
+    <div class="medit-cta-video-wrap">
+      <video id="meditCtaVid" autoplay muted loop playsinline preload="auto">
+        <source src="med-apresentacao.mp4" type="video/mp4" />
+      </video>
+      <button class="medit-sound-btn" id="meditSoundBtn">🔇 Ativar som</button>
+    </div>
+    <div>
+      <span class="medit-cta-badge">🎁 Gratuito</span>
+      <h2 class="medit-cta-title">7 Meditações Guiadas de Presente</h2>
+      <div class="medit-cta-body">
+        <p>Para te ajudar a começar — ou aprofundar — sua prática, reuni <strong>7 meditações guiadas completamente gratuitas</strong>.</p>
+        <p>Da Meditação Inicial à Meditação da Boa Sorte, cada prática foi criada para trazer mais presença, leveza e conexão com o momento presente.</p>
+        <p>Uma oferta de coração para quem está pronto para ouvir a própria voz interior.</p>
+      </div>
+      <a href="meditacoes.html" class="btn btn-green" style="margin-top:2rem;font-size:1rem;padding:1rem 2rem;">
+        ▶ Acessar meditações gratuitas
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- ══ LIVRO ════════════════════════════════════════════ -->
 <section id="livro">
   <div class="inner livro-grid">
@@ -1791,6 +1839,24 @@
   document.addEventListener('touchmove', function (e) { if (isDragging) { moveDrag(e.touches[0].clientX); e.preventDefault(); } }, { passive: false });
   document.addEventListener('touchend', endDrag);
 })();
+</script>
+<script>
+  (function() {
+    var vid = document.getElementById('meditCtaVid');
+    var btn = document.getElementById('meditSoundBtn');
+    if (!vid || !btn) return;
+    btn.addEventListener('click', function() {
+      if (vid.muted) {
+        vid.muted = false;
+        btn.textContent = '🔊 Som ativado';
+        btn.classList.add('on');
+      } else {
+        vid.muted = true;
+        btn.textContent = '🔇 Ativar som';
+        btn.classList.remove('on');
+      }
+    });
+  })();
 </script>
 <script src="translations.js"></script>
 <script src="nav.js"></script>
