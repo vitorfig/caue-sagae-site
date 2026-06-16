@@ -61,16 +61,15 @@
     /* INTRO VIDEO */
     #intro-video { background: var(--dark); padding: 5rem 4rem; }
     .intro-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1.1fr 1fr; gap: 4rem; align-items: center; }
-    .intro-video-wrap { position: relative; border-radius: 1.5rem; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,.5); cursor: pointer; background: #000; }
-    .intro-video-wrap img { width: 100%; display: block; object-fit: cover; aspect-ratio: 16/9; transition: transform .3s; }
-    .intro-video-wrap:hover img { transform: scale(1.03); }
-    .intro-video-wrap video { width: 100%; display: none; }
-    .intro-video-wrap.playing img { display: none; }
-    .intro-video-wrap.playing video { display: block; }
-    .intro-play-btn { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 72px; height: 72px; border-radius: 50%; background: rgba(45,80,22,.85); display: flex; align-items: center; justify-content: center; transition: transform .2s, background .2s; pointer-events: none; }
-    .intro-video-wrap:hover .intro-play-btn { transform: translate(-50%,-50%) scale(1.1); background: var(--mid); }
-    .intro-video-wrap.playing .intro-play-btn { display: none; }
-    .intro-play-btn svg { width: 28px; height: 28px; fill: white; margin-left: 4px; }
+    .intro-video-wrap { position: relative; border-radius: 1.5rem; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,.5); background: #000; }
+    .intro-video-wrap video { width: 100%; display: block; }
+    .intro-sound-btn {
+      position: absolute; bottom: 14px; left: 50%; transform: translateX(-50%);
+      background: rgba(0,0,0,.6); color: #fff; border: 1px solid rgba(255,255,255,.3);
+      padding: .4rem 1.1rem; border-radius: 2rem; font-size: .8rem; font-weight: 600;
+      cursor: pointer; white-space: nowrap; transition: background .2s;
+    }
+    .intro-sound-btn.on { background: rgba(37,211,102,.5); border-color: rgba(37,211,102,.7); }
     .intro-tag { display: inline-block; background: rgba(127,176,105,.18); color: var(--light); font-size: .72rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; padding: .35rem 1rem; border-radius: 2rem; margin-bottom: 1.25rem; }
     .intro-title { font-family: 'Playfair Display', serif; font-size: clamp(1.5rem,2.5vw,2rem); color: var(--white); line-height: 1.3; margin-bottom: 1.5rem; }
     .intro-body p { font-size: .95rem; color: rgba(255,255,255,.72); line-height: 1.85; }
@@ -163,10 +162,9 @@
 <!-- INTRO VIDEO -->
 <section id="intro-video">
   <div class="intro-grid">
-    <div class="intro-video-wrap" id="introWrap">
-      <img src="med-intro.jpg" alt="Introdução à Meditação" />
-      <video src="med-intro.mp4" controls></video>
-      <div class="intro-play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+    <div class="intro-video-wrap">
+      <video id="introVid" src="med-intro.mp4" autoplay playsinline controls></video>
+      <button class="intro-sound-btn on" id="introSoundBtn">🔊 Som ativado</button>
     </div>
     <div>
       <span class="intro-tag">Antes de começar</span>
@@ -311,7 +309,30 @@
 </a>
 
 <script>
-  document.querySelectorAll('.video-wrap, #introWrap').forEach(function(wrap) {
+  // Intro video: autoplay with sound
+  var introVid = document.getElementById('introVid');
+  var introBtn = document.getElementById('introSoundBtn');
+  introVid.muted = false;
+  introVid.play().catch(function() {
+    introVid.muted = true;
+    introBtn.textContent = '🔇 Ativar som';
+    introBtn.classList.remove('on');
+  });
+  introBtn.addEventListener('click', function() {
+    if (introVid.muted) {
+      introVid.muted = false;
+      introVid.play();
+      introBtn.textContent = '🔊 Som ativado';
+      introBtn.classList.add('on');
+    } else {
+      introVid.muted = true;
+      introBtn.textContent = '🔇 Ativar som';
+      introBtn.classList.remove('on');
+    }
+  });
+
+  // Grid meditation cards: click to play
+  document.querySelectorAll('.video-wrap').forEach(function(wrap) {
     wrap.addEventListener('click', function() {
       if (wrap.classList.contains('playing')) return;
       wrap.classList.add('playing');
