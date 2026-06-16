@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cauê Sagae | Terapias Holísticas & Meditação</title>
+  <title>Cauê Sagae | Terapeuta & Profissional de Bem-Estar</title>
   <link rel="icon" type="image/png" href="favicon.png" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <style>
@@ -482,7 +482,7 @@
     .massagem-video-wrap {
       border-radius: 1.5rem; overflow: hidden;
       box-shadow: 0 20px 50px rgba(0,0,0,.4);
-      background: #000;
+      background: #000; position: relative;
     }
     .massagem-video-wrap video {
       width: 100%; display: block;
@@ -703,6 +703,13 @@
       cursor: pointer; white-space: nowrap; transition: background .2s;
     }
     .medit-sound-btn.on { background: rgba(37,211,102,.5); border-color: rgba(37,211,102,.7); }
+    .vid-sound-btn {
+      position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%);
+      background: rgba(0,0,0,.6); color: #fff; border: 1px solid rgba(255,255,255,.3);
+      padding: .38rem 1rem; border-radius: 2rem; font-size: .78rem; font-weight: 600;
+      cursor: pointer; white-space: nowrap; transition: background .2s; z-index: 2;
+    }
+    .vid-sound-btn.on { background: rgba(37,211,102,.5); border-color: rgba(37,211,102,.7); }
     .medit-cta-badge { display: inline-block; background: rgba(127,176,105,.18); color: var(--mid); font-size: .75rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; padding: .35rem 1rem; border-radius: 2rem; margin-bottom: 1.25rem; }
     .medit-cta-title { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem,2.8vw,2.4rem); color: var(--dark); line-height: 1.25; margin-bottom: 1.25rem; }
     .medit-cta-body p { font-size: .97rem; color: var(--text); line-height: 1.8; }
@@ -1003,6 +1010,7 @@
         <video autoplay muted playsinline loop preload="auto">
           <source src="trevo-10.mp4" type="video/mp4"/>
         </video>
+        <button class="vid-sound-btn">🔇 Ativar som</button>
         <div class="trevo-tiktok-stats">
           <div class="tts-item">
             <svg viewBox="0 0 24 24" fill="white" width="28" height="28"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
@@ -1096,26 +1104,6 @@
               <span class="curso-buy-lbl">Comprar</span>
             </a>
             <a href="meditacao-rosas.html" class="curso-more"><span class="curso-more-lbl">Saber mais →</span></a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Palestra Amor e Sorte -->
-      <div class="curso-card">
-        <div class="curso-visual" style="background:linear-gradient(135deg,#b03060,#7a1840);">
-          <span class="curso-emoji">❤️🍀</span>
-        </div>
-        <div class="curso-body">
-          <span class="curso-category curso-cat-palestra">Palestra</span>
-          <h3 class="curso-title curso-palestra-title">Amor e Sorte</h3>
-          <p class="curso-desc curso-palestra-desc">Como amor e sorte se entrelaçam — a história do Trevo do Amor e as lições que ele trouxe.</p>
-          <span class="curso-price curso-palestra-price">R$ 47</span>
-          <div class="curso-btns">
-            <a href="https://wa.me/5551999433373?text=Olá%20Cauê!%20Quero%20comprar%20a%20Palestra%20Amor%20e%20Sorte." target="_blank" class="curso-buy">
-              <svg viewBox="0 0 24 24" width="13" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-              <span class="curso-buy-lbl">Comprar</span>
-            </a>
-            <a href="amor-sorte.html" class="curso-more"><span class="curso-more-lbl">Saber mais →</span></a>
           </div>
         </div>
       </div>
@@ -1224,6 +1212,7 @@
         <video autoplay muted loop playsinline preload="none">
           <source src="meditacao-rosas.mp4" type="video/mp4" />
         </video>
+        <button class="vid-sound-btn">🔇 Ativar som</button>
       </div>
       <div>
         <div style="display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;margin-bottom:1rem;">
@@ -1273,6 +1262,7 @@
         <video autoplay muted loop playsinline preload="none">
           <source src="massagem.mp4" type="video/mp4" />
         </video>
+        <button class="vid-sound-btn">🔇 Ativar som</button>
       </div>
     </div>
 
@@ -1286,6 +1276,7 @@
       <video autoplay muted loop playsinline preload="none">
         <source src="renascimento.mp4" type="video/mp4" />
       </video>
+      <button class="vid-sound-btn">🔇 Ativar som</button>
     </div>
     <div>
       <div style="display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;margin-bottom:1rem;">
@@ -1357,6 +1348,7 @@
       <video autoplay muted loop playsinline preload="none">
         <source src="wellness-experience.mp4" type="video/mp4" />
       </video>
+      <button class="vid-sound-btn">🔇 Ativar som</button>
     </div>
   </div>
 </section>
@@ -1368,6 +1360,7 @@
       <video autoplay muted loop playsinline preload="none">
         <source src="corporativo.mp4" type="video/mp4" />
       </video>
+      <button class="vid-sound-btn">🔇 Ativar som</button>
     </div>
     <div>
       <div style="display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;margin-bottom:1rem;">
@@ -1467,17 +1460,11 @@
         <div class="pr-dur" style="color:var(--muted);font-style:italic;">Personalizado</div>
         <div class="pr-price">R$ 97</div>
       </div>
-      <div class="price-row">
+      <div class="price-row" style="border-bottom:none;">
         <div class="pr-name"><span class="pr-icon">💡</span> Aula de Intuição na Prática</div>
         <div class="pr-type">Individual / Grupo</div>
         <div class="pr-dur" style="color:var(--muted);font-style:italic;">Personalizado</div>
         <div class="pr-price">R$ 97</div>
-      </div>
-      <div class="price-row" style="border-bottom:none;">
-        <div class="pr-name"><span class="pr-icon">❤️</span> Palestra Amor e Sorte</div>
-        <div class="pr-type">Corporativo / Grupo</div>
-        <div class="pr-dur" style="color:var(--muted);font-style:italic;">Palestra</div>
-        <div class="pr-price">R$ 47</div>
       </div>
 
     </div>
@@ -1863,6 +1850,31 @@
     modal.addEventListener('click', function(e) { if (e.target === modal) window.closeMidiaModal(); });
     document.addEventListener('keydown', function(e) { if (e.key === 'Escape') window.closeMidiaModal(); });
   });
+</script>
+<script>
+  /* Sound toggle for all .vid-sound-btn buttons */
+  (function() {
+    document.querySelectorAll('.vid-sound-btn').forEach(function(btn) {
+      var vid = btn.parentElement ? btn.parentElement.querySelector('video') : null;
+      if (!vid) return;
+      btn.addEventListener('click', function() {
+        if (vid.muted) {
+          vid.muted = false;
+          vid.play().catch(function() {
+            vid.muted = true;
+            btn.textContent = '🔇 Ativar som';
+            btn.classList.remove('on');
+          });
+          btn.textContent = '🔊 Som ativado';
+          btn.classList.add('on');
+        } else {
+          vid.muted = true;
+          btn.textContent = '🔇 Ativar som';
+          btn.classList.remove('on');
+        }
+      });
+    });
+  })();
 </script>
 <script src="translations.js"></script>
 <script src="nav.js"></script>

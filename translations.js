@@ -541,9 +541,6 @@ var TRANSLATIONS = {
   "svc.intuicao": {
     pt: "Aula de Intuição na Prática", en: "Intuition in Practice Class", es: "Clase de Intuición en la Práctica", fr: "Cours d'Intuition en Pratique"
   },
-  "svc.palestra": {
-    pt: "Palestra Amor e Sorte", en: "Love & Luck Lecture", es: "Charla Amor y Suerte", fr: "Conférence Amour et Chance"
-  },
   "svc.meditacao.sub": {
     pt: "níveis 1, 2 e 3", en: "levels 1, 2 and 3", es: "niveles 1, 2 y 3", fr: "niveaux 1, 2 et 3"
   },
@@ -554,9 +551,6 @@ var TRANSLATIONS = {
   },
   "price.intuicao": {
     pt: "R$ 97", en: "€ 18", es: "€ 18", fr: "€ 18"
-  },
-  "price.palestra": {
-    pt: "R$ 47", en: "€ 9", es: "€ 9", fr: "€ 9"
   },
   "price.aura": {
     pt: "R$ 100 – R$ 400", en: "€ 20 – € 70", es: "€ 20 – € 70", fr: "€ 20 – € 70"
@@ -959,10 +953,10 @@ var TRANSLATIONS = {
 
   // ─── PAGE TITLES ─────────────────────────────────────
   "title.index": {
-    pt: "Cauê Sagae — Terapeuta & Professor de Meditação das Rosas",
-    en: "Cauê Sagae — Therapist & Rose Meditation Teacher",
-    es: "Cauê Sagae — Terapeuta y Profesor de Meditación de las Rosas",
-    fr: "Cauê Sagae — Thérapeute & Professeur de Méditation des Roses"
+    pt: "Cauê Sagae | Terapeuta & Profissional de Bem-Estar",
+    en: "Cauê Sagae | Therapist & Wellness Professional",
+    es: "Cauê Sagae | Terapeuta y Profesional de Bienestar",
+    fr: "Cauê Sagae | Thérapeute & Professionnel du Bien-Être"
   },
   "title.trevos": {
     pt: "Trevo do Amor pelo Mundo — Cauê Sagae",
@@ -1087,7 +1081,6 @@ var TRANSLATIONS = {
   "cursos.buy": { pt: "Comprar", en: "Buy", es: "Comprar", fr: "Acheter" },
   "cursos.more": { pt: "Saber mais →", en: "Learn more →", es: "Saber más →", fr: "En savoir plus →" },
   "cursos.cat.medit": { pt: "Meditação", en: "Meditation", es: "Meditación", fr: "Méditation" },
-  "cursos.cat.palestra": { pt: "Palestra", en: "Lecture", es: "Charla", fr: "Conférence" },
   "cursos.cat.ritual": { pt: "Ritual", en: "Ritual", es: "Ritual", fr: "Rituel" },
   "cursos.cat.curso": { pt: "Curso", en: "Course", es: "Curso", fr: "Cours" },
   "cursos.lv1": { pt: "Nível 1", en: "Level 1", es: "Nivel 1", fr: "Niveau 1" },
@@ -1111,12 +1104,6 @@ var TRANSLATIONS = {
     es: "Acuerdos espirituales, lazos energéticos y creación consciente de realidad.",
     fr: "Accords spirituels, liens énergétiques et création consciente de la réalité."
   },
-  "cursos.palestra.desc": {
-    pt: "Como amor e sorte se entrelaçam — a história do Trevo do Amor e as lições que ele trouxe.",
-    en: "How love and luck intertwine — the story of the Love Clover and the lessons it brought.",
-    es: "Cómo el amor y la suerte se entrelazan — la historia del Trébol del Amor y sus lecciones.",
-    fr: "Comment l'amour et la chance s'entrelacent — l'histoire du Trèfle de l'Amour et ses leçons."
-  },
   "cursos.ritual.desc": {
     pt: "Liberte-se de laços e energias que drenam sua vitalidade e bloqueiam seu avanço.",
     en: "Free yourself from ties and energies that drain your vitality and block your progress.",
@@ -1132,9 +1119,6 @@ var TRANSLATIONS = {
   "cursos.medit.title": {
     pt: "Meditação das Rosas", en: "Rose Meditation", es: "Meditación de las Rosas", fr: "Méditation des Roses"
   },
-  "cursos.palestra.title": {
-    pt: "Amor e Sorte", en: "Love & Luck", es: "Amor y Suerte", fr: "Amour et Chance"
-  },
   "cursos.ritual.title": {
     pt: "Ritual de Corte de Energia", en: "Energy Cutting Ritual", es: "Ritual de Corte de Energía", fr: "Rituel de Coupure d'Énergie"
   },
@@ -1143,9 +1127,6 @@ var TRANSLATIONS = {
   },
   "cursos.medit.price": {
     pt: "R$ 150", en: "€ 30", es: "€ 30", fr: "€ 30"
-  },
-  "cursos.palestra.price": {
-    pt: "R$ 47", en: "€ 9", es: "€ 9", fr: "€ 9"
   },
   "cursos.ritual.price": {
     pt: "R$ 97", en: "€ 18", es: "€ 18", fr: "€ 18"
@@ -1159,5 +1140,255 @@ var TRANSLATIONS = {
   },
   "btn.conhecer_mais": {
     pt: "Conhecer mais →", en: "Learn more →", es: "Conocer más →", fr: "En savoir plus →"
-  }
+  },
+
+  // ─── INDEX: PARCEIROS & MEDITAÇÕES CTA ──────────────
+  "corp.parceiros_label": {
+    pt: "Clientes & Parceiros", en: "Clients & Partners", es: "Clientes & Socios", fr: "Clients & Partenaires"
+  },
+  "medit_cta.badge": {
+    pt: "🎁 Gratuito", en: "🎁 Free", es: "🎁 Gratuito", fr: "🎁 Gratuit"
+  },
+  "medit_cta.title": {
+    pt: "7 Meditações Guiadas Gratuitas de Presente",
+    en: "7 Free Guided Meditations as a Gift",
+    es: "7 Meditaciones Guiadas Gratuitas de Regalo",
+    fr: "7 Méditations Guidées Gratuites en Cadeau"
+  },
+  "medit_cta.p1": {
+    pt: 'Para te ajudar a começar ou aprofundar sua prática, reuni <strong>7 meditações guiadas completamente gratuitas</strong>.',
+    en: 'To help you start or deepen your practice, I\'ve gathered <strong>7 completely free guided meditations</strong>.',
+    es: 'Para ayudarte a comenzar o profundizar tu práctica, reuní <strong>7 meditaciones guiadas completamente gratuitas</strong>.',
+    fr: 'Pour vous aider à commencer ou approfondir votre pratique, j\'ai réuni <strong>7 méditations guidées complètement gratuites</strong>.'
+  },
+  "medit_cta.p2": {
+    pt: "Da Meditação Inicial à Meditação da Boa Sorte, cada prática foi criada para trazer mais presença, leveza e conexão com o momento presente.",
+    en: "From the Initial Meditation to the Good Luck Meditation, each practice was created to bring more presence, lightness and connection with the present moment.",
+    es: "Desde la Meditación Inicial hasta la Meditación de la Buena Suerte, cada práctica fue creada para traer más presencia, ligereza y conexión con el momento presente.",
+    fr: "De la Méditation Initiale à la Méditation de la Bonne Chance, chaque pratique a été créée pour apporter plus de présence, de légèreté et de connexion au moment présent."
+  },
+  "medit_cta.p3": {
+    pt: "Uma oferta de coração para quem está pronto para ouvir a própria voz interior.",
+    en: "A heartfelt gift for those ready to listen to their own inner voice.",
+    es: "Un regalo de corazón para quien está listo para escuchar su propia voz interior.",
+    fr: "Un cadeau du cœur pour ceux qui sont prêts à écouter leur propre voix intérieure."
+  },
+  "medit_cta.btn": {
+    pt: "▶ Acessar meditações gratuitas", en: "▶ Access free meditations",
+    es: "▶ Acceder a meditaciones gratuitas", fr: "▶ Accéder aux méditations gratuites"
+  },
+
+  // ─── MEDITAÇÕES PAGE: INTRO VIDEO ───────────────────
+  "meditacoes.intro_tag": {
+    pt: "Antes de começar", en: "Before you start", es: "Antes de comenzar", fr: "Avant de commencer"
+  },
+  "meditacoes.intro_title": {
+    pt: "O objetivo não é parar a mente: é observá-la",
+    en: "The goal is not to stop the mind: it is to observe it",
+    es: "El objetivo no es detener la mente: es observarla",
+    fr: "L'objectif n'est pas d'arrêter l'esprit : c'est de l'observer"
+  },
+  "meditacoes.intro_p1": {
+    pt: "Quando um pensamento chega e traz um insight, algo produtivo para você nesse momento, deixe ele correr. Absorva o que ele tem a dizer. Depois, dê tchau e deixa ir.",
+    en: "When a thought arrives and brings an insight, something productive for you in that moment, let it run. Absorb what it has to say. Then say goodbye and let it go.",
+    es: "Cuando llega un pensamiento que trae un insight, algo productivo para ti en ese momento, déjalo fluir. Absorbe lo que tiene que decir. Luego di adiós y déjalo ir.",
+    fr: "Quand une pensée arrive et apporte un insight, quelque chose de productif pour vous en ce moment, laissez-la venir. Absorbez ce qu'elle a à dire. Puis dites au revoir et laissez-la partir."
+  },
+  "meditacoes.intro_p2": {
+    pt: 'Quando vier um pensamento que não te serve, pare ele. <strong>Diga não. Tchau, pensamento.</strong> E deixa outro vir.',
+    en: 'When a thought comes that doesn\'t serve you, stop it. <strong>Say no. Goodbye, thought.</strong> And let another come.',
+    es: 'Cuando venga un pensamiento que no te sirve, detente. <strong>Di que no. Adiós, pensamiento.</strong> Y deja que venga otro.',
+    fr: 'Quand vient une pensée qui ne vous sert pas, arrêtez-la. <strong>Dites non. Au revoir, pensée.</strong> Et laissez-en venir une autre.'
+  },
+  "meditacoes.intro_p3": {
+    pt: 'Você não controla o que chega na mente. Mas pode decidir se vai continuar alimentando aquele pensamento ou não. <strong>Esse é o seu empoderamento.</strong>',
+    en: 'You don\'t control what enters your mind. But you can decide whether to keep feeding that thought or not. <strong>That is your empowerment.</strong>',
+    es: 'No controlas lo que llega a tu mente. Pero puedes decidir si vas a seguir alimentando ese pensamiento o no. <strong>Ese es tu empoderamiento.</strong>',
+    fr: 'Vous ne contrôlez pas ce qui entre dans votre esprit. Mais vous pouvez décider si vous allez continuer à nourrir cette pensée ou non. <strong>C\'est votre empowerment.</strong>'
+  },
+  "meditacoes.intro_p4": {
+    pt: "Nessa observação, de um pensamento e outro, você vai encontrar momentos de silêncio e de vazio. Não forçados. Simplesmente naturais.",
+    en: "In this observation, from one thought to another, you will find moments of silence and emptiness. Not forced. Simply natural.",
+    es: "En esta observación, de un pensamiento a otro, encontrarás momentos de silencio y vacío. No forzados. Simplemente naturales.",
+    fr: "Dans cette observation, d'une pensée à l'autre, vous trouverez des moments de silence et de vide. Pas forcés. Simplement naturels."
+  },
+
+  // ─── MEDITAÇÕES PAGE: VIDEO TITLES ──────────────────
+  "meditacoes.vt1": { pt: "Meditação Inicial", en: "Initial Meditation", es: "Meditación Inicial", fr: "Méditation Initiale" },
+  "meditacoes.vt2": { pt: "Meditação de 7 Minutos", en: "7-Minute Meditation", es: "Meditación de 7 Minutos", fr: "Méditation de 7 Minutes" },
+  "meditacoes.vt3": { pt: "Meditação de 6 Minutos", en: "6-Minute Meditation", es: "Meditación de 6 Minutos", fr: "Méditation de 6 Minutes" },
+  "meditacoes.vt4": { pt: "Meditação de 10 Minutos", en: "10-Minute Meditation", es: "Meditación de 10 Minutos", fr: "Méditation de 10 Minutes" },
+  "meditacoes.vt5": { pt: "Meditação da Respiração", en: "Breathing Meditation", es: "Meditación de la Respiración", fr: "Méditation de la Respiration" },
+  "meditacoes.vt6": { pt: "Meditação Ballon", en: "Balloon Meditation", es: "Meditación Ballon", fr: "Méditation Ballon" },
+  "meditacoes.vt7": { pt: "Meditação da Boa Sorte", en: "Good Luck Meditation", es: "Meditación de la Buena Suerte", fr: "Méditation de la Bonne Chance" },
+
+  // ─── EMPRESAS PAGE: EXP BLOCKS ───────────────────────
+  "empresas.exp2_p1": {
+    pt: 'Janeiro Branco é sobre cuidar da saúde mental e emocional. Mas, na prática, é sobre <strong>pausar, respirar e voltar para o presente</strong>, mesmo dentro do ambiente de trabalho.',
+    en: 'White January is about caring for mental and emotional health. But in practice, it is about <strong>pausing, breathing and returning to the present</strong>, even within the work environment.',
+    es: 'Enero Blanco es sobre cuidar la salud mental y emocional. Pero en la práctica, es sobre <strong>pausar, respirar y volver al presente</strong>, incluso dentro del entorno laboral.',
+    fr: 'Janvier Blanc consiste à prendre soin de la santé mentale et émotionnelle. Mais en pratique, c\'est <strong>faire une pause, respirer et revenir au présent</strong>, même au sein de l\'environnement de travail.'
+  },
+  "empresas.exp2_p2": {
+    pt: "Conduzi uma vivência de 1 hora com colaboradores, unindo:",
+    en: "I led a 1-hour experience with employees, combining:",
+    es: "Conduje una vivencia de 1 hora con colaboradores, uniendo:",
+    fr: "J'ai conduit une expérience d'1 heure avec des collaborateurs, combinant :"
+  },
+  "empresas.exp2_li1": { pt: "Meditação", en: "Meditation", es: "Meditación", fr: "Méditation" },
+  "empresas.exp2_li2": { pt: "Vivências corporais", en: "Body experiences", es: "Vivencias corporales", fr: "Expériences corporelles" },
+  "empresas.exp2_li3": { pt: "Integração em grupo", en: "Group integration", es: "Integración en grupo", fr: "Intégration en groupe" },
+  "empresas.exp2_li4": { pt: "Histórias que tocam", en: "Touching stories", es: "Historias que tocan", fr: "Histoires qui touchent" },
+  "empresas.exp2_li5": {
+    pt: "Reflexão sobre bem-estar, mente e corpo no dia a dia profissional",
+    en: "Reflection on well-being, mind and body in professional daily life",
+    es: "Reflexión sobre el bienestar, la mente y el cuerpo en el día a día profesional",
+    fr: "Réflexion sur le bien-être, le mental et le corps au quotidien professionnel"
+  },
+  "empresas.exp2_p3": {
+    pt: '<strong>O resultado?</strong> Mais presença, mais conexão entre a equipe e um espaço real de cuidado.',
+    en: '<strong>The result?</strong> More presence, more connection within the team and a real space of care.',
+    es: '<strong>¿El resultado?</strong> Más presencia, más conexión entre el equipo y un espacio real de cuidado.',
+    fr: '<strong>Le résultat ?</strong> Plus de présence, plus de connexion au sein de l\'équipe et un espace réel de soin.'
+  },
+  "empresas.exp2_p4": {
+    pt: 'Se você sente que sua empresa precisa desacelerar para render melhor, ou quer oferecer uma experiência de bem-estar verdadeira para seus colaboradores, <strong>me chama.</strong>',
+    en: 'If you feel your company needs to slow down to perform better, or want to offer a genuine well-being experience to your employees, <strong>reach out.</strong>',
+    es: 'Si sientes que tu empresa necesita desacelerar para rendir mejor, o quieres ofrecer una experiencia de bienestar genuina a tus colaboradores, <strong>escríbeme.</strong>',
+    fr: 'Si vous sentez que votre entreprise a besoin de ralentir pour mieux performer, ou souhaitez offrir une véritable expérience de bien-être à vos collaborateurs, <strong>contactez-moi.</strong>'
+  },
+  "empresas.exp2_contact": {
+    pt: '<strong>📲 51 99943-3373</strong><br/>🌱 Vivências para empresas | Saúde mental | Bem-estar | Meditação',
+    en: '<strong>📲 51 99943-3373</strong><br/>🌱 Corporate experiences | Mental health | Well-being | Meditation',
+    es: '<strong>📲 51 99943-3373</strong><br/>🌱 Vivencias para empresas | Salud mental | Bienestar | Meditación',
+    fr: '<strong>📲 51 99943-3373</strong><br/>🌱 Expériences en entreprise | Santé mentale | Bien-être | Méditation'
+  },
+  "empresas.exp3_tag": {
+    pt: "Experiência 3 · Wellness Experience", en: "Experience 3 · Wellness Experience",
+    es: "Experiencia 3 · Wellness Experience", fr: "Expérience 3 · Wellness Experience"
+  },
+  "empresas.exp3_title": {
+    pt: "Bem-estar que transforma equipes", en: "Well-being that transforms teams",
+    es: "Bienestar que transforma equipos", fr: "Bien-être qui transforme les équipes"
+  },
+  "empresas.exp3_p1": {
+    pt: "Levamos experiências de bem-estar diretamente para dentro das empresas, criando momentos reais de pausa, presença e reconexão.",
+    en: "We bring well-being experiences directly into companies, creating real moments of pause, presence and reconnection.",
+    es: "Llevamos experiencias de bienestar directamente al interior de las empresas, creando momentos reales de pausa, presencia y reconexión.",
+    fr: "Nous apportons des expériences de bien-être directement au sein des entreprises, créant de vrais moments de pause, de présence et de reconnexion."
+  },
+  "empresas.exp3_li1": { pt: "Práticas de relaxamento", en: "Relaxation practices", es: "Prácticas de relajación", fr: "Pratiques de relaxation" },
+  "empresas.exp3_li2": { pt: "Momentos de autocuidado", en: "Moments of self-care", es: "Momentos de autocuidado", fr: "Moments d'auto-soin" },
+  "empresas.exp3_li3": {
+    pt: "Reconexão com o corpo, a mente e a intuição",
+    en: "Reconnection with body, mind and intuition",
+    es: "Reconexión con el cuerpo, la mente y la intuición",
+    fr: "Reconnexion avec le corps, l'esprit et l'intuition"
+  },
+  "empresas.exp3_p2": {
+    pt: "Porque quando as pessoas se sentem bem, elas florescem, e toda a empresa cresce junto.",
+    en: "Because when people feel good, they flourish, and the whole company grows together.",
+    es: "Porque cuando las personas se sienten bien, florecen y toda la empresa crece junto.",
+    fr: "Parce que quand les gens se sentent bien, ils s'épanouissent, et toute l'entreprise grandit ensemble."
+  },
+  "empresas.exp3_p3": {
+    pt: 'Quer levar o <strong>Wellness Experience</strong> para a sua equipe? Vamos criar uma experiência sob medida para o seu grupo.',
+    en: 'Want to bring the <strong>Wellness Experience</strong> to your team? Let\'s create a tailored experience for your group.',
+    es: '¿Quieres llevar el <strong>Wellness Experience</strong> a tu equipo? Vamos a crear una experiencia a medida para tu grupo.',
+    fr: 'Vous voulez apporter le <strong>Wellness Experience</strong> à votre équipe ? Créons une expérience sur mesure pour votre groupe.'
+  },
+  "empresas.exp3_contact": {
+    pt: '📩 <strong>Quer levar essa experiência para a sua empresa?</strong><br/>Entre em contato: <strong>51 99943-3373</strong>',
+    en: '📩 <strong>Want to bring this experience to your company?</strong><br/>Contact us: <strong>51 99943-3373</strong>',
+    es: '📩 <strong>¿Quieres llevar esta experiencia a tu empresa?</strong><br/>Contáctanos: <strong>51 99943-3373</strong>',
+    fr: '📩 <strong>Vous voulez apporter cette expérience à votre entreprise ?</strong><br/>Contactez-nous : <strong>51 99943-3373</strong>'
+  },
+  "empresas.allianz_tag": {
+    pt: "Vivência · Allianz Parque", en: "Experience · Allianz Parque", es: "Vivencia · Allianz Parque", fr: "Expérience · Allianz Parque"
+  },
+  "empresas.allianz_title": {
+    pt: "O poder de se reconectar com a própria força",
+    en: "The power of reconnecting with your own strength",
+    es: "El poder de reconectarse con la propia fuerza",
+    fr: "Le pouvoir de se reconnecter à sa propre force"
+  },
+  "empresas.allianz_p1": {
+    pt: 'Levar essa vivência para dentro do <strong>Allianz Parque</strong> me lembrou do poder que cada pessoa tem quando se reconecta com a própria força.',
+    en: 'Bringing this experience inside <strong>Allianz Parque</strong> reminded me of the power each person has when they reconnect with their own strength.',
+    es: 'Llevar esta vivencia al interior de <strong>Allianz Parque</strong> me recordó el poder que tiene cada persona cuando se reconecta con su propia fuerza.',
+    fr: 'Amener cette expérience au sein de <strong>Allianz Parque</strong> m\'a rappelé le pouvoir que chaque personne possède lorsqu\'elle se reconnecte à sa propre force.'
+  },
+  "empresas.allianz_li1": { pt: "Desperta presença e foco", en: "Awakens presence and focus", es: "Despierta presencia y enfoque", fr: "Éveille la présence et la concentration" },
+  "empresas.allianz_li2": { pt: "Reduz estresse e ansiedade", en: "Reduces stress and anxiety", es: "Reduce el estrés y la ansiedad", fr: "Réduit le stress et l'anxiété" },
+  "empresas.allianz_li3": {
+    pt: "Fortalece o propósito individual e coletivo",
+    en: "Strengthens individual and collective purpose",
+    es: "Fortalece el propósito individual y colectivo",
+    fr: "Renforce le sens individuel et collectif"
+  },
+  "empresas.allianz_li4": {
+    pt: "Melhora relações, comunicação e colaboração",
+    en: "Improves relationships, communication and collaboration",
+    es: "Mejora relaciones, comunicación y colaboración",
+    fr: "Améliore les relations, la communication et la collaboration"
+  },
+  "empresas.allianz_li5": {
+    pt: "Aumenta motivação, criatividade e bem-estar",
+    en: "Increases motivation, creativity and well-being",
+    es: "Aumenta la motivación, la creatividad y el bienestar",
+    fr: "Augmente la motivation, la créativité et le bien-être"
+  },
+  "empresas.allianz_p2": {
+    pt: "Quando as pessoas se sentem bem, as empresas crescem junto.",
+    en: "When people feel good, companies grow together.",
+    es: "Cuando las personas se sienten bien, las empresas crecen juntas.",
+    fr: "Quand les gens se sentent bien, les entreprises grandissent ensemble."
+  },
+  "empresas.allianz_contact": {
+    pt: '📍 <strong>Disponível para empresas no formato presencial ou online.</strong><br/>Interessou em levar para sua equipe? Me chama: <strong>51 99943-3373</strong>',
+    en: '📍 <strong>Available for companies in person or online.</strong><br/>Interested in bringing it to your team? Contact me: <strong>51 99943-3373</strong>',
+    es: '📍 <strong>Disponible para empresas en formato presencial u online.</strong><br/>¿Te interesa llevarlo a tu equipo? Escríbeme: <strong>51 99943-3373</strong>',
+    fr: '📍 <strong>Disponible pour les entreprises en présentiel ou en ligne.</strong><br/>Intéressé à l\'amener à votre équipe ? Contactez-moi : <strong>51 99943-3373</strong>'
+  },
+  "empresas.kontrast_tag": {
+    pt: "Vivência · Kontrast Club", en: "Experience · Kontrast Club", es: "Vivencia · Kontrast Club", fr: "Expérience · Kontrast Club"
+  },
+  "empresas.kontrast_title": {
+    pt: "Conexão humana que transforma ambientes",
+    en: "Human connection that transforms environments",
+    es: "Conexión humana que transforma ambientes",
+    fr: "Connexion humaine qui transforme les environnements"
+  },
+  "empresas.kontrast_p1": {
+    pt: 'Tive a alegria de conduzir uma vivência de integração com a equipe da <strong>Kontrast Club</strong>, um dos lugares mais especiais que já conheci em São Paulo.',
+    en: 'I had the joy of leading an integration experience with the <strong>Kontrast Club</strong> team, one of the most special places I have ever known in São Paulo.',
+    es: 'Tuve la alegría de conducir una vivencia de integración con el equipo de <strong>Kontrast Club</strong>, uno de los lugares más especiales que conocí en São Paulo.',
+    fr: 'J\'ai eu la joie de conduire une expérience d\'intégration avec l\'équipe du <strong>Kontrast Club</strong>, l\'un des endroits les plus spéciaux que j\'aie jamais connus à São Paulo.'
+  },
+  "empresas.kontrast_p2": {
+    pt: "Momentos como esse me lembram o quanto a conexão humana transforma ambientes, fortalece equipes e aproxima as pessoas de si mesmas e umas das outras.",
+    en: "Moments like this remind me how much human connection transforms environments, strengthens teams and brings people closer to themselves and to each other.",
+    es: "Momentos como este me recuerdan cuánto la conexión humana transforma ambientes, fortalece equipos y acerca a las personas de sí mismas y entre ellas.",
+    fr: "Ces moments me rappellent combien la connexion humaine transforme les environnements, renforce les équipes et rapproche les gens d'eux-mêmes et les uns des autres."
+  },
+  "empresas.kontrast_p3": {
+    pt: "Através de práticas de presença, escuta e integração, criamos juntos um espaço de mais leveza, confiança e pertencimento.",
+    en: "Through practices of presence, listening and integration, we created together a space of more lightness, trust and belonging.",
+    es: "A través de prácticas de presencia, escucha e integración, creamos juntos un espacio de más ligereza, confianza y pertenencia.",
+    fr: "À travers des pratiques de présence, d'écoute et d'intégration, nous avons créé ensemble un espace de plus de légèreté, de confiance et d'appartenance."
+  },
+  "empresas.kontrast_p4": {
+    pt: "Sou muito grato por poder levar esse trabalho para empresas, equipes e grupos que desejam cultivar relações mais saudáveis e humanas.",
+    en: "I am very grateful to be able to bring this work to companies, teams and groups that wish to cultivate healthier and more human relationships.",
+    es: "Estoy muy agradecido por poder llevar este trabajo a empresas, equipos y grupos que desean cultivar relaciones más saludables y humanas.",
+    fr: "Je suis très reconnaissant de pouvoir apporter ce travail aux entreprises, équipes et groupes qui souhaitent cultiver des relations plus saines et plus humaines."
+  },
+  "empresas.kontrast_li1": { pt: "Mais conexão", en: "More connection", es: "Más conexión", fr: "Plus de connexion" },
+  "empresas.kontrast_li2": { pt: "Mais presença", en: "More presence", es: "Más presencia", fr: "Plus de présence" },
+  "empresas.kontrast_li3": { pt: "Mais humanidade", en: "More humanity", es: "Más humanidad", fr: "Plus d'humanité" },
+  "empresas.kontrast_li4": {
+    pt: "Terapia de Contraste (sauna e gelo)", en: "Contrast Therapy (sauna and ice)",
+    es: "Terapia de Contraste (sauna y hielo)", fr: "Thérapie de Contraste (sauna et glace)"
+  },
+  "empresas.kontrast_li5": { pt: "Breathwork", en: "Breathwork", es: "Breathwork", fr: "Breathwork" }
 };

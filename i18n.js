@@ -278,6 +278,20 @@
       set(qs('.btn-wa', corp), t('corp.btn_wa'));
       var corpMore = qsa('a.btn:not(.btn-wa)', corp);
       set(corpMore[corpMore.length - 1], t('btn.conhecer_mais'));
+      set(qs('.parceiros-label', corp), t('corp.parceiros_label'));
+    }
+
+    // ── Meditações CTA
+    var mCta = qs('#meditacoes-cta');
+    if (mCta) {
+      set(qs('.medit-cta-badge', mCta), t('medit_cta.badge'));
+      set(qs('.medit-cta-title', mCta), t('medit_cta.title'));
+      var mCtaPs = qsa('.medit-cta-body p', mCta);
+      set(mCtaPs[0], t('medit_cta.p1'), true);
+      set(mCtaPs[1], t('medit_cta.p2'));
+      set(mCtaPs[2], t('medit_cta.p3'));
+      var mCtaBtn = qs('a.btn-green', mCta);
+      if (mCtaBtn) mCtaBtn.textContent = t('medit_cta.btn') || mCtaBtn.textContent;
     }
 
     // ── Serviços / Pricing
@@ -289,11 +303,11 @@
     set(qs('.ph-price'), t('pricing.col_price'));
     set(qs('#servicos .services-cta .btn-wa'), t('pricing.btn'));
 
-    var svcKeys   = ['svc.aura','svc.massagem','svc.meditacao','svc.rebirthing','svc.wellness','svc.ritual','svc.intuicao','svc.palestra'];
-    var typeKeys  = ['pricing.type_individual','pricing.type_individual','pricing.type_ind_group','pricing.type_individual','pricing.type_ind_group','pricing.type_individual','pricing.type_ind_group','pricing.type_corp_group'];
-    var durFixed  = ['1h','1h','5h','1h','3h',null,null,null];
-    var durKeys   = [null,null,null,null,null,'pricing.personalized','pricing.personalized','pricing.lecture'];
-    var priceKeys = ['price.aura','price.massagem','price.meditacao','price.rebirthing','price.wellness','price.ritual','price.intuicao','price.palestra'];
+    var svcKeys   = ['svc.aura','svc.massagem','svc.meditacao','svc.rebirthing','svc.wellness','svc.ritual','svc.intuicao'];
+    var typeKeys  = ['pricing.type_individual','pricing.type_individual','pricing.type_ind_group','pricing.type_individual','pricing.type_ind_group','pricing.type_individual','pricing.type_ind_group'];
+    var durFixed  = ['1h','1h','5h','1h','3h',null,null];
+    var durKeys   = [null,null,null,null,null,'pricing.personalized','pricing.personalized'];
+    var priceKeys = ['price.aura','price.massagem','price.meditacao','price.rebirthing','price.wellness','price.ritual','price.intuicao'];
 
     qsa('#servicos .price-row').forEach(function (row, i) {
       var nameEl = qs('.pr-name', row);
@@ -354,24 +368,20 @@
     qsa('.curso-buy-lbl').forEach(function (el) { set(el, t('cursos.buy')); });
     qsa('.curso-more-lbl').forEach(function (el) { set(el, t('cursos.more')); });
     qsa('.curso-cat-medit').forEach(function (el) { set(el, t('cursos.cat.medit')); });
-    set(qs('.curso-cat-palestra'), t('cursos.cat.palestra'));
     set(qs('.curso-cat-ritual'),   t('cursos.cat.ritual'));
     set(qs('.curso-cat-intuicao'), t('cursos.cat.curso'));
     qsa('.curso-lv1').forEach(function (el) { set(el, t('cursos.lv1')); });
     qsa('.curso-lv2').forEach(function (el) { set(el, t('cursos.lv2')); });
     qsa('.curso-lv3').forEach(function (el) { set(el, t('cursos.lv3')); });
     qsa('.curso-medit-title').forEach(function (el) { set(el, t('cursos.medit.title')); });
-    set(qs('.curso-palestra-title'),  t('cursos.palestra.title'));
     set(qs('.curso-ritual-title'),    t('cursos.ritual.title'));
     set(qs('.curso-intuicao-title'),  t('cursos.intuicao.title'));
     set(qs('.curso-medit1-desc'),     t('cursos.medit1.desc'));
     set(qs('.curso-medit2-desc'),     t('cursos.medit2.desc'));
     set(qs('.curso-medit3-desc'),     t('cursos.medit3.desc'));
-    set(qs('.curso-palestra-desc'),   t('cursos.palestra.desc'));
     set(qs('.curso-ritual-desc'),     t('cursos.ritual.desc'));
     set(qs('.curso-intuicao-desc'),   t('cursos.intuicao.desc'));
     qsa('.curso-medit1-price,.curso-medit2-price,.curso-medit3-price').forEach(function (el) { set(el, t('cursos.medit.price')); });
-    set(qs('.curso-palestra-price'),  t('cursos.palestra.price'));
     set(qs('.curso-ritual-price'),    t('cursos.ritual.price'));
     set(qs('.curso-intuicao-price'),  t('cursos.intuicao.price'));
 
@@ -406,33 +416,52 @@
   ═══════════════════════════════════════════════════════ */
   function applyMeditacoes() {
     document.title = t('title.meditacoes') || document.title;
-    var tags = qsa('.section-tag');
-    set(tags[0], t('meditacoes.hero_tag'));
-    var titles = qsa('.section-title');
-    set(titles[0], t('meditacoes.hero_title'));
-    set(qs('.hero-desc, .section-body'), t('meditacoes.hero_desc'));
-    var vidTitles = qsa('.vid-title');
-    set(vidTitles[0], t('meditacoes.v1_title'));
-    set(vidTitles[1], t('meditacoes.v2_title'));
-    var vidDescs = qsa('.vid-desc');
-    set(vidDescs[0], t('meditacoes.v1_desc'));
-    set(vidDescs[1], t('meditacoes.v2_desc'));
-    set(tags[1], t('meditacoes.about_tag'));
-    set(titles[1], t('meditacoes.about_title'));
-    var aboutPs = qsa('.about-body p, .med-about p');
+
+    // ── Hero
+    set(qs('#hero .hero-tag'),   t('meditacoes.hero_tag'));
+    set(qs('#hero .hero-title'), t('meditacoes.hero_title'));
+    set(qs('#hero .hero-desc'),  t('meditacoes.hero_desc'));
+
+    // ── Intro video
+    set(qs('#intro-video .intro-tag'),   t('meditacoes.intro_tag'));
+    set(qs('#intro-video .intro-title'), t('meditacoes.intro_title'));
+    var introBps = qsa('#intro-video .intro-body p');
+    set(introBps[0], t('meditacoes.intro_p1'));
+    set(introBps[1], t('meditacoes.intro_p2'), true);
+    set(introBps[2], t('meditacoes.intro_p3'), true);
+    set(introBps[3], t('meditacoes.intro_p4'));
+
+    // ── Videos section
+    set(qs('#videos .section-tag'),   t('meditacoes.section_tag'));
+    set(qs('#videos .section-title'), t('meditacoes.section_title'));
+    var vTitles = qsa('.video-title');
+    set(vTitles[0], t('meditacoes.vt1'));
+    set(vTitles[1], t('meditacoes.vt2'));
+    set(vTitles[2], t('meditacoes.vt3'));
+    set(vTitles[3], t('meditacoes.vt4'));
+    set(vTitles[4], t('meditacoes.vt5'));
+    set(vTitles[5], t('meditacoes.vt6'));
+    set(vTitles[6], t('meditacoes.vt7'));
+
+    // ── Sobre meditação
+    set(qs('#sobre-medit .section-tag'), t('meditacoes.about_tag'));
+    set(qs('#sobre-medit .sobre-title'), t('meditacoes.about_title'));
+    var aboutPs = qsa('#sobre-medit .sobre-body p');
     set(aboutPs[0], t('meditacoes.about_p1'), true);
     set(aboutPs[1], t('meditacoes.about_p2'));
     set(aboutPs[2], t('meditacoes.about_p3'), true);
-    set(qs('.levels-title'), t('meditacoes.levels_title'));
-    var levItems = qsa('.level-item, .levels-list li');
-    set(levItems[0], t('meditacoes.level1'));
-    set(levItems[1], t('meditacoes.level2'));
-    set(levItems[2], t('meditacoes.level3'));
-    var ctaTitle = titles[2] || qs('.med-cta h2');
-    set(ctaTitle, t('meditacoes.cta_title'));
-    var ctaDesc = qsa('.section-body')[1] || qs('.med-cta p');
-    set(ctaDesc, t('meditacoes.cta_desc'));
-    set(qs('.cta-section .btn, .med-cta .btn'), t('meditacoes.btn_agendar'));
+    set(qs('#sobre-medit .sobre-card h3'), t('meditacoes.levels_title'));
+    var levItems = qsa('#sobre-medit .nivel-list li');
+    setLastText(levItems[0], t('meditacoes.level1'));
+    setLastText(levItems[1], t('meditacoes.level2'));
+    setLastText(levItems[2], t('meditacoes.level3'));
+
+    // ── CTA
+    set(qs('#cta .cta-title'), t('meditacoes.cta_title'));
+    set(qs('#cta .cta-desc'),  t('meditacoes.cta_desc'));
+    var ctaBtns = qsa('#cta a.btn');
+    setLastText(ctaBtns[0], t('meditacoes.btn_agendar'));
+    if (ctaBtns[1]) ctaBtns[1].textContent = t('meditacoes.btn_back') || ctaBtns[1].textContent;
   }
 
   /* ═══════════════════════════════════════════════════════
@@ -462,14 +491,110 @@
   ═══════════════════════════════════════════════════════ */
   function applyEmpresas() {
     document.title = t('title.empresas') || document.title;
-    set(qs('.section-tag'), t('empresas.hero_tag'));
-    set(qs('h1, .section-title'), t('empresas.hero_title'));
-    set(qs('.section-body, .hero-desc'), t('empresas.hero_desc'));
-    set(qs('.btn-wa'), t('empresas.btn_wa'));
-    set(qs('.btn-back'), t('empresas.btn_back'));
-    set(qs('.cta-title, .empresas-cta h2'), t('empresas.cta_title'));
-    set(qs('.cta-desc, .empresas-cta p'),   t('empresas.cta_desc'));
-    set(qs('.cta-btn, .empresas-cta .btn-wa'), t('empresas.cta_btn'));
+    set(qs('.hero-tag'),  t('empresas.hero_tag'));
+    set(qs('.hero-title'), t('empresas.hero_title'));
+    set(qs('.hero-desc'),  t('empresas.hero_desc'));
+    var heroWa = qs('#hero .btn-wa');
+    if (heroWa) heroWa.textContent = t('empresas.btn_wa') || heroWa.textContent;
+
+    // ── Exp blocks
+    var expBlocks = qsa('.exp-block');
+    var eb;
+
+    // Exp 1 (Agrivalle)
+    eb = expBlocks[0];
+    if (eb) {
+      set(qs('.exp-tag', eb),   t('empresas.exp1_tag'));
+      set(qs('.exp-title', eb), t('empresas.exp1_title'));
+      var eb1ps = qsa('.exp-body p', eb);
+      set(eb1ps[0], t('empresas.exp1_p1'), true);
+      set(eb1ps[1], t('empresas.exp1_p2'));
+      set(eb1ps[2], t('empresas.exp1_p3'));
+      set(eb1ps[3], t('empresas.exp1_p4'), true);
+      set(qs('.btn-wa', eb), t('empresas.btn_team'));
+    }
+
+    // Exp 3 (Wellness) — second block
+    eb = expBlocks[1];
+    if (eb) {
+      set(qs('.exp-tag', eb),   t('empresas.exp3_tag'));
+      set(qs('.exp-title', eb), t('empresas.exp3_title'));
+      var eb3ps = qsa('.exp-body > p', eb);
+      set(eb3ps[0], t('empresas.exp3_p1'));
+      var eb3lis = qsa('.exp-list li', eb);
+      setLastText(eb3lis[0], t('empresas.exp3_li1'));
+      setLastText(eb3lis[1], t('empresas.exp3_li2'));
+      setLastText(eb3lis[2], t('empresas.exp3_li3'));
+      set(eb3ps[1], t('empresas.exp3_p2'));
+      set(eb3ps[2], t('empresas.exp3_p3'), true);
+      set(qs('.exp-contact', eb), t('empresas.exp3_contact'), true);
+      set(qs('.btn-wa', eb), t('empresas.btn_team'));
+    }
+
+    // Exp 2 (Janeiro Branco) — third block
+    eb = expBlocks[2];
+    if (eb) {
+      set(qs('.exp-tag', eb),   t('empresas.exp2_tag'));
+      set(qs('.exp-title', eb), t('empresas.exp2_title'));
+      var eb2ps = qsa('.exp-body p', eb);
+      set(eb2ps[0], t('empresas.exp2_p1'), true);
+      set(eb2ps[1], t('empresas.exp2_p2'));
+      var eb2lis = qsa('.exp-list li', eb);
+      setLastText(eb2lis[0], t('empresas.exp2_li1'));
+      setLastText(eb2lis[1], t('empresas.exp2_li2'));
+      setLastText(eb2lis[2], t('empresas.exp2_li3'));
+      setLastText(eb2lis[3], t('empresas.exp2_li4'));
+      setLastText(eb2lis[4], t('empresas.exp2_li5'));
+      set(eb2ps[2], t('empresas.exp2_p3'), true);
+      set(eb2ps[3], t('empresas.exp2_p4'), true);
+      set(qs('.exp-contact', eb), t('empresas.exp2_contact'), true);
+      set(qs('.btn-wa', eb), t('empresas.btn_team'));
+    }
+
+    // Allianz Parque — fourth block
+    eb = expBlocks[3];
+    if (eb) {
+      set(qs('.exp-tag', eb),   t('empresas.allianz_tag'));
+      set(qs('.exp-title', eb), t('empresas.allianz_title'));
+      var ebAps = qsa('.exp-body > p', eb);
+      set(ebAps[0], t('empresas.allianz_p1'), true);
+      var ebAlis = qsa('.exp-list li', eb);
+      setLastText(ebAlis[0], t('empresas.allianz_li1'));
+      setLastText(ebAlis[1], t('empresas.allianz_li2'));
+      setLastText(ebAlis[2], t('empresas.allianz_li3'));
+      setLastText(ebAlis[3], t('empresas.allianz_li4'));
+      setLastText(ebAlis[4], t('empresas.allianz_li5'));
+      set(ebAps[1], t('empresas.allianz_p2'));
+      set(qs('.exp-contact', eb), t('empresas.allianz_contact'), true);
+      set(qs('.btn-wa', eb), t('empresas.btn_team'));
+    }
+
+    // Kontrast Club — fifth block
+    eb = expBlocks[4];
+    if (eb) {
+      set(qs('.exp-tag', eb),   t('empresas.kontrast_tag'));
+      set(qs('.exp-title', eb), t('empresas.kontrast_title'));
+      var ebKps = qsa('.exp-body p', eb);
+      set(ebKps[0], t('empresas.kontrast_p1'), true);
+      set(ebKps[1], t('empresas.kontrast_p2'));
+      set(ebKps[2], t('empresas.kontrast_p3'));
+      set(ebKps[3], t('empresas.kontrast_p4'));
+      var ebKlis = qsa('.exp-list li', eb);
+      setLastText(ebKlis[0], t('empresas.kontrast_li1'));
+      setLastText(ebKlis[1], t('empresas.kontrast_li2'));
+      setLastText(ebKlis[2], t('empresas.kontrast_li3'));
+      setLastText(ebKlis[3], t('empresas.kontrast_li4'));
+      setLastText(ebKlis[4], t('empresas.kontrast_li5'));
+      set(qs('.btn-wa', eb), t('empresas.btn_team'));
+    }
+
+    // ── CTA final
+    set(qs('#cta .cta-title'), t('empresas.cta_title'));
+    set(qs('#cta .cta-desc'),  t('empresas.cta_desc'));
+    var ctaWa = qs('#cta .btn-wa');
+    if (ctaWa) ctaWa.textContent = t('empresas.cta_btn') || ctaWa.textContent;
+    var ctaBack = qs('#cta .btn-corp');
+    if (ctaBack) ctaBack.textContent = t('empresas.cta_back') || ctaBack.textContent;
   }
 
   /* ═══════════════════════════════════════════════════════
