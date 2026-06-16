@@ -687,15 +687,16 @@
 
     /* ── PARCEIROS (strip inside #corporativo) ── */
     .parceiros-strip {
-      border-top: 1px solid rgba(255,255,255,.1);
-      padding: 2.5rem 0 3rem;
+      padding: 3rem 0 3.5rem;
       overflow: hidden;
     }
     .parceiros-label {
       text-align: center;
-      font-size: .72rem; font-weight: 600; letter-spacing: .12em;
-      text-transform: uppercase; color: rgba(255,255,255,.4);
-      margin-bottom: 1.75rem;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem; font-weight: 600;
+      color: rgba(255,255,255,.75);
+      margin-bottom: 2rem;
+      letter-spacing: .02em;
     }
     .parceiros-track {
       display: flex; align-items: center;
@@ -708,13 +709,15 @@
       100% { transform: translateX(-50%); }
     }
     .parceiro-logo {
-      height: 72px; width: 180px;
+      height: 80px; width: 200px;
       object-fit: contain; flex-shrink: 0;
-      padding: 0 2.5rem;
-      filter: brightness(0) invert(1);
-      opacity: .55; transition: opacity .3s;
+      padding: 1rem 2rem;
+      background: rgba(255,255,255,.92);
+      border-radius: .75rem;
+      margin: 0 1.25rem;
+      transition: background .3s;
     }
-    .parceiro-logo:hover { opacity: .9; }
+    .parceiro-logo:hover { background: rgba(255,255,255,1); }
 
     /* ── CONTATO ─────────────────────────────── */
     #contato { background: var(--dark); text-align: center; }
