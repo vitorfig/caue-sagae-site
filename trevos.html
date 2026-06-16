@@ -70,31 +70,48 @@
     /* VÍDEO DESTAQUE */
     #featured-video {
       background: var(--dark);
-      padding: 0 2rem 3rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      padding: 2rem 3rem 3rem;
     }
-    .featured-label {
-      font-size: .75rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
-      color: rgba(255,255,255,.55); margin-bottom: 1.25rem;
+    .featured-inner {
+      display: grid; grid-template-columns: auto 1fr;
+      gap: 3.5rem; align-items: center;
+      max-width: 1000px; margin: 0 auto;
     }
     .featured-wrap {
-      position: relative;
-      width: 100%; max-width: 360px;
-      aspect-ratio: 9/16;
+      position: relative; width: 300px; aspect-ratio: 9/16;
       border-radius: 1.5rem; overflow: hidden;
-      background: #000;
-      box-shadow: 0 30px 70px rgba(0,0,0,.55);
+      background: #000; box-shadow: 0 30px 70px rgba(0,0,0,.55);
+      flex-shrink: 0;
     }
     .featured-wrap video { width: 100%; height: 100%; object-fit: cover; display: block; }
     .featured-stats {
-      position: absolute; right: 14px; bottom: 60px;
-      display: flex; flex-direction: column; gap: 20px; align-items: center;
+      position: absolute; right: 12px; bottom: 56px;
+      display: flex; flex-direction: column; gap: 18px; align-items: center;
     }
-    .fts-item { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+    .fts-item { display: flex; flex-direction: column; align-items: center; gap: 3px; }
     .fts-item svg { filter: drop-shadow(0 1px 4px rgba(0,0,0,.9)); }
-    .fts-item span { color: #fff; font-size: .78rem; font-weight: 700; text-shadow: 0 1px 5px rgba(0,0,0,.9); }
+    .fts-item span { color: #fff; font-size: .73rem; font-weight: 700; text-shadow: 0 1px 5px rgba(0,0,0,.9); }
+    .featured-sound-btn {
+      position: absolute; bottom: 14px; left: 50%; transform: translateX(-50%);
+      background: rgba(0,0,0,.6); color: #fff; border: 1px solid rgba(255,255,255,.3);
+      font-size: .73rem; font-weight: 600; padding: .35rem .9rem; border-radius: 2rem;
+      cursor: pointer; white-space: nowrap; backdrop-filter: blur(4px); transition: background .2s;
+    }
+    .featured-sound-btn:hover { background: rgba(255,255,255,.2); }
+    .featured-text { color: #fff; }
+    .featured-text-tag {
+      display: inline-block; background: rgba(255,255,255,.13);
+      font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+      padding: .3rem .9rem; border-radius: 2rem; margin-bottom: 1.25rem; color: rgba(255,255,255,.85);
+    }
+    .featured-text h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.5rem,2.5vw,2.2rem); line-height: 1.25; margin-bottom: 1.1rem;
+    }
+    .featured-text p { font-size: .95rem; color: rgba(255,255,255,.72); line-height: 1.8; margin-bottom: 1.75rem; }
+    .featured-text-stats { display: flex; flex-direction: column; gap: .65rem; }
+    .fts-row { display: flex; align-items: center; gap: .75rem; font-size: .9rem; color: rgba(255,255,255,.85); }
+    .fts-num { font-weight: 700; font-size: 1.05rem; color: #fff; }
 
     /* GRID DE VÍDEOS */
     #videos {
@@ -206,7 +223,9 @@
       .videos-grid { grid-template-columns: repeat(2, 1fr); gap: .75rem; }
       #hero, #cta { padding: 4rem 1.5rem; }
       #hero { padding-top: 7rem; }
-      .featured-wrap { max-width: 280px; }
+      .featured-inner { grid-template-columns: 1fr; justify-items: center; gap: 2rem; }
+      .featured-wrap { width: 260px; }
+      #featured-video { padding: 2rem 1.5rem; }
     }
     @media (max-width: 800px) {
       .hamburger { display: flex; }
@@ -254,27 +273,42 @@
 
 <!-- VÍDEO DESTAQUE -->
 <section id="featured-video">
-  <p class="featured-label">🔥 Vídeo em destaque</p>
-  <div class="featured-wrap">
-    <video autoplay muted playsinline loop preload="auto">
-      <source src="trevo-10.mp4" type="video/mp4"/>
-    </video>
-    <div class="featured-stats">
-      <div class="fts-item">
-        <svg viewBox="0 0 24 24" fill="white" width="32" height="32"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-        <span>78K</span>
+  <div class="featured-inner">
+    <!-- Vídeo à esquerda -->
+    <div class="featured-wrap">
+      <video id="featuredVid" autoplay muted playsinline loop preload="auto">
+        <source src="trevo-10.mp4" type="video/mp4"/>
+      </video>
+      <div class="featured-stats">
+        <div class="fts-item">
+          <svg viewBox="0 0 24 24" fill="white" width="30" height="30"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+          <span>78K</span>
+        </div>
+        <div class="fts-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" width="30" height="30"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          <span>344</span>
+        </div>
+        <div class="fts-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" width="30" height="30"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><path d="M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
+          <span>570</span>
+        </div>
+        <div class="fts-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" width="30" height="30"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2" fill="white" stroke="none"/></svg>
+          <span>914</span>
+        </div>
       </div>
-      <div class="fts-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" width="32" height="32"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-        <span>344</span>
-      </div>
-      <div class="fts-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" width="32" height="32"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><path d="M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
-        <span>570</span>
-      </div>
-      <div class="fts-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" width="32" height="32"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2" fill="white" stroke="none"/></svg>
-        <span>914</span>
+      <button class="featured-sound-btn" id="featuredSoundBtn">🔇 Ativar som</button>
+    </div>
+    <!-- Texto à direita -->
+    <div class="featured-text">
+      <span class="featured-text-tag">🔥 Viral no TikTok</span>
+      <h2>78 mil pessoas se emocionaram com essa entrega</h2>
+      <p>Um trevo de quatro folhas entregue para a atendente do guichê do aeroporto. Um gesto simples — e genuíno — que tocou o coração de mais de 78 mil pessoas ao redor do mundo.</p>
+      <div class="featured-text-stats">
+        <div class="fts-row"><span>❤️</span><span class="fts-num">78K</span><span>curtidas</span></div>
+        <div class="fts-row"><span>💬</span><span class="fts-num">344</span><span>comentários</span></div>
+        <div class="fts-row"><span>🔄</span><span class="fts-num">570</span><span>compartilhamentos</span></div>
+        <div class="fts-row"><span>✈️</span><span class="fts-num">914</span><span>envios</span></div>
       </div>
     </div>
   </div>
@@ -418,6 +452,26 @@
   modalClose.addEventListener('click', closeModal);
   modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+</script>
+<script>
+  const featuredVid = document.getElementById('featuredVid');
+  const soundBtn = document.getElementById('featuredSoundBtn');
+  if (soundBtn && featuredVid) {
+    soundBtn.addEventListener('click', function() {
+      if (featuredVid.muted) {
+        featuredVid.muted = false;
+        featuredVid.play();
+        soundBtn.textContent = '🔊 Som ativado';
+        soundBtn.style.background = 'rgba(37,211,102,.45)';
+        soundBtn.style.borderColor = 'rgba(37,211,102,.6)';
+      } else {
+        featuredVid.muted = true;
+        soundBtn.textContent = '🔇 Ativar som';
+        soundBtn.style.background = '';
+        soundBtn.style.borderColor = '';
+      }
+    });
+  }
 </script>
 <script src="translations.js"></script>
 <script src="nav.js"></script>
