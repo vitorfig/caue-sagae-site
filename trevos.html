@@ -276,7 +276,7 @@
   <div class="featured-inner">
     <!-- Vídeo à esquerda -->
     <div class="featured-wrap">
-      <video id="featuredVid" autoplay muted playsinline loop preload="auto">
+      <video id="featuredVid" autoplay playsinline loop preload="auto">
         <source src="trevo-10.mp4" type="video/mp4"/>
       </video>
       <div class="featured-stats">
@@ -456,19 +456,34 @@
 <script>
   const featuredVid = document.getElementById('featuredVid');
   const soundBtn = document.getElementById('featuredSoundBtn');
-  if (soundBtn && featuredVid) {
+  if (featuredVid && soundBtn) {
+    function setSoundOn() {
+      soundBtn.textContent = '🔊 Som ativado';
+      soundBtn.style.background = 'rgba(37,211,102,.45)';
+      soundBtn.style.borderColor = 'rgba(37,211,102,.6)';
+    }
+    function setSoundOff() {
+      soundBtn.textContent = '🔇 Ativar som';
+      soundBtn.style.background = '';
+      soundBtn.style.borderColor = '';
+    }
+    // Tenta abrir com som; se browser bloquear, cai no mudo
+    featuredVid.muted = false;
+    featuredVid.play().then(function() {
+      setSoundOn();
+    }).catch(function() {
+      featuredVid.muted = true;
+      featuredVid.play();
+      setSoundOff();
+    });
     soundBtn.addEventListener('click', function() {
       if (featuredVid.muted) {
         featuredVid.muted = false;
         featuredVid.play();
-        soundBtn.textContent = '🔊 Som ativado';
-        soundBtn.style.background = 'rgba(37,211,102,.45)';
-        soundBtn.style.borderColor = 'rgba(37,211,102,.6)';
+        setSoundOn();
       } else {
         featuredVid.muted = true;
-        soundBtn.textContent = '🔇 Ativar som';
-        soundBtn.style.background = '';
-        soundBtn.style.borderColor = '';
+        setSoundOff();
       }
     });
   }
