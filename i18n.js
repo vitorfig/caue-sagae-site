@@ -130,8 +130,7 @@
 
   function translateFooter() {
     var ps = qsa('footer p');
-    if (ps[0]) set(ps[0], t('footer.rights'));
-    if (ps[1]) set(ps[1], t('footer.made'), true);
+    if (ps[0]) set(ps[0], t('footer.made'), true);
   }
 
   /* ── Page detection ──────────────────────────────────── */

@@ -34,17 +34,11 @@ var TRANSLATIONS = {
   },
 
   // ─── SHARED: FOOTER ──────────────────────────────────
-  "footer.rights": {
-    pt: "© 2025 Cauê Sagae — Todos os direitos reservados.",
-    en: "© 2025 Cauê Sagae — All rights reserved.",
-    es: "© 2025 Cauê Sagae — Todos los derechos reservados.",
-    fr: "© 2025 Cauê Sagae — Tous droits réservés."
-  },
   "footer.made": {
-    pt: 'Feito com ❤️ e 🍀 &nbsp;·&nbsp; São Paulo, Brasil',
-    en: 'Made with ❤️ and 🍀 &nbsp;·&nbsp; São Paulo, Brazil',
-    es: 'Hecho con ❤️ y 🍀 &nbsp;·&nbsp; São Paulo, Brasil',
-    fr: 'Fait avec ❤️ et 🍀 &nbsp;·&nbsp; São Paulo, Brésil'
+    pt: 'Site desenvolvido sob medida pela <a href="https://desbrava.co/" target="_blank" rel="noopener">Desbrava.co</a> ❤️🍀',
+    en: 'Site desenvolvido sob medida pela <a href="https://desbrava.co/" target="_blank" rel="noopener">Desbrava.co</a> ❤️🍀',
+    es: 'Site desenvolvido sob medida pela <a href="https://desbrava.co/" target="_blank" rel="noopener">Desbrava.co</a> ❤️🍀',
+    fr: 'Site desenvolvido sob medida pela <a href="https://desbrava.co/" target="_blank" rel="noopener">Desbrava.co</a> ❤️🍀'
   },
 
   // ─── INDEX: HERO ─────────────────────────────────────
