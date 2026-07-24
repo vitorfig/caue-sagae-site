@@ -330,7 +330,7 @@
     set(qs('#depoimentos .section-tag'),   t('depoimentos.tag'));
     set(qs('#depoimentos .section-title'), t('depoimentos.title'));
     set(qs('#depoimentos .section-body'),  t('depoimentos.desc'));
-    var depoTagKeys = ['depoimentos.tag_mentoria', 'depoimentos.tag_aura', 'depoimentos.tag_massagem', 'depoimentos.tag_depoimento'];
+    var depoTagKeys = ['depoimentos.tag_massagem', 'depoimentos.tag_aura', 'depoimentos.tag_mentoria', 'depoimentos.tag_depoimento', 'depoimentos.tag_depoimento'];
     qsa('.depo-tag').forEach(function (el, i) { if (depoTagKeys[i]) set(el, t(depoTagKeys[i])); });
 
     // ── Mídia

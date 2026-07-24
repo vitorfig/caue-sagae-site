@@ -689,12 +689,15 @@
     #depoimentos { background: var(--white); text-align: center; }
     .depo-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
       gap: 1.5rem;
       margin: 3.5rem auto 0;
     }
     .depo-card .midia-thumb { aspect-ratio: 3/4; }
-    .depo-card .midia-info { padding: 1.1rem 1.2rem; }
+    .depo-card .midia-info {
+      padding: 1.1rem 1.2rem;
+      flex-direction: column; align-items: flex-start; gap: .6rem;
+    }
     .depo-tag {
       display: inline-block;
       font-size: .72rem; font-weight: 700; letter-spacing: .1em;
@@ -706,7 +709,18 @@
       font-size: 1.2rem; color: #fff;
       line-height: 1.25;
     }
-    .depo-card .midia-play-overlay svg { width: 32px; }
+    .depo-action-btn {
+      flex-shrink: 0;
+      display: inline-flex; align-items: center; gap: .3rem;
+      background: rgba(255,255,255,.15);
+      border: 1px solid rgba(255,255,255,.3);
+      backdrop-filter: blur(6px);
+      color: #fff; font-size: .68rem; font-weight: 600;
+      padding: .38rem .7rem; border-radius: 2rem;
+      transition: background .2s;
+      user-select: none; white-space: nowrap;
+    }
+    .depo-card:hover .depo-action-btn { background: rgba(255,255,255,.25); }
 
     /* ── MEDITAÇÕES CTA ─────────────────────── */
     #meditacoes-cta { background: var(--bg-alt); }
@@ -1511,41 +1525,8 @@
       Histórias reais de quem já viveu uma sessão com Cauê.
     </p>
     <div class="depo-grid">
-      <!-- Fernando - Mentoria -->
-      <div class="midia-card depo-card" data-src="depoimento-fernando-mentoria.mp4" style="cursor:pointer;">
-        <div class="midia-play-overlay"><svg viewBox="0 0 24 24" width="40" fill="white"><path d="M8 5v14l11-7z"/></svg></div>
-        <div class="midia-thumb">
-          <video autoplay muted loop playsinline preload="none">
-            <source src="depoimento-fernando-mentoria.mp4" type="video/mp4" />
-          </video>
-        </div>
-        <div class="midia-info">
-          <div class="midia-info-text">
-            <span class="depo-tag">Mentoria</span>
-            <h3 class="depo-name">Fernando</h3>
-          </div>
-        </div>
-      </div>
-
-      <!-- Lê Mayer - Leitura da Aura -->
-      <div class="midia-card depo-card" data-src="depoimento-le-mayer-leitura-aura.mp4" style="cursor:pointer;">
-        <div class="midia-play-overlay"><svg viewBox="0 0 24 24" width="40" fill="white"><path d="M8 5v14l11-7z"/></svg></div>
-        <div class="midia-thumb">
-          <video autoplay muted loop playsinline preload="none">
-            <source src="depoimento-le-mayer-leitura-aura.mp4" type="video/mp4" />
-          </video>
-        </div>
-        <div class="midia-info">
-          <div class="midia-info-text">
-            <span class="depo-tag">Leitura da Aura</span>
-            <h3 class="depo-name">Lê Mayer</h3>
-          </div>
-        </div>
-      </div>
-
       <!-- Lucília - Massagem -->
       <div class="midia-card depo-card" data-src="depoimento-lucilia-massagem.mp4" style="cursor:pointer;">
-        <div class="midia-play-overlay"><svg viewBox="0 0 24 24" width="40" fill="white"><path d="M8 5v14l11-7z"/></svg></div>
         <div class="midia-thumb">
           <video autoplay muted loop playsinline preload="none">
             <source src="depoimento-lucilia-massagem.mp4" type="video/mp4" />
@@ -1556,12 +1537,44 @@
             <span class="depo-tag">Massagem</span>
             <h3 class="depo-name">Lucília</h3>
           </div>
+          <span class="depo-action-btn">▶ Ver depoimento</span>
+        </div>
+      </div>
+
+      <!-- Lê Mayer - Leitura da Aura -->
+      <div class="midia-card depo-card" data-src="depoimento-le-mayer-leitura-aura.mp4" style="cursor:pointer;">
+        <div class="midia-thumb">
+          <video autoplay muted loop playsinline preload="none">
+            <source src="depoimento-le-mayer-leitura-aura.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="midia-info">
+          <div class="midia-info-text">
+            <span class="depo-tag">Leitura da Aura</span>
+            <h3 class="depo-name">Lê Mayer</h3>
+          </div>
+          <span class="depo-action-btn">▶ Ver depoimento</span>
+        </div>
+      </div>
+
+      <!-- Fernando - Mentoria -->
+      <div class="midia-card depo-card" data-src="depoimento-fernando-mentoria.mp4" style="cursor:pointer;">
+        <div class="midia-thumb">
+          <video autoplay muted loop playsinline preload="none">
+            <source src="depoimento-fernando-mentoria.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="midia-info">
+          <div class="midia-info-text">
+            <span class="depo-tag">Mentoria</span>
+            <h3 class="depo-name">Fernando</h3>
+          </div>
+          <span class="depo-action-btn">▶ Ver depoimento</span>
         </div>
       </div>
 
       <!-- Leitura da Aura (sem nome informado) -->
       <div class="midia-card depo-card" data-src="depoimento-leitura-aura.mp4" style="cursor:pointer;">
-        <div class="midia-play-overlay"><svg viewBox="0 0 24 24" width="40" fill="white"><path d="M8 5v14l11-7z"/></svg></div>
         <div class="midia-thumb">
           <video autoplay muted loop playsinline preload="none">
             <source src="depoimento-leitura-aura.mp4" type="video/mp4" />
@@ -1572,6 +1585,23 @@
             <span class="depo-tag">Depoimento</span>
             <h3 class="depo-name">Leitura da Aura</h3>
           </div>
+          <span class="depo-action-btn">▶ Ver depoimento</span>
+        </div>
+      </div>
+
+      <!-- Meditação das Rosas (sem nome informado) -->
+      <div class="midia-card depo-card" data-src="depoimento-meditacao-das-rosas.mp4" style="cursor:pointer;">
+        <div class="midia-thumb">
+          <video autoplay muted loop playsinline preload="none">
+            <source src="depoimento-meditacao-das-rosas.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="midia-info">
+          <div class="midia-info-text">
+            <span class="depo-tag">Depoimento</span>
+            <h3 class="depo-name">Meditação das Rosas</h3>
+          </div>
+          <span class="depo-action-btn">▶ Ver depoimento</span>
         </div>
       </div>
     </div>
@@ -1728,7 +1758,7 @@
       <p>Uma contação de histórias da minha vida, de como criei o <strong>Trevo do Amor</strong>, um presente entregue para mais de 15.000 pessoas, tocando profundamente suas vidas e a minha.</p>
       <p>A mulher em Paris que estava desempregada, ganhou um trevo e conseguiu emprego no dia seguinte. O surfista classificado para Bali. O rapaz cujo casamento foi salvo por um trevo.</p>
       <div class="livro-btns">
-        <a href="https://wa.me/5551999433373?text=Olá%20Cauê!%20Quero%20comprar%20o%20livro%20Amor%20e%20Sorte%20em%20português!" target="_blank" class="btn" style="background:#ff9900;color:#111;box-shadow:0 4px 18px rgba(255,153,0,.3);">📚 Ebook — R$30,00</a>
+        <a href="https://wa.me/5551999433373?text=Olá%20Cauê!%20Quero%20comprar%20o%20livro%20Amor%20e%20Sorte%20em%20português!" target="_blank" class="btn" style="background:#ff9900;color:#111;box-shadow:0 4px 18px rgba(255,153,0,.3);">📚 Ebook por R$30,00</a>
         <a href="livro.html" class="btn" style="background:var(--dark);color:#fff;">Saber mais</a>
       </div>
     </div>

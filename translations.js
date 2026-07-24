@@ -1064,10 +1064,10 @@ var TRANSLATIONS = {
     fr: "La femme à Paris qui était au chômage, a reçu un trèfle et a trouvé un emploi le lendemain. Le surfeur sélectionné pour Bali. L'homme dont le mariage a été sauvé par un trèfle."
   },
   "livro.index_btn_buy": {
-    pt: "📚 Ebook — R$30,00",
-    en: "📚 Ebook — R$30.00",
-    es: "📚 Ebook — R$30,00",
-    fr: "📚 Ebook — R$30,00"
+    pt: "📚 Ebook por R$30,00",
+    en: "📚 Ebook for R$30.00",
+    es: "📚 Ebook por R$30,00",
+    fr: "📚 Ebook pour R$30,00"
   },
   "livro.index_btn_more": {
     pt: "Saber mais", en: "Learn more", es: "Saber más", fr: "En savoir plus"
