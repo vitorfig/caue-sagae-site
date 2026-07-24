@@ -547,7 +547,7 @@ var TRANSLATIONS = {
     pt: "R$ 97", en: "€ 18", es: "€ 18", fr: "€ 18"
   },
   "price.aura": {
-    pt: "R$ 100 – R$ 400", en: "€ 20 – € 70", es: "€ 20 – € 70", fr: "€ 20 – € 70"
+    pt: "R$ 200 – R$ 400", en: "€ 20 – € 70", es: "€ 20 – € 70", fr: "€ 20 – € 70"
   },
   "price.massagem": {
     pt: "R$ 350", en: "€ 60", es: "€ 60", fr: "€ 60"
@@ -560,6 +560,23 @@ var TRANSLATIONS = {
   },
   "price.wellness": {
     pt: "R$ 1.200", en: "€ 200", es: "€ 200", fr: "€ 200"
+  },
+
+  // ─── INDEX: DEPOIMENTOS ────────────────────────────────
+  "depoimentos.tag": {
+    pt: "Depoimentos", en: "Testimonials", es: "Testimonios", fr: "Témoignages"
+  },
+  "depoimentos.title": {
+    pt: "O que dizem sobre a experiência",
+    en: "What people say about the experience",
+    es: "Lo que dicen sobre la experiencia",
+    fr: "Ce qu'ils disent de l'expérience"
+  },
+  "depoimentos.desc": {
+    pt: "Histórias reais de quem já viveu uma sessão com Cauê.",
+    en: "Real stories from people who've experienced a session with Cauê.",
+    es: "Historias reales de quienes ya vivieron una sesión con Cauê.",
+    fr: "Des histoires vécues par celles et ceux qui ont vécu une séance avec Cauê."
   },
 
   // ─── INDEX: MÍDIA ────────────────────────────────────
@@ -1076,7 +1093,7 @@ var TRANSLATIONS = {
   "cursos.more": { pt: "Saber mais →", en: "Learn more →", es: "Saber más →", fr: "En savoir plus →" },
   "cursos.cat.medit": { pt: "Meditação", en: "Meditation", es: "Meditación", fr: "Méditation" },
   "cursos.cat.ritual": { pt: "Ritual", en: "Ritual", es: "Ritual", fr: "Rituel" },
-  "cursos.cat.curso": { pt: "Curso", en: "Course", es: "Curso", fr: "Cours" },
+  "cursos.cat.curso": { pt: "Aula", en: "Class", es: "Clase", fr: "Cours" },
   "cursos.lv1": { pt: "Nível 1", en: "Level 1", es: "Nivel 1", fr: "Niveau 1" },
   "cursos.lv2": { pt: "Nível 2", en: "Level 2", es: "Nivel 2", fr: "Niveau 2" },
   "cursos.lv3": { pt: "Nível 3", en: "Level 3", es: "Nivel 3", fr: "Niveau 3" },

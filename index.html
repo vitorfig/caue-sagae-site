@@ -685,6 +685,29 @@
     .midia-card:hover .midia-play-overlay { opacity: 1; }
     .midia-play-overlay svg { filter: drop-shadow(0 2px 8px rgba(0,0,0,.6)); }
 
+    /* ── DEPOIMENTOS ─────────────────────────── */
+    #depoimentos { background: var(--white); text-align: center; }
+    .depo-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      margin: 3.5rem auto 0;
+    }
+    .depo-card .midia-thumb { aspect-ratio: 3/4; }
+    .depo-card .midia-info { padding: 1.1rem 1.2rem; }
+    .depo-tag {
+      display: inline-block;
+      font-size: .72rem; font-weight: 700; letter-spacing: .1em;
+      text-transform: uppercase; color: rgba(255,255,255,.75);
+      margin-bottom: .35rem;
+    }
+    .depo-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem; color: #fff;
+      line-height: 1.25;
+    }
+    .depo-card .midia-play-overlay svg { width: 32px; }
+
     /* ── MEDITAÇÕES CTA ─────────────────────── */
     #meditacoes-cta { background: var(--bg-alt); }
     .medit-cta-grid {
@@ -876,6 +899,7 @@
       .corp-grid,
       .midia-grid,
       .trevo-mundo-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .depo-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
       #trevo-mundo { padding: 4rem 1.5rem; }
       .trevo-videos-col { max-height: 420px; }
       .trevo-tiktok-stats { right: 6px; bottom: 36px; gap: 12px; }
@@ -1136,12 +1160,12 @@
           <img class="curso-visual-img" src="capa-intuicao.jpg" alt="Intuição na Prática"/>
         </div>
         <div class="curso-body">
-          <span class="curso-category curso-cat-intuicao">Curso</span>
+          <span class="curso-category curso-cat-intuicao">Aula</span>
           <h3 class="curso-title curso-intuicao-title">Intuição na Prática</h3>
           <p class="curso-desc curso-intuicao-desc">Desenvolva sua intuição como ferramenta poderosa para decisões e percepções no cotidiano.</p>
           <span class="curso-price curso-intuicao-price">R$ 97</span>
           <div class="curso-btns">
-            <a href="https://wa.me/5551999433373?text=Olá%20Cauê!%20Quero%20comprar%20o%20curso%20Intuição%20na%20Prática." target="_blank" class="curso-buy">
+            <a href="https://wa.me/5551999433373?text=Olá%20Cauê!%20Quero%20comprar%20a%20aula%20Intuição%20na%20Prática." target="_blank" class="curso-buy">
               <svg viewBox="0 0 24 24" width="13" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
               <span class="curso-buy-lbl">Comprar</span>
             </a>
@@ -1170,7 +1194,7 @@
         <div style="display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;margin-bottom:1rem;">
           <span class="section-tag massagem-tag" style="margin-bottom:0;">Leitura da Aura</span>
           <span style="background:rgba(255,255,255,.15);color:rgba(255,255,255,.9);font-size:.75rem;font-weight:600;padding:.3rem .85rem;border-radius:2rem;border:1px solid rgba(255,255,255,.25);">Sessão individual · 1h</span>
-          <span style="background:#7fb069;color:#fff;font-size:.75rem;font-weight:700;padding:.3rem .85rem;border-radius:2rem;">R$ 100 – R$ 400</span>
+          <span style="background:#7fb069;color:#fff;font-size:.75rem;font-weight:700;padding:.3rem .85rem;border-radius:2rem;">R$ 200 – R$ 400</span>
         </div>
         <h2 class="section-title massagem-title">Leitura da Aura</h2>
         <p style="color:rgba(255,255,255,.65);font-size:1.05rem;font-style:italic;margin-bottom:1.5rem;margin-top:-.5rem;">Uma escuta do campo energético</p>
@@ -1430,7 +1454,7 @@
         <div class="pr-name"><span class="pr-icon">👁️</span> Leitura da Aura</div>
         <div class="pr-type">Individual</div>
         <div class="pr-dur">1h</div>
-        <div class="pr-price">R$ 100 – R$ 400</div>
+        <div class="pr-price">R$ 200 – R$ 400</div>
       </div>
       <div class="price-row">
         <div class="pr-name"><span class="pr-icon">🙌</span> Massagem Shiatsu</div>
@@ -1474,6 +1498,82 @@
       <a href="https://wa.me/5551999433373" target="_blank" class="btn btn-wa">
         💬 Agendar pelo WhatsApp
       </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ DEPOIMENTOS ════════════════════════════════════════ -->
+<section id="depoimentos">
+  <div class="inner" style="text-align:center;">
+    <span class="section-tag">Depoimentos</span>
+    <h2 class="section-title">O que dizem sobre a experiência</h2>
+    <p class="section-body" style="max-width:460px;margin:.5rem auto 0;text-align:center;">
+      Histórias reais de quem já viveu uma sessão com Cauê.
+    </p>
+    <div class="depo-grid">
+      <!-- Fernando - Mentoria -->
+      <div class="midia-card depo-card" data-src="depoimento-fernando-mentoria.mp4" style="cursor:pointer;">
+        <div class="midia-play-overlay"><svg viewBox="0 0 24 24" width="40" fill="white"><path d="M8 5v14l11-7z"/></svg></div>
+        <div class="midia-thumb">
+          <video autoplay muted loop playsinline preload="none">
+            <source src="depoimento-fernando-mentoria.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="midia-info">
+          <div class="midia-info-text">
+            <span class="depo-tag">Mentoria</span>
+            <h3 class="depo-name">Fernando</h3>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lê Mayer - Leitura da Aura -->
+      <div class="midia-card depo-card" data-src="depoimento-le-mayer-leitura-aura.mp4" style="cursor:pointer;">
+        <div class="midia-play-overlay"><svg viewBox="0 0 24 24" width="40" fill="white"><path d="M8 5v14l11-7z"/></svg></div>
+        <div class="midia-thumb">
+          <video autoplay muted loop playsinline preload="none">
+            <source src="depoimento-le-mayer-leitura-aura.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="midia-info">
+          <div class="midia-info-text">
+            <span class="depo-tag">Leitura da Aura</span>
+            <h3 class="depo-name">Lê Mayer</h3>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lucília - Massagem -->
+      <div class="midia-card depo-card" data-src="depoimento-lucilia-massagem.mp4" style="cursor:pointer;">
+        <div class="midia-play-overlay"><svg viewBox="0 0 24 24" width="40" fill="white"><path d="M8 5v14l11-7z"/></svg></div>
+        <div class="midia-thumb">
+          <video autoplay muted loop playsinline preload="none">
+            <source src="depoimento-lucilia-massagem.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="midia-info">
+          <div class="midia-info-text">
+            <span class="depo-tag">Massagem</span>
+            <h3 class="depo-name">Lucília</h3>
+          </div>
+        </div>
+      </div>
+
+      <!-- Leitura da Aura (sem nome informado) -->
+      <div class="midia-card depo-card" data-src="depoimento-leitura-aura.mp4" style="cursor:pointer;">
+        <div class="midia-play-overlay"><svg viewBox="0 0 24 24" width="40" fill="white"><path d="M8 5v14l11-7z"/></svg></div>
+        <div class="midia-thumb">
+          <video autoplay muted loop playsinline preload="none">
+            <source src="depoimento-leitura-aura.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="midia-info">
+          <div class="midia-info-text">
+            <span class="depo-tag">Depoimento</span>
+            <h3 class="depo-name">Leitura da Aura</h3>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>

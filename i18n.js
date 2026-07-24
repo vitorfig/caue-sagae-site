@@ -326,6 +326,11 @@
       if (priceEl) set(priceEl, t(priceKeys[i]));
     });
 
+    // ── Depoimentos
+    set(qs('#depoimentos .section-tag'),   t('depoimentos.tag'));
+    set(qs('#depoimentos .section-title'), t('depoimentos.title'));
+    set(qs('#depoimentos .section-body'),  t('depoimentos.desc'));
+
     // ── Mídia
     set(qs('#midia .section-tag'),   t('midia.tag'));
     set(qs('#midia .section-title'), t('midia.title'));
