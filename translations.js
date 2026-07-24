@@ -36,9 +36,9 @@ var TRANSLATIONS = {
   // ─── SHARED: FOOTER ──────────────────────────────────
   "footer.made": {
     pt: 'Site desenvolvido sob medida pela <a href="https://desbrava.co/" target="_blank" rel="noopener">Desbrava.co</a> ❤️🍀',
-    en: 'Site desenvolvido sob medida pela <a href="https://desbrava.co/" target="_blank" rel="noopener">Desbrava.co</a> ❤️🍀',
-    es: 'Site desenvolvido sob medida pela <a href="https://desbrava.co/" target="_blank" rel="noopener">Desbrava.co</a> ❤️🍀',
-    fr: 'Site desenvolvido sob medida pela <a href="https://desbrava.co/" target="_blank" rel="noopener">Desbrava.co</a> ❤️🍀'
+    en: 'Site custom-built by <a href="https://desbrava.co/" target="_blank" rel="noopener">Desbrava.co</a> ❤️🍀',
+    es: 'Sitio desarrollado a medida por <a href="https://desbrava.co/" target="_blank" rel="noopener">Desbrava.co</a> ❤️🍀',
+    fr: 'Site conçu sur mesure par <a href="https://desbrava.co/" target="_blank" rel="noopener">Desbrava.co</a> ❤️🍀'
   },
 
   // ─── INDEX: HERO ─────────────────────────────────────
@@ -578,6 +578,18 @@ var TRANSLATIONS = {
     es: "Historias reales de quienes ya vivieron una sesión con Cauê.",
     fr: "Des histoires vécues par celles et ceux qui ont vécu une séance avec Cauê."
   },
+  "depoimentos.tag_mentoria": {
+    pt: "Mentoria", en: "Mentoring", es: "Mentoría", fr: "Mentorat"
+  },
+  "depoimentos.tag_aura": {
+    pt: "Leitura da Aura", en: "Aura Reading", es: "Lectura del Aura", fr: "Lecture de l'Aura"
+  },
+  "depoimentos.tag_massagem": {
+    pt: "Massagem", en: "Massage", es: "Masaje", fr: "Massage"
+  },
+  "depoimentos.tag_depoimento": {
+    pt: "Depoimento", en: "Testimonial", es: "Testimonio", fr: "Témoignage"
+  },
 
   // ─── INDEX: MÍDIA ────────────────────────────────────
   "midia.tag": {
@@ -1093,7 +1105,7 @@ var TRANSLATIONS = {
   "cursos.more": { pt: "Saber mais →", en: "Learn more →", es: "Saber más →", fr: "En savoir plus →" },
   "cursos.cat.medit": { pt: "Meditação", en: "Meditation", es: "Meditación", fr: "Méditation" },
   "cursos.cat.ritual": { pt: "Ritual", en: "Ritual", es: "Ritual", fr: "Rituel" },
-  "cursos.cat.curso": { pt: "Aula", en: "Class", es: "Clase", fr: "Cours" },
+  "cursos.cat.curso": { pt: "Aula", en: "Class", es: "Clase", fr: "Classe" },
   "cursos.lv1": { pt: "Nível 1", en: "Level 1", es: "Nivel 1", fr: "Niveau 1" },
   "cursos.lv2": { pt: "Nível 2", en: "Level 2", es: "Nivel 2", fr: "Niveau 2" },
   "cursos.lv3": { pt: "Nível 3", en: "Level 3", es: "Nivel 3", fr: "Niveau 3" },
