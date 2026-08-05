@@ -197,6 +197,8 @@
       set(qs('.massagem-tag', ag),              t('aura.tag'));
       set(qs('.massagem-title', ag),             t('aura.tag'));
       set(qs('.massagem-title + p[style]', ag),  t('aura.title'));
+      set(qs('.aura-session-badge', ag),         t('aura.badge'));
+      set(qs('.aura-price-badge', ag),           t('aura.price_badge'));
       var agBps = qsa('.massagem-body p', ag);
       set(agBps[0], t('aura.p1'), true);
       set(agBps[1], t('aura.p2'));
