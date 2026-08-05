@@ -547,7 +547,7 @@ var TRANSLATIONS = {
     pt: "R$ 97", en: "€ 18", es: "€ 18", fr: "€ 18"
   },
   "price.aura": {
-    pt: "R$ 200 – R$ 400", en: "€ 20 – € 70", es: "€ 20 – € 70", fr: "€ 20 – € 70"
+    pt: "R$ 370 presencial<br>R$ 300 online", en: "€ 20 – € 70", es: "€ 20 – € 70", fr: "€ 20 – € 70"
   },
   "price.massagem": {
     pt: "R$ 350", en: "€ 60", es: "€ 60", fr: "€ 60"

@@ -323,7 +323,7 @@
       var durEl = qs('.pr-dur', row);
       if (durEl) set(durEl, durFixed[i] !== null ? durFixed[i] : (durKeys[i] ? t(durKeys[i]) : null));
       var priceEl = qs('.pr-price', row);
-      if (priceEl) set(priceEl, t(priceKeys[i]));
+      if (priceEl) set(priceEl, t(priceKeys[i]), true);
     });
 
     // ── Depoimentos
